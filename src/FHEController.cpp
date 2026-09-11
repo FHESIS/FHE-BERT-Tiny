@@ -416,7 +416,7 @@ Ctxt FHEController::add(const Ctxt &c1, const Ctxt &c2) {
     return context->EvalAdd(c1, c2);
 }
 
-Ctxt FHEController::add(const Ctxt &c1, const Ptxt &c2) {
+Ctxt FHEController::add(const Ctxt &c1, Ptxt c2) {
     cout << "Calling EvalAdd cipher and plain" << endl;
     return context->EvalAdd(c1, c2);
 }
@@ -430,7 +430,7 @@ Ctxt FHEController::mult(const Ctxt &c1, double d) {
     return context->EvalMult(c1, p);
 }
 
-Ctxt FHEController::mult(const Ctxt &c, const Ptxt& p) {
+Ctxt FHEController::mult(const Ctxt &c, Ptxt p) {
     cout << "Calling EvalMult cipher and plain" << endl;
     return context->EvalMult(c, p);
 }

@@ -72,11 +72,11 @@ public:
      * Homomorphic operations
      */
     Ctxt add(const Ctxt& c1, const Ctxt& c2);
-    Ctxt add(const Ctxt& c1, const Ptxt& c2);
+    Ctxt add(const Ctxt& c1, Ptxt c2);
     Ctxt add(vector<Ctxt> c);
     Ctxt mult(const Ctxt& c1, const Ctxt& c2);
     Ctxt mult(const Ctxt& c, double d);
-    Ctxt mult(const Ctxt& c, const Ptxt& p);
+    Ctxt mult(const Ctxt& c, Ptxt p);
     Ctxt rotate(const Ctxt& c, int index);
     Ctxt bootstrap(const Ctxt& c, bool timing = false);
     Ctxt bootstrap(const Ctxt& c, int precision, bool timing = false);
