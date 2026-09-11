@@ -52,3 +52,6 @@ src/tmp_embeddings/
 notebooks/.ipynb_checkpoints/
 /src/.locks/models--prajjwal1--bert-tiny
 /src/models--prajjwal1--bert-tiny
+src/python/.venv/*
+*.log
+*.patch

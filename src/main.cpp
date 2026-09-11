@@ -44,7 +44,7 @@ int main(int argc, char *argv[]) {
     if (p == Parameters::Generate) {
         run_command("mkdir -p ../keys");
         controller.generate_context(true, security128bits);
-        vector<int> rotations = {1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, -1, -2, -4, -8, -16, -32, -64};
+        vector<int> rotations = {1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, -1, -2, -4, -8, -16, -32, -64, -512};
         controller.generate_bootstrapping_and_rotation_keys(rotations, 16384, true, "rotation_keys.txt");
         return 0;
     } else if (p == Parameters::Load) {
@@ -66,20 +66,44 @@ int main(int argc, char *argv[]) {
 
     vector<Ctxt> encoder1output;
     Ctxt encoder2output;
+    Ctxt pooled, classified;
+    vector<double> plain_result;
 
-    encoder1output = encoder1();
-    encoder2output = encoder2(encoder1output);
+    // Retry wrapper: the GPU bootstrap occasionally produces a catastrophically noisy
+    // ciphertext (observed via instrumenting OpenFHE's Decode() -- the identical circuit on
+    // the identical input decoded fine with ~+23 bits of precision on some runs and failed
+    // ("approximation error too high") with ~-4 bits on others, a ~27-bit swing). That points
+    // to an intermittent bug (most likely a race condition in FIDESlib's CUDA bootstrap
+    // kernels) rather than a per-input or per-parameter precision shortfall, so more
+    // circuit_depth headroom doesn't reliably fix it. Retrying the whole circuit re-rolls
+    // that kernel's execution and empirically succeeds within a couple of attempts.
+    const int max_attempts = 3;
+    for (int attempt = 1; attempt <= max_attempts; attempt++) {
+        try {
+            encoder1output = encoder1();
+            encoder2output = encoder2(encoder1output);
 
-    Ctxt pooled = pooler(encoder2output);
-    Ctxt classified = classifier(pooled);
+            pooled = pooler(encoder2output);
+            classified = classifier(pooled);
+            classified = controller.bootstrap(classified, 0, verbose); // Meta-BTS (numIterations=2) for extra precision before the final decode
 
-    if (verbose) cout << "The circuit has been evaluated, the results are sent back to the client" << endl << endl;
-    if (verbose) cout << "CLIENT-SIDE" << endl;
+            if (verbose) cout << "The circuit has been evaluated, the results are sent back to the client" << endl << endl;
+            if (verbose) cout << "CLIENT-SIDE" << endl;
 
-    if (verbose)
-        controller.print(classified, 2, "Output logits");
+            if (verbose)
+                controller.print(classified, 2, "Output logits");
 
-    vector<double> plain_result = controller.decrypt_tovector(classified, 2);
+            plain_result = controller.decrypt_tovector(classified, 2);
+            break;
+        } catch (const lbcrypto::OpenFHEException &e) {
+            cerr << "Warning: FHE circuit evaluation failed on attempt " << attempt << "/" << max_attempts
+                 << " (" << e.what() << "), retrying..." << endl;
+            if (attempt == max_attempts) {
+                cerr << "Giving up after " << max_attempts << " failed attempts." << endl;
+                throw;
+            }
+        }
+    }
 
     int timing = (duration_cast<milliseconds>( high_resolution_clock::now() - start)).count() / 1000.0;
     if (verbose) cout << endl << "The evaluation of the FHE circuit took: " << timing << " seconds." << endl;
@@ -144,7 +168,7 @@ Ctxt pooler(Ctxt input) {
 
     output = controller.add(output, bias);
 
-    output = controller.bootstrap(output);
+    output = controller.bootstrap(output, 0, verbose); // Meta-BTS (numIterations=2) for extra precision
 
     output = controller.eval_tanh_function(output, -1, 1, tanhScale, 300);
 
@@ -168,21 +192,19 @@ Ctxt encoder2(vector<Ctxt> inputs) {
 
     Ctxt scores = controller.matmulScores(Q, K_wrapped);
 
-    scores = controller.bootstrap(scores);
+    scores = controller.bootstrap(scores, 0, verbose); // Meta-BTS (numIterations=2) for extra precision
 
     scores = controller.eval_exp(scores, inputs.size());
 
     scores = controller.mult(scores, 1 / 500.0); //Here values are scaled down in order to achieve better accuracy with bootstrapping
-    scores = controller.bootstrap(scores);
+    scores = controller.bootstrap(scores, 0, verbose); // Meta-BTS (numIterations=2) for extra precision
     scores = controller.mult(scores, 500.0);
 
     Ctxt scores_sum = controller.rotsum(scores, 128, 128);
 
-    controller.print_min_max(scores_sum);
-
     Ctxt scores_denominator = controller.eval_inverse_naive_2(scores_sum, 3, 145000, 1);
 
-    scores_denominator = controller.bootstrap(scores_denominator);
+    scores_denominator = controller.bootstrap(scores_denominator, 0, verbose); // Meta-BTS (numIterations=2) for extra precision
 
     scores = controller.mult(scores, scores_denominator);
 
@@ -224,7 +246,7 @@ Ctxt encoder2(vector<Ctxt> inputs) {
     Ptxt precomputed_mean = controller.read_plain_repeated_input("../weights-sst2/layer1_selfoutput_mean.txt", wrappedOutput->GetLevel(), -1);
     wrappedOutput = controller.add(wrappedOutput, precomputed_mean);
 
-    wrappedOutput = controller.bootstrap(wrappedOutput);
+    wrappedOutput = controller.bootstrap(wrappedOutput, 0, verbose); // Meta-BTS (numIterations=2) for extra precision
 
     Ptxt vy = controller.read_plain_input("../weights-sst2/layer1_selfoutput_vy.txt", wrappedOutput->GetLevel(), 1);
     wrappedOutput = controller.mult(wrappedOutput, vy);
@@ -259,7 +281,7 @@ Ctxt encoder2(vector<Ctxt> inputs) {
 
     for (size_t i = 0; i < output.size(); i++) {
         output[i] = controller.eval_gelu_function(output[i], -1, 1, GELU_max_abs_value, 59);
-        output[i] = controller.bootstrap(output[i]);
+        output[i] = controller.bootstrap(output[i], 0, verbose); // Meta-BTS (numIterations=2) for extra precision
     }
 
     vector<vector<Ctxt>> unwrappedLargeOutput = controller.unwrapRepeatedLarge(output, output.size());
@@ -366,7 +388,7 @@ vector<Ctxt> encoder1() {
     Ptxt bias = controller.read_plain_expanded_input("../weights-sst2/layer0_selfoutput_normbias.txt", wrappedOutput->GetLevel(), 1, inputs.size());
     wrappedOutput = controller.add(wrappedOutput, bias);
 
-    wrappedOutput = controller.bootstrap(wrappedOutput);
+    wrappedOutput = controller.bootstrap(wrappedOutput, 0, verbose); // Meta-BTS (numIterations=2) for extra precision
 
     Ctxt output_copy = wrappedOutput->Clone(); // Required at the last layernorm
 
@@ -395,7 +417,7 @@ vector<Ctxt> encoder1() {
 
     for (size_t i = 0; i < output.size(); i++) {
         output[i] = controller.eval_gelu_function(output[i], -1, 1, GELU_max_abs_value, 119);
-        output[i] = controller.bootstrap(output[i]);
+        output[i] = controller.bootstrap(output[i], 0, verbose); // Meta-BTS (numIterations=2) for extra precision
     }
 
     vector<vector<Ctxt>> unwrappedLargeOutput = controller.unwrapRepeatedLarge(output, inputs.size());

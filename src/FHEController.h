@@ -11,20 +11,20 @@
 #include "ciphertext-ser.h"
 #include "cryptocontext-ser.h"
 #include "key/key-ser.h"
+#include <fideslib.hpp>
 #include <thread>
 #include "Utils.h"
 
-using namespace lbcrypto;
 using namespace std;
 using namespace std::chrono;
 
 using namespace utils;
 
-using Ptxt = Plaintext;
-using Ctxt = Ciphertext<DCRTPoly>;
+using Ptxt = fideslib::Plaintext;
+using Ctxt = fideslib::Ciphertext<fideslib::DCRTPoly>;
 
 class FHEController {
-    CryptoContext<DCRTPoly> context;
+    fideslib::CryptoContext<fideslib::DCRTPoly> context;
 
 public:
     int circuit_depth;
@@ -153,8 +153,9 @@ public:
     string parameters_folder = "keys";
 
 private:
-    KeyPair<DCRTPoly> key_pair;
+    fideslib::KeyPair<fideslib::DCRTPoly> key_pair;
     vector<uint32_t> level_budget = {4, 4};
+    bool serialize_context_pending = false;
 
 
 };
