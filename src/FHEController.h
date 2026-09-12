@@ -135,7 +135,7 @@ public:
     Ctxt mask_mod_n(const Ctxt& c, int n, int padding, int max_slots);
     Ctxt mask_first_n(const Ctxt& c, int n, double mask_value = 1);
 
-    Ctxt eval_exp(const Ctxt& c, int inputs_number);
+    Ctxt eval_exp(const Ctxt& c, int inputs_number, double min, double max, int degree);
     Ctxt eval_inverse(const Ctxt& c, double min, double max);
     Ctxt eval_inverse_naive(const Ctxt& c, double min, double max);
     Ctxt eval_inverse_naive_2(const Ctxt& c, double min, double max, double mult);

@@ -34,7 +34,7 @@ void FHEController::generate_context(bool serialize, bool secure) {
 
     uint32_t approxBootstrapDepth = 4 + 4;
 
-    uint32_t levelsUsedBeforeBootstrap = 15; // +1 vs. the original OpenFHE value: fideslib eval_exp uses a Horner-based
+    uint32_t levelsUsedBeforeBootstrap = 16; // +1 vs. the original OpenFHE value: fideslib eval_exp uses a Horner-based
     // polynomial evaluation (no EvalPoly exposed by fideslib) that costs one more
     // multiplicative level than OpenFHE's Paterson-Stockmeyer EvalPoly, so the
     // circuit needs one more level of total budget to avoid a bootstrap call
@@ -50,6 +50,13 @@ void FHEController::generate_context(bool serialize, bool secure) {
     // prior headroom was still occasionally insufficient. Confirmed FIDESlib's GPU EvalBootstrap
     // ignores numIterations/precision entirely (api/CryptoContext.cpp), so the only available
     // fix is more circuit_depth headroom, requiring a full context/key regeneration.
+    // +1 again (15->16): "This movie was fantastic" still failed deterministically (2/2 full
+    // process runs, 3/3 retry attempts each) even at level 15, and a sweep of the plaintext
+    // pre-activation values over the whole SST-2 validation set showed this input's values sit
+    // well inside all the Chebyshev/Taylor approximation domains -- so the failure isn't a
+    // domain-range problem, it's remaining CKKS precision budget. Trying one more level of
+    // headroom before looking at reducing multiplicative depth instead (e.g. implementing
+    // Paterson-Stockmeyer for eval_exp/GELU to avoid needing this headroom at all).
 
     circuit_depth = levelsUsedBeforeBootstrap + lbcrypto::FHECKKSRNS::GetBootstrapDepth(approxBootstrapDepth, level_budget, lbcrypto::SPARSE_TERNARY);
 
@@ -1279,32 +1286,28 @@ Ctxt FHEController::mask_first_n(const Ctxt &c, int n, double mask_value) {
 }
 
 
-Ctxt FHEController::eval_exp(const Ctxt &c, int inputs_number) {
-    // fideslib has no EvalPoly (Paterson-Stockmeyer) helper, so this Taylor series for e^x is
-    // evaluated with a plain Horner chain instead: 1 + x(1 + x(1/2 + x(1/6 + x(1/24 + x(1/120 + x/720))))).
-    // Horner costs one multiplicative level per term (6 levels here) instead of OpenFHE
-    // EvalPoly's ~4 for the same degree, and the 3 EvalSquare calls below (computing res^8) cost
-    // 3 more, so we bootstrap up front if there isn't room for all 9 levels -- doing the check
-    // after the fact (as the OpenFHE version did) would be too late to prevent underflow mid-chain.
+Ctxt FHEController::eval_exp(const Ctxt &c, int inputs_number, double min, double max, int degree) {
+    // Was a hand-rolled degree-6 Taylor series around 0 (Horner chain), cubed three times
+    // (EvalSquare x3, i.e. raised to the 8th power) to reach e^(8x) from e^x -- the only
+    // approximated nonlinearity in this file NOT using a Chebyshev fit like GELU/tanh/inverse
+    // below. Taylor truncation error is only small near x=0, and cubing amplifies it
+    // roughly 8x ((1+eps)^8 ~= 1+8*eps), so inputs toward the edge of the observed range
+    // (measured empirically over the SST-2 validation set: ~[-0.66, 1.04] for layer 0's
+    // attention scores, ~[-1.35, 1.76] for layer 1's, see the eval_exp() call sites in
+    // encoder1()/encoder2()) were being evaluated well outside where a degree-6 Taylor
+    // series is trustworthy. Refit as a Chebyshev series over the actual [min, max] domain,
+    // matching eval_gelu_function/eval_tanh_function/eval_inverse_naive* below -- this is a
+    // strictly better fit at comparable-or-lower multiplicative depth, since
+    // EvalChebyshevSeries here costs roughly log2(degree) levels rather than one level per
+    // Taylor term.
     Ctxt input = c;
     if (static_cast<int>(input->GetLevel()) + 9 > circuit_depth) {
         input = bootstrap(input);
     }
 
-    Ctxt res = context->EvalMult(input, 1.0 / 720.0);
-    res = context->EvalAdd(res, 1.0 / 120.0);
-    res = context->EvalMult(res, input);
-    res = context->EvalAdd(res, 1.0 / 24.0);
-    res = context->EvalMult(res, input);
-    res = context->EvalAdd(res, 1.0 / 6.0);
-    res = context->EvalMult(res, input);
-    res = context->EvalAdd(res, 1.0 / 2.0);
-    res = context->EvalMult(res, input);
-    res = context->EvalAdd(res, 1.0);
-    res = context->EvalMult(res, input);
-    res = context->EvalAdd(res, 1.0);
-
-    cout << "Current level " << res->GetLevel() << endl;
+    std::function<double(double)> exp_func = [](double x) -> double { return std::exp(x); };
+    std::vector<double> exp_coeffs = context->GetChebyshevCoefficients(exp_func, min, max, degree);
+    Ctxt res = context->EvalChebyshevSeries(input, exp_coeffs, min, max);
 
     res = context->EvalSquare(res);
     res = context->EvalSquare(res);

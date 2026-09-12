@@ -194,7 +194,10 @@ Ctxt encoder2(vector<Ctxt> inputs) {
 
     scores = controller.bootstrap(scores, 0, verbose); // Meta-BTS (numIterations=2) for extra precision
 
-    scores = controller.eval_exp(scores, inputs.size());
+    // Domain measured empirically over the SST-2 validation set: this layer's pre-softmax
+    // scores (after the /64 scaling folded into matmulScores/mask_heads) range ~[-1.35, 1.76],
+    // padded here for headroom against inputs outside that sample.
+    scores = controller.eval_exp(scores, inputs.size(), -2.1, 2.6, 30);
 
     scores = controller.mult(scores, 1 / 500.0); //Here values are scaled down in order to achieve better accuracy with bootstrapping
     scores = controller.bootstrap(scores, 0, verbose); // Meta-BTS (numIterations=2) for extra precision
@@ -346,7 +349,9 @@ vector<Ctxt> encoder1() {
     Ctxt K_wrapped = controller.wrapUpRepeated(K);
 
     Ctxt scores = controller.matmulScores(Q, K_wrapped);
-    scores = controller.eval_exp(scores, inputs.size());
+    // Domain measured empirically over the SST-2 validation set: this layer's pre-softmax
+    // scores range ~[-0.66, 1.04], padded here for headroom against inputs outside that sample.
+    scores = controller.eval_exp(scores, inputs.size(), -1.1, 1.6, 30);
 
     Ctxt scores_sum = controller.rotsum(scores, 128, 128);
     Ctxt scores_denominator = controller.eval_inverse_naive(scores_sum, 2, 5000);

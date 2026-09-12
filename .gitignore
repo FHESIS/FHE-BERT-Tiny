@@ -55,3 +55,6 @@ notebooks/.ipynb_checkpoints/
 src/python/.venv/*
 *.log
 *.patch
+src/python/.locks/*
+src/python/CACHEDIR.TAG
+src/python/models--prajjwal1--bert-tiny/*
