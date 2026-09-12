@@ -45,3 +45,10 @@ include_directories(${GSL_INCLUDE_DIR})
 add_executable(FHE-BERT-Tiny src/main.cpp src/FHEController.cpp src/FHEController.h src/Utils.h)
 
 target_link_libraries(FHE-BERT-Tiny PRIVATE fideslib::fideslib CUDA::cudart)
+
+### Concept tests: exercise the CKKS primitives, the four packing algorithms and the
+### Chebyshev-approximated non-linearities in isolation, without running the full BERT
+### circuit -- see src/test_concepts.cpp.
+add_executable(FHE-BERT-Tiny-Tests src/test_concepts.cpp src/FHEController.cpp src/FHEController.h src/Utils.h)
+
+target_link_libraries(FHE-BERT-Tiny-Tests PRIVATE fideslib::fideslib CUDA::cudart)
