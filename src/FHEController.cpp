@@ -439,12 +439,10 @@ vector<double> FHEController::decrypt_tovector(const Ctxt &c, int slots) {
  * Homomorphic operations
  */
 Ctxt FHEController::add(const Ctxt &c1, const Ctxt &c2) {
-    cout << "Calling EvalAdd ciphertexts" << endl;
     return context->EvalAdd(c1, c2);
 }
 
 Ctxt FHEController::add(const Ctxt &c1, const Ptxt &c2) {
-    cout << "Calling EvalAdd cipher and plain" << endl;
     Ptxt c2_mutable = c2;
     return context->EvalAdd(c1, c2_mutable);
 }
@@ -459,13 +457,11 @@ Ctxt FHEController::mult(const Ctxt &c1, double d) {
 }
 
 Ctxt FHEController::mult(const Ctxt &c, const Ptxt& p) {
-    cout << "Calling EvalMult cipher and plain" << endl;
     Ptxt p_mut = p;
     return context->EvalMult(c, p_mut);
 }
 
 Ctxt FHEController::mult(const Ctxt &c1, const Ctxt& c2) {
-    cout << "Calling EvalMult ciphertext" << endl;
     return context->EvalMult(c1, c2);
 }
 
@@ -868,9 +864,7 @@ void FHEController::print_min_max(const Ctxt &c) {
 Ctxt FHEController::rotsum(const Ctxt &in, int slots, int padding) {
     Ctxt result = in->Clone();
 
-    cout << "Slots " << slots << endl;
     for (int i = 0; i < log2(slots); i++) {
-        cout << "Rotate Sum " << i << endl;
         result = add(result, context->EvalRotate(result, padding * pow(2, i)));
     }
 
@@ -910,7 +904,6 @@ Ctxt FHEController::repeat(const Ctxt &in, int slots, int padding) {
 vector<Ctxt> FHEController::matmulRE(vector<Ctxt> rows, const Ptxt &weight, const Ptxt &bias) {
     vector<Ctxt> columns;
 
-    cout << "MatMulRE " << rows.size() << endl;
     for (size_t i = 0; i < rows.size(); i++) {
         Ctxt m = mult(rows[i], weight);
 
@@ -988,7 +981,6 @@ vector<Ctxt> FHEController::matmulRElarge(vector<Ctxt>& inputs, const vector<Ptx
 vector<Ctxt> FHEController::matmulCR(vector<Ctxt> rows, const Ctxt& matrix) {
     vector<Ctxt> columns;
 
-    cout << "MatMulCR " << rows.size() << endl;
     for (size_t i = 0; i < rows.size(); i++) {
         Ctxt m = mult(rows[i], matrix);
 
@@ -1066,7 +1058,6 @@ Ctxt FHEController::matmulScores(vector<Ctxt> queries, const Ctxt &key) {
 
 Ctxt FHEController::wrapUpRepeated(vector<Ctxt> vectors) {
     vector<Ctxt> masked;
-    cout << "Size of vectors " << vectors.size() << endl;
 
     for (size_t i = 0; i < vectors.size(); i++) {
         masked.push_back(mask_block(vectors[i], 128 * i, 128 * (i + 1), 1));
@@ -1211,71 +1202,69 @@ Ctxt FHEController::wrap_containers(vector<Ctxt> c, int inputs_number) {
     return result;
 }
 
-Ctxt FHEController::mask_block(const Ctxt& c, int from, int to, double mask_value) {
-    vector<double> mask;
-
-    for (int i = 0; i < num_slots; i++) {
-        if (i >= from && i < to) {
-            mask.push_back(mask_value);
-        } else {
-            mask.push_back(0);
-        }
+Ptxt FHEController::get_cached_mask(int kind, int p1, int p2, int p3, int level, double mask_value,
+                                    const std::function<vector<double>()>& build) {
+    auto key = std::make_tuple(kind, p1, p2, p3, level, mask_value);
+    auto it = mask_ptxt_cache.find(key);
+    if (it != mask_ptxt_cache.end()) {
+        return it->second;
     }
 
-    return mult(c, encode(mask, c->GetLevel(), num_slots));
+    Ptxt p = encode(build(), level, num_slots);
+    mask_ptxt_cache.emplace(key, p);
+    return p;
+}
+
+Ctxt FHEController::mask_block(const Ctxt& c, int from, int to, double mask_value) {
+    Ptxt p = get_cached_mask(0, from, to, 0, c->GetLevel(), mask_value, [&]() {
+        vector<double> mask(num_slots, 0.0);
+        for (int i = from; i < to && i < num_slots; i++) mask[i] = mask_value;
+        return mask;
+    });
+
+    return mult(c, p);
 }
 
 Ctxt FHEController::mask_heads(const Ctxt& c, double mask_value) {
-    vector<double> mask;
+    Ptxt p = get_cached_mask(1, 0, 0, 0, c->GetLevel(), mask_value, [&]() {
+        vector<double> mask(num_slots, 0.0);
+        for (int i = 0; i < num_slots; i += 64) mask[i] = mask_value;
+        return mask;
+    });
 
-    for (int i = 0; i < num_slots; i++) {
-        if (i % 64 == 0) {
-            mask.push_back(mask_value);
-        } else {
-            mask.push_back(0);
-        }
-    }
-
-    return mult(c, encode(mask, c->GetLevel(), num_slots));
+    return mult(c, p);
 }
 
 Ctxt FHEController::mask_mod_n(const Ctxt& c, int n) {
-    vector<double> mask;
-    for (int i = 0; i < num_slots; i++) {
-        if (i % n == 0) {
-            mask.push_back(1);
-        } else {
-            mask.push_back(0);
-        }
-    }
+    Ptxt p = get_cached_mask(2, n, 0, 0, c->GetLevel(), 1.0, [&]() {
+        vector<double> mask(num_slots, 0.0);
+        for (int i = 0; i < num_slots; i += n) mask[i] = 1;
+        return mask;
+    });
 
-    return mult(c, encode(mask, c->GetLevel(), num_slots));
+    return mult(c, p);
 }
 
 Ctxt FHEController::mask_mod_n(const Ctxt& c, int n, int padding, int max_slots) {
-    vector<double> mask;
-    for (int i = 0; i < num_slots; i++) {
-        if (i % n == padding) {
-            mask.push_back(1);
-        } else {
-            mask.push_back(0);
+    Ptxt p = get_cached_mask(3, n, padding, max_slots, c->GetLevel(), 1.0, [&]() {
+        vector<double> mask(num_slots, 0.0);
+        for (int i = 0; i < num_slots; i++) {
+            if (i % n == padding) mask[i] = 1;
         }
-    }
+        return mask;
+    });
 
-    return mult(c, encode(mask, c->GetLevel(), num_slots));
+    return mult(c, p);
 }
 
 Ctxt FHEController::mask_first_n(const Ctxt &c, int n, double mask_value) {
-    vector<double> mask;
-    for (int i = 0; i < num_slots; i++) {
-        if (i < n) {
-            mask.push_back(mask_value);
-        } else {
-            mask.push_back(0);
-        }
-    }
+    Ptxt p = get_cached_mask(4, n, 0, 0, c->GetLevel(), mask_value, [&]() {
+        vector<double> mask(num_slots, 0.0);
+        for (int i = 0; i < n && i < num_slots; i++) mask[i] = mask_value;
+        return mask;
+    });
 
-    return mult(c, encode(mask, c->GetLevel(), num_slots));
+    return mult(c, p);
 }
 
 
@@ -1303,8 +1292,6 @@ Ctxt FHEController::eval_exp(const Ctxt &c, int inputs_number) {
     res = context->EvalAdd(res, 1.0);
     res = context->EvalMult(res, input);
     res = context->EvalAdd(res, 1.0);
-
-    cout << "Current level " << res->GetLevel() << endl;
 
     res = context->EvalSquare(res);
     res = context->EvalSquare(res);

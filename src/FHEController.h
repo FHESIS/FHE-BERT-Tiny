@@ -13,6 +13,9 @@
 #include "key/key-ser.h"
 #include <fideslib.hpp>
 #include <thread>
+#include <map>
+#include <tuple>
+#include <functional>
 #include "Utils.h"
 
 using namespace std;
@@ -156,6 +159,26 @@ private:
     fideslib::KeyPair<fideslib::DCRTPoly> key_pair;
     vector<uint32_t> level_budget = {4, 4};
     bool serialize_context_pending = false;
+
+    // The mask_* helpers below encode a fresh all-zero-except-a-pattern plaintext of num_slots
+    // (16384) values on every call, even though within one circuit evaluation they are invoked
+    // repeatedly (once per token/row) with the exact same (kind, params, level) -- e.g.
+    // unwrapExpanded() calls mask_mod_n() with identical arguments for every token. The pattern
+    // and level fully determine the encoded plaintext, so it's cached instead of being rebuilt
+    // and re-NTT-encoded each time. Keyed by (kind, p1, p2, p3, level, mask_value).
+    map<tuple<int, int, int, int, int, double>, Ptxt> mask_ptxt_cache;
+    Ptxt get_cached_mask(int kind, int p1, int p2, int p3, int level, double mask_value,
+                         const std::function<vector<double>()>& build);
+
+public:
+    // Must be called before returning from main(), NOT left to the global `controller`'s
+    // destructor at program exit: destroying these cached Ptxt objects calls into FIDESlib's
+    // GPU-plaintext eviction path, but by the time global destructors run, the CUDA runtime's
+    // own atexit-registered stream-pool teardown has already fired (it's registered on first
+    // CUDA use inside main(), i.e. *after* this global object was constructed, so it tears down
+    // *before* this object's destructor in the LIFO exit sequence). Evicting here, while CUDA is
+    // still known-alive, avoids that use-after-teardown segfault.
+    void clear_mask_cache() { mask_ptxt_cache.clear(); }
 
 
 };

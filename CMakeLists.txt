@@ -2,6 +2,13 @@ project(FHE-BERT-Tiny)
 
 cmake_minimum_required(VERSION 3.25.2)
 
+# No build type was ever set here, so CMake defaulted to no optimization flags at all (plain -O0)
+# for main.cpp/FHEController.cpp -- the plaintext masking/encoding/orchestration code that runs on
+# the CPU around every GPU call. Default to Release (-O3 -DNDEBUG) unless the caller overrides it.
+if(NOT CMAKE_BUILD_TYPE)
+    set(CMAKE_BUILD_TYPE Release CACHE STRING "Build type" FORCE)
+endif()
+
 if(APPLE)
     set(CMAKE_C_COMPILER "/Library/Developer/CommandLineTools/usr/bin/gcc")
     set(CMAKE_CXX_COMPILER "/Library/Developer/CommandLineTools/usr/bin/g++")

@@ -46,6 +46,7 @@ int main(int argc, char *argv[]) {
         controller.generate_context(true, security128bits);
         vector<int> rotations = {1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, -1, -2, -4, -8, -16, -32, -64, -128, -256, -512};
         controller.generate_bootstrapping_and_rotation_keys(rotations, 16384, true, "rotation_keys.txt");
+        controller.clear_mask_cache();
         return 0;
     } else if (p == Parameters::Load) {
         controller.load_context(false);
@@ -127,7 +128,9 @@ int main(int argc, char *argv[]) {
         }
     }
 
-
+    // See the comment on clear_mask_cache(): must run here, before main() returns, not left to
+    // the global `controller`'s destructor at process exit.
+    controller.clear_mask_cache();
 }
 
 Ctxt classifier(Ctxt input) {
