@@ -44,7 +44,7 @@ int main(int argc, char *argv[]) {
     if (p == Parameters::Generate) {
         run_command("mkdir -p ./keys");
         controller.generate_context(true, security128bits);
-        vector<int> rotations = {1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, -1, -2, -4, -8, -16, -32, -64};
+        vector<int> rotations = {1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, -1, -2, -4, -8, -16, -32, -64, -128, -256, -512};
         controller.generate_bootstrapping_and_rotation_keys(rotations, 16384, true, "rotation_keys.txt");
         return 0;
     } else if (p == Parameters::Load) {
