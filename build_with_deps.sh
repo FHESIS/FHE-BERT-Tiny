@@ -7,6 +7,10 @@ cmake -DFIDESLIB_ARCH=${CUDA_ARCH//./} -DCMAKE_BUILD_TYPE=Release -DFIDESLIB_INS
 make -j`nproc` && make install
 echo "Done building FIDESlib"
 cd -
+ldconfig
 rm -rf build/
+mkdir build && cd build
 cmake ..
 make -j4
+echo "Done building project"
+
