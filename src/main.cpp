@@ -358,8 +358,22 @@ vector<Ctxt> encoder1() {
 
     vector<Ctxt> unwrapped_scores = controller.unwrapScoresExpanded(scores, inputs.size());
 
-    Ptxt value_w = controller.read_plain_input("./weights-sst2/layer0_attself_value_weight.txt", scores->GetLevel() - 2);
-    Ptxt value_b = controller.read_plain_repeated_input("./weights-sst2/layer0_attself_value_bias.txt", scores->GetLevel() - 1);
+    // `value_w`/`value_b` are multiplied against `inputs[i]` (the fresh, level-0 embedding
+    // ciphertexts) in matmulRE() below -- NOT against `scores`. Encoding them at
+    // `scores->GetLevel() - {2,1}` (levels ~20-21, vs. inputs[i]->GetLevel()==0) was a leftover
+    // OpenFHE-CPU idiom: real OpenFHE's EvalMult(ciphertext, plaintext) auto-drops the
+    // ciphertext's extra RNS limbs to match a plaintext encoded at a deeper level, so encoding
+    // the plaintext "ahead of time" at the level the caller wants worked there. FIDESlib's GPU
+    // EvalMult does not replicate that implicit level-adjustment (confirmed via
+    // FHEBERT_DEBUG_SCORES instrumentation: inputs[0]->GetLevel()==0 while
+    // scores->GetLevel()-2==20), silently multiplying mismatched RNS limb counts and producing a
+    // ciphertext whose tracked scale no longer matches its actual numeric scale -- this was the
+    // dominant source of the ~2.5-3x undershoot in the final classifier logits relative to the
+    // plaintext reference (see notebooks/Precision of FHE Circuit.ipynb for the expected ~1x
+    // ratio). Fix: encode at the level the multiplication actually happens at, matching the
+    // query/key weights above and layer1's equivalent in encoder2().
+    Ptxt value_w = controller.read_plain_input("./weights-sst2/layer0_attself_value_weight.txt", inputs[0]->GetLevel());
+    Ptxt value_b = controller.read_plain_repeated_input("./weights-sst2/layer0_attself_value_bias.txt", inputs[0]->GetLevel());
 
     vector<Ctxt> V = controller.matmulRE(inputs, value_w, value_b);
     Ctxt V_wrapped = controller.wrapUpRepeated(V);
