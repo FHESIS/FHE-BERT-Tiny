@@ -19,13 +19,14 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS ON)
 
 ### FIDESlib provides GPU-accelerated CKKS primitives; FHEController runs the whole circuit
-### through its api/ wrapper instead of talking to OpenFHE directly. FIDESlib is vendored as a
-### pinned git submodule (third_party/FIDESlib) and built in-tree via add_subdirectory: one
-### `cmake --build` now drives both projects as a single incremental dependency graph, instead
-### of a separate `cmake --install` to a system prefix plus a `find_package(... CONFIG)` lookup.
+### through its api/ wrapper instead of talking to OpenFHE directly. FIDESlib is vendored
+### in-tree as plain source (third_party/FIDESlib, no longer a git submodule) and built via
+### add_subdirectory: one `cmake --build` now drives both projects as a single incremental
+### dependency graph, instead of a separate `cmake --install` to a system prefix plus a
+### `find_package(... CONFIG)` lookup.
 if (NOT EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/third_party/FIDESlib/CMakeLists.txt")
     message(FATAL_ERROR
-            "third_party/FIDESlib is empty -- run: git submodule update --init --recursive")
+            "third_party/FIDESlib is missing its CMakeLists.txt -- the vendored FIDESlib source tree looks incomplete")
 endif ()
 
 # Building FIDESlib as a dependency: skip its own test/benchmark suites (FHE-BERT-Tiny only

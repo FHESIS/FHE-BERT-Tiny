@@ -2,8 +2,9 @@
 #
 # Build FHE-BERT-Tiny and its FIDESlib dependency in one shot.
 #
-# FIDESlib is a pinned git submodule (third_party/FIDESlib), added directly to this
-# project's build via add_subdirectory -- there is no separate "build FIDESlib, then
+# FIDESlib is vendored in-tree as plain source (third_party/FIDESlib, no longer a git
+# submodule), added directly to this project's build via add_subdirectory -- there is no
+# separate "build FIDESlib, then
 # `make install` it, then `find_package` it from FHE-BERT-Tiny" step anymore. One
 # `cmake`/`cmake --build` drives both projects as a single incremental dependency
 # graph: FIDESLIB_ARCH is auto-detected from the GPU present (see cmake/DetectCudaArch.cmake)
@@ -23,8 +24,8 @@ JOBS="$(nproc 2>/dev/null || echo 4)"
 OPENFHE_INSTALL_PREFIX="${OPENFHE_INSTALL_PREFIX:-/usr/local}"
 
 if [[ ! -f "$FIDESLIB_DIR/CMakeLists.txt" ]]; then
-    echo "==> third_party/FIDESlib is empty; initializing submodule"
-    git -C "$ROOT_DIR" submodule update --init --recursive
+    echo "==> third_party/FIDESlib is missing its CMakeLists.txt; the vendored FIDESlib source tree looks incomplete" >&2
+    exit 1
 fi
 
 GENERATOR_FLAGS=()
