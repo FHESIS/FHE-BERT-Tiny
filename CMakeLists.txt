@@ -69,6 +69,21 @@ find_package(OpenMP REQUIRED)
 # call it again here to get CUDA::cudart in this scope too (cheap: already cached by then).
 find_package(CUDAToolkit REQUIRED)
 
-add_executable(FHE-BERT-Tiny src/main.cpp src/FHEController.cpp src/FHEController.h src/Utils.h)
+add_executable(FHE-BERT-Tiny
+        src/client_main.cpp
+        src/ServerCircuit.cpp src/ServerCircuit.h
+        src/ServerLog.h
+        src/FHEController.cpp src/FHEController.h
+        src/Utils.h)
 
 target_link_libraries(FHE-BERT-Tiny PRIVATE fideslib CUDA::cudart OpenMP::OpenMP_CXX)
+
+### security_tests/cca_probe_main.cpp: standalone research tool, see its file header. Reuses
+### FHEController but never touches the BERT circuit/weights.
+add_executable(cca-probe
+        security_tests/cca_probe_main.cpp
+        src/FHEController.cpp src/FHEController.h
+        src/Utils.h)
+target_include_directories(cca-probe PRIVATE src)
+
+target_link_libraries(cca-probe PRIVATE fideslib CUDA::cudart OpenMP::OpenMP_CXX)

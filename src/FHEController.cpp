@@ -68,6 +68,7 @@ void FHEController::generate_context(bool serialize, bool secure) {
     context->Enable(fideslib::FHE);
 
     key_pair = context->KeyGen();
+    secret_key_loaded = true;
 
     context->EvalMultKeyGen(key_pair.secretKey);
 
@@ -149,6 +150,7 @@ void FHEController::generate_context(int log_ring, int log_scale, int log_primes
     context->Enable(fideslib::FHE);
 
     key_pair = context->KeyGen();
+    secret_key_loaded = true;
 
     context->EvalMultKeyGen(key_pair.secretKey);
 
@@ -165,8 +167,8 @@ void FHEController::generate_context(int log_ring, int log_scale, int log_primes
     serialize_context_pending = serialize;
 }
 
-void FHEController::load_context(bool verbose) {
-    if (verbose) cout << "Reading serialized context..." << endl;
+void FHEController::load_context_server(bool verbose) {
+    if (verbose) cout << "Reading serialized context (server role: public/evaluation material only)..." << endl;
 
     if (!fideslib::Serial::DeserializeFromFile("../" + parameters_folder + "/crypto-context.txt", context, fideslib::SerType::BINARY)) {
         cerr << "I cannot read serialized data from: " << "../" + parameters_folder + "/crypto-context.txt" << endl;
@@ -179,14 +181,11 @@ void FHEController::load_context(bool verbose) {
         exit(1);
     }
 
-    fideslib::PrivateKey<fideslib::DCRTPoly> serverSecretKey;
-    if (!fideslib::Serial::DeserializeFromFile("../" + parameters_folder + "/secret-key.txt", serverSecretKey, fideslib::SerType::BINARY)) {
-        cerr << "I cannot read serialized data from public-key.txt" << endl;
-        exit(1);
-    }
-
     key_pair.publicKey = clientPublicKey;
-    key_pair.secretKey = serverSecretKey;
+    // secret-key.txt is deliberately never opened here. key_pair.secretKey stays default-
+    // constructed and secret_key_loaded stays false, so decrypt()/decrypt_tovector() refuse to
+    // run against this controller until (and unless) load_client_secret_key() is called
+    // separately, later, on the client side of the boundary.
 
     std::ifstream multKeyIStream("../" + parameters_folder + "/mult-keys.txt", ios::in | ios::binary);
     if (!multKeyIStream.is_open()) {
@@ -218,6 +217,19 @@ void FHEController::load_context(bool verbose) {
     if (verbose) cout << "Circuit depth: " << circuit_depth << ", available multiplications: " << levelsUsedBeforeBootstrap - 2 << endl;
 
     num_slots = 1 << 14;
+}
+
+void FHEController::load_client_secret_key(bool verbose) {
+    if (verbose) cout << "Reading secret-key.txt (client role)..." << endl;
+
+    fideslib::PrivateKey<fideslib::DCRTPoly> clientSecretKey;
+    if (!fideslib::Serial::DeserializeFromFile("../" + parameters_folder + "/secret-key.txt", clientSecretKey, fideslib::SerType::BINARY)) {
+        cerr << "I cannot read serialized data from secret-key.txt" << endl;
+        exit(1);
+    }
+
+    key_pair.secretKey = clientSecretKey;
+    secret_key_loaded = true;
 }
 
 
@@ -415,6 +427,12 @@ Ctxt FHEController::encrypt_ptxt(const Ptxt& p) {
 }
 
 Ptxt FHEController::decrypt(const Ctxt &c) {
+    if (!secret_key_loaded) {
+        throw std::runtime_error(
+            "FHEController::decrypt(): no secret key is loaded on this controller. Server-role "
+            "controllers (load_context_server()) never load one; call load_client_secret_key() "
+            "on the client side first.");
+    }
     Ptxt p;
     Ctxt c_mut = c;
     context->Decrypt(key_pair.secretKey, c_mut, &p);
@@ -422,6 +440,12 @@ Ptxt FHEController::decrypt(const Ctxt &c) {
 }
 
 vector<double> FHEController::decrypt_tovector(const Ctxt &c, int slots) {
+    if (!secret_key_loaded) {
+        throw std::runtime_error(
+            "FHEController::decrypt_tovector(): no secret key is loaded on this controller. "
+            "Server-role controllers (load_context_server()) never load one; call "
+            "load_client_secret_key() on the client side first.");
+    }
     if (slots == 0) {
         slots = num_slots;
     }
@@ -729,6 +753,12 @@ Ptxt FHEController::read_plain_expanded_input(const string& filename, int level,
 }
 
 void FHEController::print(const Ctxt &c, int slots, string prefix) {
+    if (!secret_key_loaded) {
+        throw std::runtime_error(
+            "FHEController::print(): this is a decrypting debug helper and no secret key is "
+            "loaded on this controller. Server-role code must not call it -- log ciphertext "
+            "level/timing via ServerLog instead.");
+    }
     if (slots == 0) {
         slots = num_slots;
     }
@@ -768,6 +798,11 @@ void FHEController::print(const Ctxt &c, int slots, string prefix) {
 }
 
 void FHEController::print_expanded(const Ctxt &c, int slots, int expansion_factor, string prefix) {
+    if (!secret_key_loaded) {
+        throw std::runtime_error(
+            "FHEController::print_expanded(): this is a decrypting debug helper and no secret "
+            "key is loaded on this controller. Server-role code must not call it.");
+    }
     if (slots == 0) {
         slots = num_slots;
     }
@@ -813,6 +848,11 @@ void FHEController::print_expanded(const Ctxt &c, int slots, int expansion_facto
 }
 
 void FHEController::print_padded(const Ctxt &c, int slots, int padding, string prefix) {
+    if (!secret_key_loaded) {
+        throw std::runtime_error(
+            "FHEController::print_padded(): this is a decrypting debug helper and no secret key "
+            "is loaded on this controller. Server-role code must not call it.");
+    }
     if (slots == 0) {
         slots = num_slots;
     }
@@ -852,6 +892,11 @@ void FHEController::print_padded(const Ctxt &c, int slots, int padding, string p
 }
 
 void FHEController::print_min_max(const Ctxt &c) {
+    if (!secret_key_loaded) {
+        throw std::runtime_error(
+            "FHEController::print_min_max(): this is a decrypting debug helper and no secret "
+            "key is loaded on this controller. Server-role code must not call it.");
+    }
     Ptxt result;
     Ctxt c_mut = c;
     context->Decrypt(key_pair.secretKey, c_mut, &result);

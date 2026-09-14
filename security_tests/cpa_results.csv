@@ -1,0 +1,41 @@
+sentence,bucket,pair_label,arm,repeat_idx,returncode,wall_time_s,circuit_time_s,total_circuit_time_s,attempts,client_attempts_used,logit0,logit1,predicted_sentiment,stderr_tail,num_input_ciphertexts,output_level,stage_ms__encoder1.self_attention,stage_ms__encoder1.self_output,stage_ms__encoder1.intermediate_output,stage_ms__encoder2.self_attention,stage_ms__encoder2.self_output,stage_ms__encoder2.intermediate_output,stage_ms__pooler,stage_ms__classifier,stage_ms__circuit.attempt
+Good movie,short,short_0,positive,0,0,43.090983843954746,3.0,3.0,1,1,0.5768,-0.5185,negative,,4,18,695,211,1023,540,185,527,84,108,3402
+Bad movie,short,short_0,negative,0,0,40.217159477993846,2.0,5.0,1,2,0.8554,-0.7422,negative,,4,18,1127,328,1505,973,338,1013,180,212,5741
+I loved it,short,short_1,positive,0,0,37.95465544500621,3.0,3.0,1,1,0.4544,-0.4209,negative,,5,18,734,208,1177,584,190,530,84,105,3642
+I hated it,short,short_1,negative,0,0,41.494518894993234,2.0,5.0,1,2,0.7949,-0.7027,negative,,5,18,1269,346,1814,1031,352,1031,172,216,6292
+Great acting here,short,short_2,positive,0,0,43.56377128197346,3.0,3.0,1,1,0.6747,-0.6001,negative,,5,18,810,214,1195,589,185,536,89,112,3761
+Terrible acting here,short,short_2,negative,0,0,41.452385339012835,2.0,5.0,1,2,0.8733,-0.7494,negative,,5,18,1246,346,1745,1031,343,1000,168,223,6164
+Really enjoyed this,short,short_3,positive,0,0,50.71662222297164,2.0,7.0,1,3,-1.4101,1.2819,positive,,5,18,1802,488,2426,1506,522,1592,276,327,9042
+Really disliked this,short,short_3,negative,0,0,43.99586501100566,2.0,8.0,1,2,0.9769,-0.7783,negative,,5,18,1969,514,2530,1527,544,1619,279,224,9301
+A wonderful film,short,short_4,positive,0,0,38.678899783990346,3.0,3.0,1,1,-0.7217,0.7473,positive,,5,18,783,213,1248,595,193,561,92,107,3827
+A terrible film,short,short_4,negative,0,0,42.34376123797847,3.0,3.0,1,1,0.8575,-0.725,negative,,5,18,752,207,1146,578,183,535,83,112,3627
+Good movie,short,short_0,positive,1,0,38.4902917429572,3.0,3.0,1,1,0.5768,-0.5184,negative,,4,18,671,202,1019,548,188,550,96,112,3416
+Good movie,short,short_0,positive,2,0,39.2100460419897,3.0,3.0,1,1,0.5772,-0.5187,negative,,4,18,663,201,976,533,181,504,86,106,3280
+Good movie,short,short_0,positive,3,0,37.886448193050455,3.0,3.0,1,1,0.5773,-0.5186,negative,,4,18,668,201,1008,537,184,518,89,102,3341
+Good movie,short,short_0,positive,4,0,39.165552261983976,3.0,3.0,1,1,0.5767,-0.5187,negative,,4,18,665,207,975,532,189,500,91,110,3300
+This was a truly wonderful and delightful experience,medium,medium_0,positive,0,0,47.38853716204176,6.0,11.0,2,2,-1.6841,1.4993,positive,,10,18,2660,684,3496,1839,532,1695,270,220,11485
+This was a truly awful and disappointing experience,medium,medium_0,negative,0,0,51.929575149028096,3.0,8.0,1,2,1.1662,-1.0143,negative,,10,18,2070,521,2799,1321,385,1233,200,204,8798
+The film was funny charming and well acted,medium,medium_1,positive,0,0,52.44323838001583,6.0,11.0,2,2,-1.9567,1.7046,positive,,10,18,2734,709,3520,1854,537,1747,256,222,11659
+The film was boring dull and badly acted,medium,medium_1,negative,0,0,41.6902878889814,5.0,5.0,1,1,1.743,-1.5035,negative,,10,18,1213,277,1956,744,207,612,92,114,5246
+A brilliant heartwarming story I really enjoyed,medium,medium_2,positive,0,0,46.61678182799369,5.0,5.0,1,1,-2.3019,2.0677,positive,,11,18,1306,294,1957,762,202,603,85,107,5346
+A terrible depressing story I really hated,medium,medium_2,negative,0,0,44.732587668986525,3.0,8.0,1,2,1.5945,-1.3541,negative,,10,18,1974,488,2756,1300,366,1180,176,225,8525
+Such a fantastic and beautifully shot movie,medium,medium_3,positive,0,0,41.42102161596995,4.0,4.0,1,1,-2.2359,2.0182,positive,,9,18,1098,261,1749,684,194,585,86,107,4795
+Such a dreadful and poorly shot movie,medium,medium_3,negative,0,0,45.273353079974186,3.0,7.0,1,2,1.9115,-1.6667,negative,,9,18,1794,459,2499,1206,358,1124,176,216,7892
+The actors gave a genuinely moving performance,medium,medium_4,positive,0,0,43.701184261997696,3.0,7.0,1,2,-1.7667,1.5783,positive,,9,18,1775,462,2504,1197,364,1169,185,221,7935
+The actors gave a genuinely dull performance,medium,medium_4,negative,0,0,45.50212487601675,3.0,7.0,1,2,-0.4406,0.3635,positive,,9,18,1799,467,2612,1230,364,1148,180,219,8084
+This was a truly wonderful and delightful experience,medium,medium_0,positive,1,0,44.50568340002792,3.0,8.0,1,2,-1.5937,1.416,positive,,10,18,1944,488,2802,1309,377,1187,187,222,8579
+This was a truly wonderful and delightful experience,medium,medium_0,positive,2,0,47.346465191978496,3.0,8.0,1,2,-1.6504,1.4681,positive,,10,18,1970,488,2680,1284,379,1192,182,212,8448
+This was a truly wonderful and delightful experience,medium,medium_0,positive,3,0,46.68683358898852,5.0,5.0,1,1,-1.6109,1.4318,positive,,10,18,1218,275,1838,736,201,575,90,108,5072
+This was a truly wonderful and delightful experience,medium,medium_0,positive,4,0,40.51850924396422,5.0,5.0,1,1,-1.6193,1.4395,positive,,10,18,1187,278,1894,723,199,583,88,105,5086
+I absolutely loved every single minute of this wonderfully crafted and deeply moving film,long,long_0,positive,0,0,51.98576500499621,7.0,7.0,1,1,-2.6481,2.3765,positive,,17,18,1917,372,2874,996,233,772,93,111,7400
+I absolutely hated every single minute of this poorly crafted and deeply boring film,long,long_0,negative,0,0,45.682871536992025,7.0,7.0,1,1,1.0964,-1.2335,negative,,16,18,1760,372,2738,993,228,749,91,119,7085
+This is one of the best and most inspiring movies I have seen in years,long,long_1,positive,0,0,44.675173110037576,7.0,7.0,1,1,-1.3348,1.1891,positive,,17,18,1922,373,2891,1025,233,768,91,114,7451
+This is one of the worst and most tedious movies I have seen in years,long,long_1,negative,0,0,56.396072077041026,4.0,11.0,1,2,1.3478,-1.1001,negative,,18,18,3154,664,4189,1732,433,1573,180,241,12235
+The director created a beautiful touching and unforgettable story about hope,long,long_2,positive,0,0,51.76366012095241,11.0,11.0,2,1,-2.5792,2.3513,positive,,16,18,2783,673,3878,1619,403,1436,177,114,11139
+The director created a clumsy tedious and forgettable story about nothing,long,long_2,negative,0,0,45.51953556900844,6.0,6.0,1,1,1.0297,-0.9968,negative,,15,18,1702,359,2674,915,221,729,98,109,6838
+A remarkable and joyful film that everyone in the family will truly love,long,long_3,positive,0,0,48.997597169014625,7.0,7.0,1,1,-2.46,2.2233,positive,,16,18,1809,397,2710,926,228,722,84,114,7022
+A miserable and joyless film that everyone in the family will truly hate,long,long_3,negative,0,0,48.097778203955386,11.0,11.0,2,1,0.713,-0.6969,negative,,16,18,2814,647,3798,1616,402,1435,178,108,11053
+I absolutely loved every single minute of this wonderfully crafted and deeply moving film,long,long_0,positive,1,0,52.08542467805091,7.0,7.0,1,1,-2.6453,2.3805,positive,,17,18,1948,370,2864,998,228,756,87,111,7394
+I absolutely loved every single minute of this wonderfully crafted and deeply moving film,long,long_0,positive,2,0,52.0359279490076,7.0,7.0,1,1,-2.5989,2.3273,positive,,17,18,1914,373,2876,998,232,767,90,104,7386
+I absolutely loved every single minute of this wonderfully crafted and deeply moving film,long,long_0,positive,3,0,45.46706958999857,7.0,7.0,1,1,-2.6405,2.3761,positive,,17,18,1954,380,2878,983,222,759,86,112,7406
+I absolutely loved every single minute of this wonderfully crafted and deeply moving film,long,long_0,positive,4,0,46.22052994399564,7.0,7.0,1,1,-2.6506,2.3854,positive,,17,18,1972,375,3018,1030,222,791,92,112,7645
