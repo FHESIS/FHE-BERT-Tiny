@@ -1,4 +1,4 @@
-from transformers import AutoModelForSequenceClassification, AutoTokenizer
+from transformers import BertForSequenceClassification, AutoTokenizer
 import torch
 import sys
 import numpy as np
@@ -8,8 +8,8 @@ import os
 from transformers import logging
 logging.set_verbosity_error()
 
-tokenizer = AutoTokenizer.from_pretrained("prajjwal1/bert-tiny")
-model = AutoModelForSequenceClassification.from_pretrained("prajjwal1/bert-tiny")
+tokenizer = AutoTokenizer.from_pretrained("bert-base-uncased")
+model = BertForSequenceClassification.from_pretrained("prajjwal1/bert-tiny")
 trained = torch.load('../notebooks/SST-2-BERT-tiny.bin', map_location=torch.device('cpu'))
 model.load_state_dict(trained, strict=False)
 model.eval()
