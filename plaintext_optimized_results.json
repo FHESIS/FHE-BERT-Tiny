@@ -1,14 +1,14 @@
 {
-  "model_load_sec": 0.615,
-  "n_sentences": 100,
-  "total_classify_sec": 1.447,
-  "total_wall_sec_including_load": 2.061,
-  "mean_classify_sec": 0.0145,
+  "model_load_sec": 0.591,
+  "n_sentences": 25,
+  "total_classify_sec": 0.646,
+  "total_wall_sec_including_load": 1.238,
+  "mean_classify_sec": 0.0259,
   "results": [
     {
       "sentence": "This is one of the best performances I have seen all year",
       "expected_sentiment": "positive",
-      "elapsed_sec": 0.4607,
+      "elapsed_sec": 0.4573,
       "logits": [
         -1.9175413256228124,
         1.9433409882949564
@@ -19,7 +19,7 @@
     {
       "sentence": "A brilliant, funny, and touching film that exceeded my expectations",
       "expected_sentiment": "positive",
-      "elapsed_sec": 0.0103,
+      "elapsed_sec": 0.0083,
       "logits": [
         -2.7019147942199884,
         2.6011348958879816
@@ -30,7 +30,7 @@
     {
       "sentence": "I absolutely loved this film, it was a masterpiece",
       "expected_sentiment": "positive",
-      "elapsed_sec": 0.0102,
+      "elapsed_sec": 0.0083,
       "logits": [
         -2.616415804243568,
         2.532881634129303
@@ -41,7 +41,7 @@
     {
       "sentence": "What a delightful and heartwarming movie experience",
       "expected_sentiment": "positive",
-      "elapsed_sec": 0.0098,
+      "elapsed_sec": 0.0079,
       "logits": [
         -2.7744237507273843,
         2.651388908468225
@@ -52,7 +52,7 @@
     {
       "sentence": "The acting was superb and the story kept me engaged the whole time",
       "expected_sentiment": "positive",
-      "elapsed_sec": 0.0101,
+      "elapsed_sec": 0.0082,
       "logits": [
         0.6219274559394052,
         -0.30568067364821694
@@ -63,7 +63,7 @@
     {
       "sentence": "A truly inspiring story told with grace and humor",
       "expected_sentiment": "positive",
-      "elapsed_sec": 0.0097,
+      "elapsed_sec": 0.0078,
       "logits": [
         -2.830238548318795,
         2.6643752486393972
@@ -74,7 +74,7 @@
     {
       "sentence": "The cinematography was stunning from start to finish",
       "expected_sentiment": "positive",
-      "elapsed_sec": 0.0101,
+      "elapsed_sec": 0.0081,
       "logits": [
         -0.8676351495244494,
         1.2671098810782464
@@ -85,7 +85,7 @@
     {
       "sentence": "This film restored my faith in modern storytelling",
       "expected_sentiment": "positive",
-      "elapsed_sec": 0.0097,
+      "elapsed_sec": 0.0078,
       "logits": [
         -2.422659867960962,
         2.4041037401116774
@@ -96,7 +96,7 @@
     {
       "sentence": "An absolute triumph of direction and performance",
       "expected_sentiment": "positive",
-      "elapsed_sec": 0.0098,
+      "elapsed_sec": 0.0079,
       "logits": [
         -2.5794771905688623,
         2.509405696740615
@@ -107,7 +107,7 @@
     {
       "sentence": "The soundtrack alone is worth the price of admission",
       "expected_sentiment": "positive",
-      "elapsed_sec": 0.0096,
+      "elapsed_sec": 0.0077,
       "logits": [
         -1.1514897316595027,
         1.2544405923914113
@@ -118,7 +118,7 @@
     {
       "sentence": "A charming little film that grows on you",
       "expected_sentiment": "positive",
-      "elapsed_sec": 0.0097,
+      "elapsed_sec": 0.0078,
       "logits": [
         -2.6428493625628806,
         2.550279874303307
@@ -129,7 +129,7 @@
     {
       "sentence": "I laughed out loud more than once, a genuinely funny movie",
       "expected_sentiment": "positive",
-      "elapsed_sec": 0.0097,
+      "elapsed_sec": 0.0078,
       "logits": [
         -1.1400930233527693,
         1.1657317786814072
@@ -140,7 +140,7 @@
     {
       "sentence": "The chemistry between the leads made the whole film work",
       "expected_sentiment": "positive",
-      "elapsed_sec": 0.0096,
+      "elapsed_sec": 0.0077,
       "logits": [
         -1.385940353609554,
         1.556945324467443
@@ -151,7 +151,7 @@
     {
       "sentence": "A beautifully written script with real emotional depth",
       "expected_sentiment": "positive",
-      "elapsed_sec": 0.0096,
+      "elapsed_sec": 0.0078,
       "logits": [
         -2.703502973243509,
         2.5577504015129224
@@ -162,7 +162,7 @@
     {
       "sentence": "This exceeded every expectation I had going in",
       "expected_sentiment": "positive",
-      "elapsed_sec": 0.0096,
+      "elapsed_sec": 0.0078,
       "logits": [
         0.7284666715485071,
         -0.21907476564835307
@@ -173,7 +173,7 @@
     {
       "sentence": "The special effects were seamless and genuinely thrilling",
       "expected_sentiment": "positive",
-      "elapsed_sec": 0.0096,
+      "elapsed_sec": 0.0078,
       "logits": [
         1.7037428197650286,
         -1.2514193150909605
@@ -184,7 +184,7 @@
     {
       "sentence": "A masterclass in pacing and tension",
       "expected_sentiment": "positive",
-      "elapsed_sec": 0.0097,
+      "elapsed_sec": 0.0078,
       "logits": [
         -1.5193937160577673,
         1.5911273874069638
@@ -195,7 +195,7 @@
     {
       "sentence": "I would happily watch this again tomorrow",
       "expected_sentiment": "positive",
-      "elapsed_sec": 0.0096,
+      "elapsed_sec": 0.0077,
       "logits": [
         -0.9814005778055834,
         1.1473354343125577
@@ -206,7 +206,7 @@
     {
       "sentence": "The ending brought tears to my eyes, in the best way",
       "expected_sentiment": "positive",
-      "elapsed_sec": 0.0096,
+      "elapsed_sec": 0.0077,
       "logits": [
         -1.8497986605786167,
         1.9774850213945854
@@ -217,7 +217,7 @@
     {
       "sentence": "Every scene felt purposeful and beautifully shot",
       "expected_sentiment": "positive",
-      "elapsed_sec": 0.0096,
+      "elapsed_sec": 0.0077,
       "logits": [
         -2.4915615013064567,
         2.415871783512836
@@ -228,7 +228,7 @@
     {
       "sentence": "A wonderfully clever plot with a satisfying payoff",
       "expected_sentiment": "positive",
-      "elapsed_sec": 0.0096,
+      "elapsed_sec": 0.0077,
       "logits": [
         -2.579728796609342,
         2.4319385855397266
@@ -239,7 +239,7 @@
     {
       "sentence": "The dialogue crackles with wit and energy",
       "expected_sentiment": "positive",
-      "elapsed_sec": 0.0096,
+      "elapsed_sec": 0.0077,
       "logits": [
         -1.9426601140538557,
         2.0351240445983247
@@ -250,7 +250,7 @@
     {
       "sentence": "This is family entertainment done exactly right",
       "expected_sentiment": "positive",
-      "elapsed_sec": 0.0096,
+      "elapsed_sec": 0.0077,
       "logits": [
         -0.8005819367678652,
         0.8704184450176284
@@ -261,7 +261,7 @@
     {
       "sentence": "A gripping thriller that never lets up",
       "expected_sentiment": "positive",
-      "elapsed_sec": 0.0096,
+      "elapsed_sec": 0.0077,
       "logits": [
         -0.3213825030490116,
         0.4964858081612974
@@ -272,838 +272,13 @@
     {
       "sentence": "The lead actress gives a career-defining performance",
       "expected_sentiment": "positive",
-      "elapsed_sec": 0.0096,
+      "elapsed_sec": 0.0077,
       "logits": [
         -2.6059881804381955,
         2.451944356229617
       ],
       "predicted_sentiment": "positive",
       "pytorch_predicted_sentiment": "positive"
-    },
-    {
-      "sentence": "Genuinely one of the most enjoyable films of the decade",
-      "expected_sentiment": "positive",
-      "elapsed_sec": 0.0097,
-      "logits": [
-        -2.6604288666710394,
-        2.4982768859921887
-      ],
-      "predicted_sentiment": "positive",
-      "pytorch_predicted_sentiment": "positive"
-    },
-    {
-      "sentence": "The food at this restaurant was absolutely delicious",
-      "expected_sentiment": "positive",
-      "elapsed_sec": 0.0097,
-      "logits": [
-        -1.9151958571369587,
-        2.0371604562058736
-      ],
-      "predicted_sentiment": "positive",
-      "pytorch_predicted_sentiment": "positive"
-    },
-    {
-      "sentence": "Customer service was fast, friendly, and helpful",
-      "expected_sentiment": "positive",
-      "elapsed_sec": 0.0096,
-      "logits": [
-        -0.6158267549795295,
-        0.5700650901536697
-      ],
-      "predicted_sentiment": "positive",
-      "pytorch_predicted_sentiment": "positive"
-    },
-    {
-      "sentence": "This phone works flawlessly and the battery lasts all day",
-      "expected_sentiment": "positive",
-      "elapsed_sec": 0.0108,
-      "logits": [
-        0.5082030728108493,
-        -0.20393811826091496
-      ],
-      "predicted_sentiment": "negative",
-      "pytorch_predicted_sentiment": "positive"
-    },
-    {
-      "sentence": "The hotel room was spotless and the staff were wonderful",
-      "expected_sentiment": "positive",
-      "elapsed_sec": 0.0096,
-      "logits": [
-        0.8661863908594472,
-        -0.5124845218645416
-      ],
-      "predicted_sentiment": "negative",
-      "pytorch_predicted_sentiment": "negative"
-    },
-    {
-      "sentence": "Great value for the price, highly recommended",
-      "expected_sentiment": "positive",
-      "elapsed_sec": 0.0096,
-      "logits": [
-        -2.3319681656923863,
-        2.308416409440525
-      ],
-      "predicted_sentiment": "positive",
-      "pytorch_predicted_sentiment": "positive"
-    },
-    {
-      "sentence": "The book kept me hooked until the very last page",
-      "expected_sentiment": "positive",
-      "elapsed_sec": 0.0096,
-      "logits": [
-        1.2876161100706514,
-        -0.8493145040946075
-      ],
-      "predicted_sentiment": "negative",
-      "pytorch_predicted_sentiment": "negative"
-    },
-    {
-      "sentence": "A refreshing and uplifting comedy the whole family enjoyed",
-      "expected_sentiment": "positive",
-      "elapsed_sec": 0.0096,
-      "logits": [
-        -2.861325043354883,
-        2.6935297259800657
-      ],
-      "predicted_sentiment": "positive",
-      "pytorch_predicted_sentiment": "positive"
-    },
-    {
-      "sentence": "The concert was electric, easily the best show I have seen",
-      "expected_sentiment": "positive",
-      "elapsed_sec": 0.0096,
-      "logits": [
-        -1.4061305393863672,
-        1.4605704064010303
-      ],
-      "predicted_sentiment": "positive",
-      "pytorch_predicted_sentiment": "positive"
-    },
-    {
-      "sentence": "This laptop is fast, quiet, and beautifully designed",
-      "expected_sentiment": "positive",
-      "elapsed_sec": 0.0096,
-      "logits": [
-        -2.2151799486288746,
-        2.16473528362853
-      ],
-      "predicted_sentiment": "positive",
-      "pytorch_predicted_sentiment": "positive"
-    },
-    {
-      "sentence": "The weather was perfect for our trip to the coast",
-      "expected_sentiment": "positive",
-      "elapsed_sec": 0.0096,
-      "logits": [
-        -0.6498970054604718,
-        0.8983522091958149
-      ],
-      "predicted_sentiment": "positive",
-      "pytorch_predicted_sentiment": "positive"
-    },
-    {
-      "sentence": "Our vacation exceeded every expectation we had",
-      "expected_sentiment": "positive",
-      "elapsed_sec": 0.0096,
-      "logits": [
-        -0.16328069624858227,
-        0.5456826539644267
-      ],
-      "predicted_sentiment": "positive",
-      "pytorch_predicted_sentiment": "positive"
-    },
-    {
-      "sentence": "The coffee here is consistently excellent",
-      "expected_sentiment": "positive",
-      "elapsed_sec": 0.0098,
-      "logits": [
-        -2.340011771443326,
-        2.229867480596433
-      ],
-      "predicted_sentiment": "positive",
-      "pytorch_predicted_sentiment": "positive"
-    },
-    {
-      "sentence": "I am thoroughly impressed with the quality of this product",
-      "expected_sentiment": "positive",
-      "elapsed_sec": 0.0096,
-      "logits": [
-        -2.256863115451433,
-        2.2220878365302124
-      ],
-      "predicted_sentiment": "positive",
-      "pytorch_predicted_sentiment": "positive"
-    },
-    {
-      "sentence": "The team played with incredible energy and won deservedly",
-      "expected_sentiment": "positive",
-      "elapsed_sec": 0.0096,
-      "logits": [
-        -2.8117331786332747,
-        2.677822197984862
-      ],
-      "predicted_sentiment": "positive",
-      "pytorch_predicted_sentiment": "positive"
-    },
-    {
-      "sentence": "This app makes managing my schedule so much easier",
-      "expected_sentiment": "positive",
-      "elapsed_sec": 0.0096,
-      "logits": [
-        1.3563499231097036,
-        -1.0753173567616419
-      ],
-      "predicted_sentiment": "negative",
-      "pytorch_predicted_sentiment": "negative"
-    },
-    {
-      "sentence": "The garden looked absolutely gorgeous in the spring sunshine",
-      "expected_sentiment": "positive",
-      "elapsed_sec": 0.0096,
-      "logits": [
-        -2.559346919921911,
-        2.505186196718419
-      ],
-      "predicted_sentiment": "positive",
-      "pytorch_predicted_sentiment": "positive"
-    },
-    {
-      "sentence": "Their new album is a joyful, inventive piece of work",
-      "expected_sentiment": "positive",
-      "elapsed_sec": 0.0097,
-      "logits": [
-        -2.7653667915361524,
-        2.611905877488999
-      ],
-      "predicted_sentiment": "positive",
-      "pytorch_predicted_sentiment": "positive"
-    },
-    {
-      "sentence": "This is not a bad film at all, it is actually quite good",
-      "expected_sentiment": "positive",
-      "elapsed_sec": 0.0096,
-      "logits": [
-        1.3674312354710063,
-        -0.8871747360709997
-      ],
-      "predicted_sentiment": "negative",
-      "pytorch_predicted_sentiment": "negative"
-    },
-    {
-      "sentence": "I never expected to enjoy this movie as much as I did",
-      "expected_sentiment": "positive",
-      "elapsed_sec": 0.0096,
-      "logits": [
-        0.7270161725869627,
-        -0.31415488281645104
-      ],
-      "predicted_sentiment": "negative",
-      "pytorch_predicted_sentiment": "negative"
-    },
-    {
-      "sentence": "Despite a slow start, the film wins you over completely",
-      "expected_sentiment": "positive",
-      "elapsed_sec": 0.0096,
-      "logits": [
-        0.8703373701021285,
-        -0.4825629695600027
-      ],
-      "predicted_sentiment": "negative",
-      "pytorch_predicted_sentiment": "negative"
-    },
-    {
-      "sentence": "It is hard not to smile the entire way through this movie",
-      "expected_sentiment": "positive",
-      "elapsed_sec": 0.0096,
-      "logits": [
-        1.2122075959471135,
-        -0.8360130645289287
-      ],
-      "predicted_sentiment": "negative",
-      "pytorch_predicted_sentiment": "negative"
-    },
-    {
-      "sentence": "A small film with a surprisingly big heart",
-      "expected_sentiment": "positive",
-      "elapsed_sec": 0.0096,
-      "logits": [
-        -2.5912527131869587,
-        2.5147639205507906
-      ],
-      "predicted_sentiment": "positive",
-      "pytorch_predicted_sentiment": "positive"
-    },
-    {
-      "sentence": "The sequel actually improves on the original in every way",
-      "expected_sentiment": "positive",
-      "elapsed_sec": 0.0096,
-      "logits": [
-        -1.4457932485256344,
-        1.4306729601249975
-      ],
-      "predicted_sentiment": "positive",
-      "pytorch_predicted_sentiment": "positive"
-    },
-    {
-      "sentence": "Well worth the wait, this delivers on every level",
-      "expected_sentiment": "positive",
-      "elapsed_sec": 0.0096,
-      "logits": [
-        -1.9690393012506402,
-        1.8905824639658813
-      ],
-      "predicted_sentiment": "positive",
-      "pytorch_predicted_sentiment": "positive"
-    },
-    {
-      "sentence": "This was a complete waste of my time and money",
-      "expected_sentiment": "negative",
-      "elapsed_sec": 0.0096,
-      "logits": [
-        2.609506741804843,
-        -2.290741215358865
-      ],
-      "predicted_sentiment": "negative",
-      "pytorch_predicted_sentiment": "negative"
-    },
-    {
-      "sentence": "The plot was boring and the acting felt wooden",
-      "expected_sentiment": "negative",
-      "elapsed_sec": 0.0096,
-      "logits": [
-        2.6529602359498066,
-        -2.405086826614294
-      ],
-      "predicted_sentiment": "negative",
-      "pytorch_predicted_sentiment": "negative"
-    },
-    {
-      "sentence": "I hated every minute of this dull and pointless movie",
-      "expected_sentiment": "negative",
-      "elapsed_sec": 0.0096,
-      "logits": [
-        2.494137049120054,
-        -2.1405936844005367
-      ],
-      "predicted_sentiment": "negative",
-      "pytorch_predicted_sentiment": "negative"
-    },
-    {
-      "sentence": "A disappointing mess with no redeeming qualities",
-      "expected_sentiment": "negative",
-      "elapsed_sec": 0.0096,
-      "logits": [
-        1.9164385145588176,
-        -1.5631361108996513
-      ],
-      "predicted_sentiment": "negative",
-      "pytorch_predicted_sentiment": "negative"
-    },
-    {
-      "sentence": "The worst film I have seen in years, truly terrible",
-      "expected_sentiment": "negative",
-      "elapsed_sec": 0.0096,
-      "logits": [
-        2.1156391507309547,
-        -1.6755844476401993
-      ],
-      "predicted_sentiment": "negative",
-      "pytorch_predicted_sentiment": "negative"
-    },
-    {
-      "sentence": "This movie is a tedious, incoherent slog",
-      "expected_sentiment": "negative",
-      "elapsed_sec": 0.0097,
-      "logits": [
-        2.4688442619709416,
-        -2.2177014750504513
-      ],
-      "predicted_sentiment": "negative",
-      "pytorch_predicted_sentiment": "negative"
-    },
-    {
-      "sentence": "The dialogue was cringeworthy and the pacing glacial",
-      "expected_sentiment": "negative",
-      "elapsed_sec": 0.0096,
-      "logits": [
-        1.9936967223042248,
-        -1.699478836292331
-      ],
-      "predicted_sentiment": "negative",
-      "pytorch_predicted_sentiment": "negative"
-    },
-    {
-      "sentence": "A lazy, uninspired sequel that adds nothing new",
-      "expected_sentiment": "negative",
-      "elapsed_sec": 0.0097,
-      "logits": [
-        1.5194593858086805,
-        -1.1764929981268066
-      ],
-      "predicted_sentiment": "negative",
-      "pytorch_predicted_sentiment": "negative"
-    },
-    {
-      "sentence": "I walked out halfway through, it was that bad",
-      "expected_sentiment": "negative",
-      "elapsed_sec": 0.0096,
-      "logits": [
-        2.4447048484110643,
-        -2.1008252911842455
-      ],
-      "predicted_sentiment": "negative",
-      "pytorch_predicted_sentiment": "negative"
-    },
-    {
-      "sentence": "The special effects looked cheap and unconvincing",
-      "expected_sentiment": "negative",
-      "elapsed_sec": 0.0096,
-      "logits": [
-        2.450496657420776,
-        -2.079496039237407
-      ],
-      "predicted_sentiment": "negative",
-      "pytorch_predicted_sentiment": "negative"
-    },
-    {
-      "sentence": "A forgettable film with a plot full of holes",
-      "expected_sentiment": "negative",
-      "elapsed_sec": 0.0096,
-      "logits": [
-        2.2540960664445655,
-        -1.9730062289015227
-      ],
-      "predicted_sentiment": "negative",
-      "pytorch_predicted_sentiment": "negative"
-    },
-    {
-      "sentence": "The lead performance was flat and utterly unconvincing",
-      "expected_sentiment": "negative",
-      "elapsed_sec": 0.0096,
-      "logits": [
-        1.7935014363124242,
-        -1.4376060702276594
-      ],
-      "predicted_sentiment": "negative",
-      "pytorch_predicted_sentiment": "negative"
-    },
-    {
-      "sentence": "This film insults the intelligence of its audience",
-      "expected_sentiment": "negative",
-      "elapsed_sec": 0.0096,
-      "logits": [
-        2.0121230875155254,
-        -1.8931996412578918
-      ],
-      "predicted_sentiment": "negative",
-      "pytorch_predicted_sentiment": "negative"
-    },
-    {
-      "sentence": "A bloated, self-indulgent film that never earns its runtime",
-      "expected_sentiment": "negative",
-      "elapsed_sec": 0.0354,
-      "logits": [
-        1.2681569832885524,
-        -0.8830862282009455
-      ],
-      "predicted_sentiment": "negative",
-      "pytorch_predicted_sentiment": "negative"
-    },
-    {
-      "sentence": "The jokes fell flat and the story made no sense",
-      "expected_sentiment": "negative",
-      "elapsed_sec": 0.0097,
-      "logits": [
-        2.491234869088978,
-        -2.1281068101702
-      ],
-      "predicted_sentiment": "negative",
-      "pytorch_predicted_sentiment": "negative"
-    },
-    {
-      "sentence": "An empty, soulless cash grab of a sequel",
-      "expected_sentiment": "negative",
-      "elapsed_sec": 0.0096,
-      "logits": [
-        2.407236279265107,
-        -2.066846109094906
-      ],
-      "predicted_sentiment": "negative",
-      "pytorch_predicted_sentiment": "negative"
-    },
-    {
-      "sentence": "This is easily the worst movie of the year",
-      "expected_sentiment": "negative",
-      "elapsed_sec": 0.0096,
-      "logits": [
-        2.1857227563211783,
-        -1.770020241966752
-      ],
-      "predicted_sentiment": "negative",
-      "pytorch_predicted_sentiment": "negative"
-    },
-    {
-      "sentence": "The editing was choppy and the story dragged endlessly",
-      "expected_sentiment": "negative",
-      "elapsed_sec": 0.0096,
-      "logits": [
-        2.618501602870476,
-        -2.366434945439886
-      ],
-      "predicted_sentiment": "negative",
-      "pytorch_predicted_sentiment": "negative"
-    },
-    {
-      "sentence": "A painfully dull film with nothing to say",
-      "expected_sentiment": "negative",
-      "elapsed_sec": 0.0096,
-      "logits": [
-        2.3162763074336117,
-        -1.961701848925951
-      ],
-      "predicted_sentiment": "negative",
-      "pytorch_predicted_sentiment": "negative"
-    },
-    {
-      "sentence": "The characters were flat and impossible to care about",
-      "expected_sentiment": "negative",
-      "elapsed_sec": 0.0096,
-      "logits": [
-        2.1441513693264196,
-        -1.7777676177426895
-      ],
-      "predicted_sentiment": "negative",
-      "pytorch_predicted_sentiment": "negative"
-    },
-    {
-      "sentence": "A confused mess that never finds its footing",
-      "expected_sentiment": "negative",
-      "elapsed_sec": 0.0096,
-      "logits": [
-        1.8453669322672521,
-        -1.5588856260490784
-      ],
-      "predicted_sentiment": "negative",
-      "pytorch_predicted_sentiment": "negative"
-    },
-    {
-      "sentence": "The score was intrusive and the script painfully cliched",
-      "expected_sentiment": "negative",
-      "elapsed_sec": 0.0096,
-      "logits": [
-        1.999595421541203,
-        -1.6771542515661488
-      ],
-      "predicted_sentiment": "negative",
-      "pytorch_predicted_sentiment": "negative"
-    },
-    {
-      "sentence": "I regret spending an evening on this dreadful movie",
-      "expected_sentiment": "negative",
-      "elapsed_sec": 0.0097,
-      "logits": [
-        1.5641496676707907,
-        -1.1521095525647922
-      ],
-      "predicted_sentiment": "negative",
-      "pytorch_predicted_sentiment": "negative"
-    },
-    {
-      "sentence": "A shallow, forgettable film with no depth whatsoever",
-      "expected_sentiment": "negative",
-      "elapsed_sec": 0.0096,
-      "logits": [
-        2.3653666731339564,
-        -2.0551944760787424
-      ],
-      "predicted_sentiment": "negative",
-      "pytorch_predicted_sentiment": "negative"
-    },
-    {
-      "sentence": "The pacing kills any tension the story might have had",
-      "expected_sentiment": "negative",
-      "elapsed_sec": 0.0096,
-      "logits": [
-        2.1680925108666282,
-        -1.8853463421989345
-      ],
-      "predicted_sentiment": "negative",
-      "pytorch_predicted_sentiment": "negative"
-    },
-    {
-      "sentence": "This sequel betrays everything that made the original good",
-      "expected_sentiment": "negative",
-      "elapsed_sec": 0.0096,
-      "logits": [
-        -0.5472529280218315,
-        0.7856958911073417
-      ],
-      "predicted_sentiment": "positive",
-      "pytorch_predicted_sentiment": "positive"
-    },
-    {
-      "sentence": "The food arrived cold and tasted terrible",
-      "expected_sentiment": "negative",
-      "elapsed_sec": 0.0096,
-      "logits": [
-        2.0856388588570525,
-        -1.619686590143751
-      ],
-      "predicted_sentiment": "negative",
-      "pytorch_predicted_sentiment": "negative"
-    },
-    {
-      "sentence": "Customer service was rude and unhelpful throughout",
-      "expected_sentiment": "negative",
-      "elapsed_sec": 0.0096,
-      "logits": [
-        0.29915770578701617,
-        -0.03143636214209873
-      ],
-      "predicted_sentiment": "negative",
-      "pytorch_predicted_sentiment": "negative"
-    },
-    {
-      "sentence": "This phone constantly freezes and the battery is awful",
-      "expected_sentiment": "negative",
-      "elapsed_sec": 0.0097,
-      "logits": [
-        2.3785474589209112,
-        -2.1521257911349334
-      ],
-      "predicted_sentiment": "negative",
-      "pytorch_predicted_sentiment": "negative"
-    },
-    {
-      "sentence": "The hotel room was filthy and the staff were dismissive",
-      "expected_sentiment": "negative",
-      "elapsed_sec": 0.0096,
-      "logits": [
-        2.5200494291168467,
-        -2.300387941576138
-      ],
-      "predicted_sentiment": "negative",
-      "pytorch_predicted_sentiment": "negative"
-    },
-    {
-      "sentence": "Overpriced and poorly made, do not waste your money",
-      "expected_sentiment": "negative",
-      "elapsed_sec": 0.0096,
-      "logits": [
-        2.5298969072351487,
-        -2.3011393716186426
-      ],
-      "predicted_sentiment": "negative",
-      "pytorch_predicted_sentiment": "negative"
-    },
-    {
-      "sentence": "The book was tedious and I never finished it",
-      "expected_sentiment": "negative",
-      "elapsed_sec": 0.0097,
-      "logits": [
-        1.748011118635422,
-        -1.462988739489838
-      ],
-      "predicted_sentiment": "negative",
-      "pytorch_predicted_sentiment": "negative"
-    },
-    {
-      "sentence": "A joyless comedy that never once made me laugh",
-      "expected_sentiment": "negative",
-      "elapsed_sec": 0.0096,
-      "logits": [
-        0.8009703460665433,
-        -0.47238876314324213
-      ],
-      "predicted_sentiment": "negative",
-      "pytorch_predicted_sentiment": "negative"
-    },
-    {
-      "sentence": "The concert was a disorganized, disappointing mess",
-      "expected_sentiment": "negative",
-      "elapsed_sec": 0.0097,
-      "logits": [
-        2.504240042885708,
-        -2.1976808268480634
-      ],
-      "predicted_sentiment": "negative",
-      "pytorch_predicted_sentiment": "negative"
-    },
-    {
-      "sentence": "This laptop overheats constantly and the fan is deafening",
-      "expected_sentiment": "negative",
-      "elapsed_sec": 0.0097,
-      "logits": [
-        0.9480065143751348,
-        -0.5489101806310129
-      ],
-      "predicted_sentiment": "negative",
-      "pytorch_predicted_sentiment": "negative"
-    },
-    {
-      "sentence": "The weather ruined what could have been a nice trip",
-      "expected_sentiment": "negative",
-      "elapsed_sec": 0.0096,
-      "logits": [
-        2.1508492756809847,
-        -1.8032726288286467
-      ],
-      "predicted_sentiment": "negative",
-      "pytorch_predicted_sentiment": "negative"
-    },
-    {
-      "sentence": "Our vacation was plagued with delays and bad service",
-      "expected_sentiment": "negative",
-      "elapsed_sec": 0.0096,
-      "logits": [
-        1.94082184880822,
-        -1.5616985109002925
-      ],
-      "predicted_sentiment": "negative",
-      "pytorch_predicted_sentiment": "negative"
-    },
-    {
-      "sentence": "The coffee here tastes burnt and watered down",
-      "expected_sentiment": "negative",
-      "elapsed_sec": 0.0096,
-      "logits": [
-        2.505022535062777,
-        -2.240037715460991
-      ],
-      "predicted_sentiment": "negative",
-      "pytorch_predicted_sentiment": "negative"
-    },
-    {
-      "sentence": "I am thoroughly disappointed with the quality of this product",
-      "expected_sentiment": "negative",
-      "elapsed_sec": 0.0096,
-      "logits": [
-        -0.5693570088287337,
-        0.745923660239179
-      ],
-      "predicted_sentiment": "positive",
-      "pytorch_predicted_sentiment": "positive"
-    },
-    {
-      "sentence": "The team played sloppily and lost embarrassingly",
-      "expected_sentiment": "negative",
-      "elapsed_sec": 0.0096,
-      "logits": [
-        2.1991911939390625,
-        -1.8678446178753725
-      ],
-      "predicted_sentiment": "negative",
-      "pytorch_predicted_sentiment": "negative"
-    },
-    {
-      "sentence": "This app crashes constantly and loses my data",
-      "expected_sentiment": "negative",
-      "elapsed_sec": 0.0096,
-      "logits": [
-        2.255528084694184,
-        -2.030407040549449
-      ],
-      "predicted_sentiment": "negative",
-      "pytorch_predicted_sentiment": "negative"
-    },
-    {
-      "sentence": "The garden was overgrown and poorly maintained",
-      "expected_sentiment": "negative",
-      "elapsed_sec": 0.0096,
-      "logits": [
-        2.476115077313828,
-        -2.2947828298912967
-      ],
-      "predicted_sentiment": "negative",
-      "pytorch_predicted_sentiment": "negative"
-    },
-    {
-      "sentence": "Their new album is a tired, uninspired retread",
-      "expected_sentiment": "negative",
-      "elapsed_sec": 0.0096,
-      "logits": [
-        2.190586078668583,
-        -1.9049395296627778
-      ],
-      "predicted_sentiment": "negative",
-      "pytorch_predicted_sentiment": "negative"
-    },
-    {
-      "sentence": "This is not a good film, it is a genuine chore to watch",
-      "expected_sentiment": "negative",
-      "elapsed_sec": 0.0098,
-      "logits": [
-        0.4926939440609558,
-        -0.1453515894492645
-      ],
-      "predicted_sentiment": "negative",
-      "pytorch_predicted_sentiment": "positive"
-    },
-    {
-      "sentence": "I never expected to dislike this movie as much as I did",
-      "expected_sentiment": "negative",
-      "elapsed_sec": 0.0096,
-      "logits": [
-        1.2758936746653704,
-        -0.9130431744982922
-      ],
-      "predicted_sentiment": "negative",
-      "pytorch_predicted_sentiment": "negative"
-    },
-    {
-      "sentence": "Despite a promising start, the film collapses completely",
-      "expected_sentiment": "negative",
-      "elapsed_sec": 0.0096,
-      "logits": [
-        2.233272031457291,
-        -1.884859285282961
-      ],
-      "predicted_sentiment": "negative",
-      "pytorch_predicted_sentiment": "negative"
-    },
-    {
-      "sentence": "It is hard to sit through this movie without checking the time",
-      "expected_sentiment": "negative",
-      "elapsed_sec": 0.0097,
-      "logits": [
-        1.608254417866731,
-        -1.277277188724521
-      ],
-      "predicted_sentiment": "negative",
-      "pytorch_predicted_sentiment": "negative"
-    },
-    {
-      "sentence": "A big-budget film with a surprisingly hollow core",
-      "expected_sentiment": "negative",
-      "elapsed_sec": 0.0096,
-      "logits": [
-        1.622281834932312,
-        -1.3205296433735811
-      ],
-      "predicted_sentiment": "negative",
-      "pytorch_predicted_sentiment": "negative"
-    },
-    {
-      "sentence": "The sequel manages to be worse than the original in every way",
-      "expected_sentiment": "negative",
-      "elapsed_sec": 0.0096,
-      "logits": [
-        1.9786609824404453,
-        -1.60651737101396
-      ],
-      "predicted_sentiment": "negative",
-      "pytorch_predicted_sentiment": "negative"
-    },
-    {
-      "sentence": "Not worth the wait, this fails on almost every level",
-      "expected_sentiment": "negative",
-      "elapsed_sec": 0.0096,
-      "logits": [
-        1.6742747144673056,
-        -1.4363712046514392
-      ],
-      "predicted_sentiment": "negative",
-      "pytorch_predicted_sentiment": "negative"
     }
   ]
 }
