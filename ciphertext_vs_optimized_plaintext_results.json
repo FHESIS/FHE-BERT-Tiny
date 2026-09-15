@@ -1,0 +1,1249 @@
+[
+  {
+    "sentence": "This is one of the best performances I have seen all year",
+    "expected_sentiment": "positive",
+    "plaintext": {
+      "elapsed_sec": 0.4675,
+      "logits": [
+        -1.9175413256228124,
+        1.9433409882949564
+      ],
+      "predicted_sentiment": "positive"
+    },
+    "encrypted": {
+      "elapsed_sec": 45.909,
+      "reported_circuit_time_sec": 6.0,
+      "logits": [
+        -0.2795,
+        0.1989
+      ],
+      "predicted_sentiment": "positive",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 15999.40it/s]\nClient-side decode failed on attempt 1/3 (/root/FIDESlib/deps/openfhe-src/src/pke/lib/encoding/ckkspackedencoding.cpp:l.453:Decode(): The decryption failed because the approximation error is too high. Check the parameters. ). Asking the server to recompute from scratch...\n"
+    }
+  },
+  {
+    "sentence": "A brilliant, funny, and touching film that exceeded my expectations",
+    "expected_sentiment": "positive",
+    "plaintext": {
+      "elapsed_sec": 0.0261,
+      "logits": [
+        -2.7019147942199884,
+        2.6011348958879816
+      ],
+      "predicted_sentiment": "positive"
+    },
+    "encrypted": {
+      "elapsed_sec": 53.484,
+      "reported_circuit_time_sec": 6.0,
+      "logits": null,
+      "predicted_sentiment": null,
+      "retries": 0,
+      "timed_out": false,
+      "returncode": -6,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 15313.41it/s]\nClient-side decode failed on attempt 1/3 (/root/FIDESlib/deps/openfhe-src/src/pke/lib/encoding/ckkspackedencoding.cpp:l.453:Decode(): The decryption failed because the approximation error is too high. Check the parameters. ). Asking the server to recompute from scratch...\nClient-side decode failed on attempt 2/3 (/root/FIDESlib/deps/openfhe-src/src/pke/lib/encoding/ckkspackedencoding.cpp:l.453:Decode(): The decryption failed because the approximation error is too high. Check the parameters. ). Asking the server to recompute from scratch...\nClient-side decode failed on attempt 3/3 (/root/FIDESlib/deps/openfhe-src/src/pke/lib/encoding/ckkspackedencoding.cpp:l.453:Decode(): The decryption failed because the approximation error is too high. Check the parameters. ). Asking the server to recompute from scratch...\nGiving up after 3 client-level attempt(s).\nterminate called after throwing an instance of 'lbcrypto::OpenFHEException'\n  what():  /root/FIDESlib/deps/openfhe-src/src/pke/lib/encoding/ckkspackedencoding.cpp:l.453:Decode(): The decryption failed because the approximation error is too high. Check the parameters. \n"
+    }
+  },
+  {
+    "sentence": "I absolutely loved this film, it was a masterpiece",
+    "expected_sentiment": "positive",
+    "plaintext": {
+      "elapsed_sec": 0.025,
+      "logits": [
+        -2.616415804243568,
+        2.532881634129303
+      ],
+      "predicted_sentiment": "positive"
+    },
+    "encrypted": {
+      "elapsed_sec": 40.249,
+      "reported_circuit_time_sec": 5.0,
+      "logits": [
+        -1.3177,
+        1.2391
+      ],
+      "predicted_sentiment": "positive",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 15677.39it/s]\n"
+    }
+  },
+  {
+    "sentence": "What a delightful and heartwarming movie experience",
+    "expected_sentiment": "positive",
+    "plaintext": {
+      "elapsed_sec": 0.0212,
+      "logits": [
+        -2.7744237507273843,
+        2.651388908468225
+      ],
+      "predicted_sentiment": "positive"
+    },
+    "encrypted": {
+      "elapsed_sec": 46.324,
+      "reported_circuit_time_sec": 5.0,
+      "logits": [
+        -1.0682,
+        1.0021
+      ],
+      "predicted_sentiment": "positive",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 15698.45it/s]\nClient-side decode failed on attempt 1/3 (/root/FIDESlib/deps/openfhe-src/src/pke/lib/encoding/ckkspackedencoding.cpp:l.453:Decode(): The decryption failed because the approximation error is too high. Check the parameters. ). Asking the server to recompute from scratch...\n"
+    }
+  },
+  {
+    "sentence": "The acting was superb and the story kept me engaged the whole time",
+    "expected_sentiment": "positive",
+    "plaintext": {
+      "elapsed_sec": 0.0208,
+      "logits": [
+        0.6219274559394052,
+        -0.30568067364821694
+      ],
+      "predicted_sentiment": "negative"
+    },
+    "encrypted": {
+      "elapsed_sec": 45.568,
+      "reported_circuit_time_sec": 10.0,
+      "logits": [
+        0.4592,
+        -0.521
+      ],
+      "predicted_sentiment": "negative",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 15528.56it/s]\n"
+    }
+  },
+  {
+    "sentence": "A truly inspiring story told with grace and humor",
+    "expected_sentiment": "positive",
+    "plaintext": {
+      "elapsed_sec": 0.0189,
+      "logits": [
+        -2.830238548318795,
+        2.6643752486393972
+      ],
+      "predicted_sentiment": "positive"
+    },
+    "encrypted": {
+      "elapsed_sec": 42.354,
+      "reported_circuit_time_sec": 5.0,
+      "logits": [
+        -2.0406,
+        1.7777
+      ],
+      "predicted_sentiment": "positive",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 15195.34it/s]\n"
+    }
+  },
+  {
+    "sentence": "The cinematography was stunning from start to finish",
+    "expected_sentiment": "positive",
+    "plaintext": {
+      "elapsed_sec": 0.018,
+      "logits": [
+        -0.8676351495244494,
+        1.2671098810782464
+      ],
+      "predicted_sentiment": "positive"
+    },
+    "encrypted": {
+      "elapsed_sec": 42.072,
+      "reported_circuit_time_sec": 5.0,
+      "logits": [
+        0.1567,
+        -0.2507
+      ],
+      "predicted_sentiment": "negative",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 15660.88it/s]\n"
+    }
+  },
+  {
+    "sentence": "This film restored my faith in modern storytelling",
+    "expected_sentiment": "positive",
+    "plaintext": {
+      "elapsed_sec": 0.0209,
+      "logits": [
+        -2.422659867960962,
+        2.4041037401116774
+      ],
+      "predicted_sentiment": "positive"
+    },
+    "encrypted": {
+      "elapsed_sec": 41.005,
+      "reported_circuit_time_sec": 5.0,
+      "logits": [
+        -0.8771,
+        0.7871
+      ],
+      "predicted_sentiment": "positive",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 15695.44it/s]\n"
+    }
+  },
+  {
+    "sentence": "An absolute triumph of direction and performance",
+    "expected_sentiment": "positive",
+    "plaintext": {
+      "elapsed_sec": 0.0176,
+      "logits": [
+        -2.5794771905688623,
+        2.509405696740615
+      ],
+      "predicted_sentiment": "positive"
+    },
+    "encrypted": {
+      "elapsed_sec": 41.318,
+      "reported_circuit_time_sec": 4.0,
+      "logits": [
+        -1.0054,
+        0.9103
+      ],
+      "predicted_sentiment": "positive",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 15274.80it/s]\nClient-side decode failed on attempt 1/3 (/root/FIDESlib/deps/openfhe-src/src/pke/lib/encoding/ckkspackedencoding.cpp:l.453:Decode(): The decryption failed because the approximation error is too high. Check the parameters. ). Asking the server to recompute from scratch...\n"
+    }
+  },
+  {
+    "sentence": "The soundtrack alone is worth the price of admission",
+    "expected_sentiment": "positive",
+    "plaintext": {
+      "elapsed_sec": 0.0182,
+      "logits": [
+        -1.1514897316595027,
+        1.2544405923914113
+      ],
+      "predicted_sentiment": "positive"
+    },
+    "encrypted": {
+      "elapsed_sec": 42.517,
+      "reported_circuit_time_sec": 5.0,
+      "logits": [
+        -0.3793,
+        0.3048
+      ],
+      "predicted_sentiment": "positive",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 16097.01it/s]\n"
+    }
+  },
+  {
+    "sentence": "A charming little film that grows on you",
+    "expected_sentiment": "positive",
+    "plaintext": {
+      "elapsed_sec": 0.0174,
+      "logits": [
+        -2.6428493625628806,
+        2.550279874303307
+      ],
+      "predicted_sentiment": "positive"
+    },
+    "encrypted": {
+      "elapsed_sec": 44.862,
+      "reported_circuit_time_sec": 8.0,
+      "logits": [
+        -0.5293,
+        0.4578
+      ],
+      "predicted_sentiment": "positive",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 15986.89it/s]\n"
+    }
+  },
+  {
+    "sentence": "I laughed out loud more than once, a genuinely funny movie",
+    "expected_sentiment": "positive",
+    "plaintext": {
+      "elapsed_sec": 0.018,
+      "logits": [
+        -1.1400930233527693,
+        1.1657317786814072
+      ],
+      "predicted_sentiment": "positive"
+    },
+    "encrypted": {
+      "elapsed_sec": 40.88,
+      "reported_circuit_time_sec": 6.0,
+      "logits": [
+        -0.958,
+        0.5827
+      ],
+      "predicted_sentiment": "positive",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 14184.69it/s]\n"
+    }
+  },
+  {
+    "sentence": "The chemistry between the leads made the whole film work",
+    "expected_sentiment": "positive",
+    "plaintext": {
+      "elapsed_sec": 0.0171,
+      "logits": [
+        -1.385940353609554,
+        1.556945324467443
+      ],
+      "predicted_sentiment": "positive"
+    },
+    "encrypted": {
+      "elapsed_sec": 39.946,
+      "reported_circuit_time_sec": 5.0,
+      "logits": [
+        0.3396,
+        -0.3669
+      ],
+      "predicted_sentiment": "negative",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 14788.70it/s]\n"
+    }
+  },
+  {
+    "sentence": "A beautifully written script with real emotional depth",
+    "expected_sentiment": "positive",
+    "plaintext": {
+      "elapsed_sec": 0.0191,
+      "logits": [
+        -2.703502973243509,
+        2.5577504015129224
+      ],
+      "predicted_sentiment": "positive"
+    },
+    "encrypted": {
+      "elapsed_sec": 42.088,
+      "reported_circuit_time_sec": 5.0,
+      "logits": [
+        -0.9066,
+        0.8172
+      ],
+      "predicted_sentiment": "positive",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 15463.97it/s]\nClient-side decode failed on attempt 1/3 (/root/FIDESlib/deps/openfhe-src/src/pke/lib/encoding/ckkspackedencoding.cpp:l.453:Decode(): The decryption failed because the approximation error is too high. Check the parameters. ). Asking the server to recompute from scratch...\n"
+    }
+  },
+  {
+    "sentence": "This exceeded every expectation I had going in",
+    "expected_sentiment": "positive",
+    "plaintext": {
+      "elapsed_sec": 0.0172,
+      "logits": [
+        0.7284666715485071,
+        -0.21907476564835307
+      ],
+      "predicted_sentiment": "negative"
+    },
+    "encrypted": {
+      "elapsed_sec": 43.811,
+      "reported_circuit_time_sec": 5.0,
+      "logits": [
+        0.5817,
+        -0.4574
+      ],
+      "predicted_sentiment": "negative",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 15094.39it/s]\nClient-side decode failed on attempt 1/3 (/root/FIDESlib/deps/openfhe-src/src/pke/lib/encoding/ckkspackedencoding.cpp:l.453:Decode(): The decryption failed because the approximation error is too high. Check the parameters. ). Asking the server to recompute from scratch...\n"
+    }
+  },
+  {
+    "sentence": "The special effects were seamless and genuinely thrilling",
+    "expected_sentiment": "positive",
+    "plaintext": {
+      "elapsed_sec": 0.0115,
+      "logits": [
+        1.7037428197650286,
+        -1.2514193150909605
+      ],
+      "predicted_sentiment": "negative"
+    },
+    "encrypted": {
+      "elapsed_sec": 42.488,
+      "reported_circuit_time_sec": 5.0,
+      "logits": [
+        0.8914,
+        -0.8684
+      ],
+      "predicted_sentiment": "negative",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 13761.07it/s]\n"
+    }
+  },
+  {
+    "sentence": "A masterclass in pacing and tension",
+    "expected_sentiment": "positive",
+    "plaintext": {
+      "elapsed_sec": 0.0173,
+      "logits": [
+        -1.5193937160577673,
+        1.5911273874069638
+      ],
+      "predicted_sentiment": "positive"
+    },
+    "encrypted": {
+      "elapsed_sec": 38.151,
+      "reported_circuit_time_sec": 4.0,
+      "logits": [
+        -0.0719,
+        0.1011
+      ],
+      "predicted_sentiment": "positive",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 15881.35it/s]\n"
+    }
+  },
+  {
+    "sentence": "I would happily watch this again tomorrow",
+    "expected_sentiment": "positive",
+    "plaintext": {
+      "elapsed_sec": 0.0174,
+      "logits": [
+        -0.9814005778055834,
+        1.1473354343125577
+      ],
+      "predicted_sentiment": "positive"
+    },
+    "encrypted": {
+      "elapsed_sec": 44.531,
+      "reported_circuit_time_sec": 7.0,
+      "logits": [
+        0.3391,
+        -0.2999
+      ],
+      "predicted_sentiment": "negative",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 15812.26it/s]\nClient-side decode failed on attempt 1/3 (/root/FIDESlib/deps/openfhe-src/src/pke/lib/encoding/ckkspackedencoding.cpp:l.453:Decode(): The decryption failed because the approximation error is too high. Check the parameters. ). Asking the server to recompute from scratch...\n"
+    }
+  },
+  {
+    "sentence": "The ending brought tears to my eyes, in the best way",
+    "expected_sentiment": "positive",
+    "plaintext": {
+      "elapsed_sec": 0.0173,
+      "logits": [
+        -1.8497986605786167,
+        1.9774850213945854
+      ],
+      "predicted_sentiment": "positive"
+    },
+    "encrypted": {
+      "elapsed_sec": 41.445,
+      "reported_circuit_time_sec": 6.0,
+      "logits": [
+        -1.4366,
+        1.3389
+      ],
+      "predicted_sentiment": "positive",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 15480.07it/s]\n"
+    }
+  },
+  {
+    "sentence": "Every scene felt purposeful and beautifully shot",
+    "expected_sentiment": "positive",
+    "plaintext": {
+      "elapsed_sec": 0.0116,
+      "logits": [
+        -2.4915615013064567,
+        2.415871783512836
+      ],
+      "predicted_sentiment": "positive"
+    },
+    "encrypted": {
+      "elapsed_sec": 39.119,
+      "reported_circuit_time_sec": 5.0,
+      "logits": [
+        -0.9565,
+        0.8595
+      ],
+      "predicted_sentiment": "positive",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 14948.17it/s]\n"
+    }
+  },
+  {
+    "sentence": "A wonderfully clever plot with a satisfying payoff",
+    "expected_sentiment": "positive",
+    "plaintext": {
+      "elapsed_sec": 0.0174,
+      "logits": [
+        -2.579728796609342,
+        2.4319385855397266
+      ],
+      "predicted_sentiment": "positive"
+    },
+    "encrypted": {
+      "elapsed_sec": 47.98,
+      "reported_circuit_time_sec": 5.0,
+      "logits": [
+        -1.2562,
+        1.051
+      ],
+      "predicted_sentiment": "positive",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 14827.58it/s]\nClient-side decode failed on attempt 1/3 (/root/FIDESlib/deps/openfhe-src/src/pke/lib/encoding/ckkspackedencoding.cpp:l.453:Decode(): The decryption failed because the approximation error is too high. Check the parameters. ). Asking the server to recompute from scratch...\n"
+    }
+  },
+  {
+    "sentence": "The dialogue crackles with wit and energy",
+    "expected_sentiment": "positive",
+    "plaintext": {
+      "elapsed_sec": 0.0174,
+      "logits": [
+        -1.9426601140538557,
+        2.0351240445983247
+      ],
+      "predicted_sentiment": "positive"
+    },
+    "encrypted": {
+      "elapsed_sec": 49.217,
+      "reported_circuit_time_sec": 5.0,
+      "logits": [
+        -0.8355,
+        0.7009
+      ],
+      "predicted_sentiment": "positive",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 15232.13it/s]\nClient-side decode failed on attempt 1/3 (/root/FIDESlib/deps/openfhe-src/src/pke/lib/encoding/ckkspackedencoding.cpp:l.453:Decode(): The decryption failed because the approximation error is too high. Check the parameters. ). Asking the server to recompute from scratch...\nClient-side decode failed on attempt 2/3 (/root/FIDESlib/deps/openfhe-src/src/pke/lib/encoding/ckkspackedencoding.cpp:l.453:Decode(): The decryption failed because the approximation error is too high. Check the parameters. ). Asking the server to recompute from scratch...\n"
+    }
+  },
+  {
+    "sentence": "This is family entertainment done exactly right",
+    "expected_sentiment": "positive",
+    "plaintext": {
+      "elapsed_sec": 0.0209,
+      "logits": [
+        -0.8005819367678652,
+        0.8704184450176284
+      ],
+      "predicted_sentiment": "positive"
+    },
+    "encrypted": {
+      "elapsed_sec": 42.277,
+      "reported_circuit_time_sec": 4.0,
+      "logits": [
+        0.1264,
+        -0.2105
+      ],
+      "predicted_sentiment": "negative",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 14748.70it/s]\n"
+    }
+  },
+  {
+    "sentence": "A gripping thriller that never lets up",
+    "expected_sentiment": "positive",
+    "plaintext": {
+      "elapsed_sec": 0.0175,
+      "logits": [
+        -0.3213825030490116,
+        0.4964858081612974
+      ],
+      "predicted_sentiment": "positive"
+    },
+    "encrypted": {
+      "elapsed_sec": 40.661,
+      "reported_circuit_time_sec": 4.0,
+      "logits": [
+        0.6442,
+        -0.5453
+      ],
+      "predicted_sentiment": "negative",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 15876.72it/s]\n"
+    }
+  },
+  {
+    "sentence": "The lead actress gives a career-defining performance",
+    "expected_sentiment": "positive",
+    "plaintext": {
+      "elapsed_sec": 0.0174,
+      "logits": [
+        -2.6059881804381955,
+        2.451944356229617
+      ],
+      "predicted_sentiment": "positive"
+    },
+    "encrypted": {
+      "elapsed_sec": 39.62,
+      "reported_circuit_time_sec": 5.0,
+      "logits": [
+        -1.7297,
+        1.4606
+      ],
+      "predicted_sentiment": "positive",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 14719.50it/s]\n"
+    }
+  },
+  {
+    "sentence": "Genuinely one of the most enjoyable films of the decade",
+    "expected_sentiment": "positive",
+    "plaintext": {
+      "elapsed_sec": 0.0114,
+      "logits": [
+        -2.6604288666710394,
+        2.4982768859921887
+      ],
+      "predicted_sentiment": "positive"
+    },
+    "encrypted": {
+      "elapsed_sec": 48.427,
+      "reported_circuit_time_sec": 5.0,
+      "logits": [
+        -1.5536,
+        1.4173
+      ],
+      "predicted_sentiment": "positive",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 14099.11it/s]\nClient-side decode failed on attempt 1/3 (/root/FIDESlib/deps/openfhe-src/src/pke/lib/encoding/ckkspackedencoding.cpp:l.453:Decode(): The decryption failed because the approximation error is too high. Check the parameters. ). Asking the server to recompute from scratch...\nClient-side decode failed on attempt 2/3 (/root/FIDESlib/deps/openfhe-src/src/pke/lib/encoding/ckkspackedencoding.cpp:l.453:Decode(): The decryption failed because the approximation error is too high. Check the parameters. ). Asking the server to recompute from scratch...\n"
+    }
+  },
+  {
+    "sentence": "The food at this restaurant was absolutely delicious",
+    "expected_sentiment": "positive",
+    "plaintext": {
+      "elapsed_sec": 0.0203,
+      "logits": [
+        -1.9151958571369587,
+        2.0371604562058736
+      ],
+      "predicted_sentiment": "positive"
+    },
+    "encrypted": {
+      "elapsed_sec": 43.231,
+      "reported_circuit_time_sec": 5.0,
+      "logits": [
+        -0.7134,
+        0.5751
+      ],
+      "predicted_sentiment": "positive",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 15487.39it/s]\nClient-side decode failed on attempt 1/3 (/root/FIDESlib/deps/openfhe-src/src/pke/lib/encoding/ckkspackedencoding.cpp:l.453:Decode(): The decryption failed because the approximation error is too high. Check the parameters. ). Asking the server to recompute from scratch...\n"
+    }
+  },
+  {
+    "sentence": "Customer service was fast, friendly, and helpful",
+    "expected_sentiment": "positive",
+    "plaintext": {
+      "elapsed_sec": 0.0172,
+      "logits": [
+        -0.6158267549795295,
+        0.5700650901536697
+      ],
+      "predicted_sentiment": "positive"
+    },
+    "encrypted": {
+      "elapsed_sec": 43.587,
+      "reported_circuit_time_sec": 5.0,
+      "logits": [
+        0.1089,
+        -0.1664
+      ],
+      "predicted_sentiment": "negative",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 15365.19it/s]\nClient-side decode failed on attempt 1/3 (/root/FIDESlib/deps/openfhe-src/src/pke/lib/encoding/ckkspackedencoding.cpp:l.453:Decode(): The decryption failed because the approximation error is too high. Check the parameters. ). Asking the server to recompute from scratch...\n"
+    }
+  },
+  {
+    "sentence": "This phone works flawlessly and the battery lasts all day",
+    "expected_sentiment": "positive",
+    "plaintext": {
+      "elapsed_sec": 0.021,
+      "logits": [
+        0.5082030728108493,
+        -0.20393811826091496
+      ],
+      "predicted_sentiment": "negative"
+    },
+    "encrypted": {
+      "elapsed_sec": 43.782,
+      "reported_circuit_time_sec": 5.0,
+      "logits": [
+        0.6765,
+        -0.6232
+      ],
+      "predicted_sentiment": "negative",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 15048.56it/s]\n"
+    }
+  },
+  {
+    "sentence": "The hotel room was spotless and the staff were wonderful",
+    "expected_sentiment": "positive",
+    "plaintext": {
+      "elapsed_sec": 0.0126,
+      "logits": [
+        0.8661863908594472,
+        -0.5124845218645416
+      ],
+      "predicted_sentiment": "negative"
+    },
+    "encrypted": {
+      "elapsed_sec": 41.239,
+      "reported_circuit_time_sec": 6.0,
+      "logits": [
+        0.8074,
+        -0.9404
+      ],
+      "predicted_sentiment": "negative",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 15636.92it/s]\n"
+    }
+  },
+  {
+    "sentence": "Great value for the price, highly recommended",
+    "expected_sentiment": "positive",
+    "plaintext": {
+      "elapsed_sec": 0.0173,
+      "logits": [
+        -2.3319681656923863,
+        2.308416409440525
+      ],
+      "predicted_sentiment": "positive"
+    },
+    "encrypted": {
+      "elapsed_sec": 43.705,
+      "reported_circuit_time_sec": 5.0,
+      "logits": [
+        -0.7016,
+        0.6918
+      ],
+      "predicted_sentiment": "positive",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 14926.35it/s]\n"
+    }
+  },
+  {
+    "sentence": "The book kept me hooked until the very last page",
+    "expected_sentiment": "positive",
+    "plaintext": {
+      "elapsed_sec": 0.0175,
+      "logits": [
+        1.2876161100706514,
+        -0.8493145040946075
+      ],
+      "predicted_sentiment": "negative"
+    },
+    "encrypted": {
+      "elapsed_sec": 42.434,
+      "reported_circuit_time_sec": 5.0,
+      "logits": [
+        0.5925,
+        -0.6064
+      ],
+      "predicted_sentiment": "negative",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 14976.91it/s]\n"
+    }
+  },
+  {
+    "sentence": "A refreshing and uplifting comedy the whole family enjoyed",
+    "expected_sentiment": "positive",
+    "plaintext": {
+      "elapsed_sec": 0.0179,
+      "logits": [
+        -2.861325043354883,
+        2.6935297259800657
+      ],
+      "predicted_sentiment": "positive"
+    },
+    "encrypted": {
+      "elapsed_sec": 40.816,
+      "reported_circuit_time_sec": 5.0,
+      "logits": [
+        -2.7009,
+        2.5106
+      ],
+      "predicted_sentiment": "positive",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 15569.95it/s]\n"
+    }
+  },
+  {
+    "sentence": "The concert was electric, easily the best show I have seen",
+    "expected_sentiment": "positive",
+    "plaintext": {
+      "elapsed_sec": 0.0173,
+      "logits": [
+        -1.4061305393863672,
+        1.4605704064010303
+      ],
+      "predicted_sentiment": "positive"
+    },
+    "encrypted": {
+      "elapsed_sec": 49.063,
+      "reported_circuit_time_sec": 6.0,
+      "logits": [
+        -0.7708,
+        0.6692
+      ],
+      "predicted_sentiment": "positive",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 15635.43it/s]\nClient-side decode failed on attempt 1/3 (/root/FIDESlib/deps/openfhe-src/src/pke/lib/encoding/ckkspackedencoding.cpp:l.453:Decode(): The decryption failed because the approximation error is too high. Check the parameters. ). Asking the server to recompute from scratch...\nClient-side decode failed on attempt 2/3 (/root/FIDESlib/deps/openfhe-src/src/pke/lib/encoding/ckkspackedencoding.cpp:l.453:Decode(): The decryption failed because the approximation error is too high. Check the parameters. ). Asking the server to recompute from scratch...\n"
+    }
+  },
+  {
+    "sentence": "This laptop is fast, quiet, and beautifully designed",
+    "expected_sentiment": "positive",
+    "plaintext": {
+      "elapsed_sec": 0.0114,
+      "logits": [
+        -2.2151799486288746,
+        2.16473528362853
+      ],
+      "predicted_sentiment": "positive"
+    },
+    "encrypted": {
+      "elapsed_sec": 43.033,
+      "reported_circuit_time_sec": 5.0,
+      "logits": [
+        -1.6256,
+        1.4129
+      ],
+      "predicted_sentiment": "positive",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 15921.54it/s]\n"
+    }
+  },
+  {
+    "sentence": "The weather was perfect for our trip to the coast",
+    "expected_sentiment": "positive",
+    "plaintext": {
+      "elapsed_sec": 0.0115,
+      "logits": [
+        -0.6498970054604718,
+        0.8983522091958149
+      ],
+      "predicted_sentiment": "positive"
+    },
+    "encrypted": {
+      "elapsed_sec": 44.177,
+      "reported_circuit_time_sec": 6.0,
+      "logits": [
+        0.1841,
+        -0.256
+      ],
+      "predicted_sentiment": "negative",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 15689.42it/s]\n"
+    }
+  },
+  {
+    "sentence": "Our vacation exceeded every expectation we had",
+    "expected_sentiment": "positive",
+    "plaintext": {
+      "elapsed_sec": 0.0215,
+      "logits": [
+        -0.16328069624858227,
+        0.5456826539644267
+      ],
+      "predicted_sentiment": "positive"
+    },
+    "encrypted": {
+      "elapsed_sec": 43.819,
+      "reported_circuit_time_sec": 4.0,
+      "logits": [
+        0.3297,
+        -0.2692
+      ],
+      "predicted_sentiment": "negative",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 15553.66it/s]\nClient-side decode failed on attempt 1/3 (/root/FIDESlib/deps/openfhe-src/src/pke/lib/encoding/ckkspackedencoding.cpp:l.453:Decode(): The decryption failed because the approximation error is too high. Check the parameters. ). Asking the server to recompute from scratch...\n"
+    }
+  },
+  {
+    "sentence": "The coffee here is consistently excellent",
+    "expected_sentiment": "positive",
+    "plaintext": {
+      "elapsed_sec": 0.0181,
+      "logits": [
+        -2.340011771443326,
+        2.229867480596433
+      ],
+      "predicted_sentiment": "positive"
+    },
+    "encrypted": {
+      "elapsed_sec": 40.312,
+      "reported_circuit_time_sec": 4.0,
+      "logits": [
+        -1.1849,
+        0.9108
+      ],
+      "predicted_sentiment": "positive",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 14371.63it/s]\n"
+    }
+  },
+  {
+    "sentence": "I am thoroughly impressed with the quality of this product",
+    "expected_sentiment": "positive",
+    "plaintext": {
+      "elapsed_sec": 0.0189,
+      "logits": [
+        -2.256863115451433,
+        2.2220878365302124
+      ],
+      "predicted_sentiment": "positive"
+    },
+    "encrypted": {
+      "elapsed_sec": 40.17,
+      "reported_circuit_time_sec": 5.0,
+      "logits": [
+        -0.9226,
+        0.7705
+      ],
+      "predicted_sentiment": "positive",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 14408.34it/s]\n"
+    }
+  },
+  {
+    "sentence": "The team played with incredible energy and won deservedly",
+    "expected_sentiment": "positive",
+    "plaintext": {
+      "elapsed_sec": 0.0173,
+      "logits": [
+        -2.8117331786332747,
+        2.677822197984862
+      ],
+      "predicted_sentiment": "positive"
+    },
+    "encrypted": {
+      "elapsed_sec": 40.892,
+      "reported_circuit_time_sec": 5.0,
+      "logits": [
+        -1.7401,
+        1.5084
+      ],
+      "predicted_sentiment": "positive",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 15499.13it/s]\n"
+    }
+  },
+  {
+    "sentence": "This app makes managing my schedule so much easier",
+    "expected_sentiment": "positive",
+    "plaintext": {
+      "elapsed_sec": 0.0173,
+      "logits": [
+        1.3563499231097036,
+        -1.0753173567616419
+      ],
+      "predicted_sentiment": "negative"
+    },
+    "encrypted": {
+      "elapsed_sec": 43.543,
+      "reported_circuit_time_sec": 5.0,
+      "logits": [
+        0.8168,
+        -0.7262
+      ],
+      "predicted_sentiment": "negative",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 15129.29it/s]\n"
+    }
+  },
+  {
+    "sentence": "The garden looked absolutely gorgeous in the spring sunshine",
+    "expected_sentiment": "positive",
+    "plaintext": {
+      "elapsed_sec": 0.0176,
+      "logits": [
+        -2.559346919921911,
+        2.505186196718419
+      ],
+      "predicted_sentiment": "positive"
+    },
+    "encrypted": {
+      "elapsed_sec": 41.334,
+      "reported_circuit_time_sec": 5.0,
+      "logits": [
+        -1.0304,
+        0.9601
+      ],
+      "predicted_sentiment": "positive",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 15447.90it/s]\n"
+    }
+  },
+  {
+    "sentence": "Their new album is a joyful, inventive piece of work",
+    "expected_sentiment": "positive",
+    "plaintext": {
+      "elapsed_sec": 0.0118,
+      "logits": [
+        -2.7653667915361524,
+        2.611905877488999
+      ],
+      "predicted_sentiment": "positive"
+    },
+    "encrypted": {
+      "elapsed_sec": 44.2,
+      "reported_circuit_time_sec": 7.0,
+      "logits": [
+        -2.0504,
+        1.7914
+      ],
+      "predicted_sentiment": "positive",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 15280.51it/s]\n"
+    }
+  },
+  {
+    "sentence": "This is not a bad film at all, it is actually quite good",
+    "expected_sentiment": "positive",
+    "plaintext": {
+      "elapsed_sec": 0.0136,
+      "logits": [
+        1.3674312354710063,
+        -0.8871747360709997
+      ],
+      "predicted_sentiment": "negative"
+    },
+    "encrypted": {
+      "elapsed_sec": 45.873,
+      "reported_circuit_time_sec": 7.0,
+      "logits": [
+        0.3769,
+        -0.3542
+      ],
+      "predicted_sentiment": "negative",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 15038.88it/s]\n"
+    }
+  },
+  {
+    "sentence": "I never expected to enjoy this movie as much as I did",
+    "expected_sentiment": "positive",
+    "plaintext": {
+      "elapsed_sec": 0.0211,
+      "logits": [
+        0.7270161725869627,
+        -0.31415488281645104
+      ],
+      "predicted_sentiment": "negative"
+    },
+    "encrypted": {
+      "elapsed_sec": 42.275,
+      "reported_circuit_time_sec": 6.0,
+      "logits": [
+        0.7293,
+        -0.5132
+      ],
+      "predicted_sentiment": "negative",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 15524.14it/s]\n"
+    }
+  },
+  {
+    "sentence": "Despite a slow start, the film wins you over completely",
+    "expected_sentiment": "positive",
+    "plaintext": {
+      "elapsed_sec": 0.0174,
+      "logits": [
+        0.8703373701021285,
+        -0.4825629695600027
+      ],
+      "predicted_sentiment": "negative"
+    },
+    "encrypted": {
+      "elapsed_sec": 45.17,
+      "reported_circuit_time_sec": 6.0,
+      "logits": [
+        0.6744,
+        -0.6091
+      ],
+      "predicted_sentiment": "negative",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 14293.77it/s]\nClient-side decode failed on attempt 1/3 (/root/FIDESlib/deps/openfhe-src/src/pke/lib/encoding/ckkspackedencoding.cpp:l.453:Decode(): The decryption failed because the approximation error is too high. Check the parameters. ). Asking the server to recompute from scratch...\n"
+    }
+  },
+  {
+    "sentence": "It is hard not to smile the entire way through this movie",
+    "expected_sentiment": "positive",
+    "plaintext": {
+      "elapsed_sec": 0.0209,
+      "logits": [
+        1.2122075959471135,
+        -0.8360130645289287
+      ],
+      "predicted_sentiment": "negative"
+    },
+    "encrypted": {
+      "elapsed_sec": 43.411,
+      "reported_circuit_time_sec": 6.0,
+      "logits": [
+        0.6345,
+        -0.6229
+      ],
+      "predicted_sentiment": "negative",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 14780.69it/s]\n"
+    }
+  },
+  {
+    "sentence": "A small film with a surprisingly big heart",
+    "expected_sentiment": "positive",
+    "plaintext": {
+      "elapsed_sec": 0.0177,
+      "logits": [
+        -2.5912527131869587,
+        2.5147639205507906
+      ],
+      "predicted_sentiment": "positive"
+    },
+    "encrypted": {
+      "elapsed_sec": 41.881,
+      "reported_circuit_time_sec": 5.0,
+      "logits": [
+        -1.1581,
+        0.9935
+      ],
+      "predicted_sentiment": "positive",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 15850.57it/s]\n"
+    }
+  },
+  {
+    "sentence": "The sequel actually improves on the original in every way",
+    "expected_sentiment": "positive",
+    "plaintext": {
+      "elapsed_sec": 0.0179,
+      "logits": [
+        -1.4457932485256344,
+        1.4306729601249975
+      ],
+      "predicted_sentiment": "positive"
+    },
+    "encrypted": {
+      "elapsed_sec": 40.293,
+      "reported_circuit_time_sec": 6.0,
+      "logits": [
+        -0.3973,
+        0.3049
+      ],
+      "predicted_sentiment": "positive",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 15165.76it/s]\n"
+    }
+  },
+  {
+    "sentence": "Well worth the wait, this delivers on every level",
+    "expected_sentiment": "positive",
+    "plaintext": {
+      "elapsed_sec": 0.0173,
+      "logits": [
+        -1.9690393012506402,
+        1.8905824639658813
+      ],
+      "predicted_sentiment": "positive"
+    },
+    "encrypted": {
+      "elapsed_sec": 43.837,
+      "reported_circuit_time_sec": 5.0,
+      "logits": [
+        -1.4552,
+        1.2483
+      ],
+      "predicted_sentiment": "positive",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 15172.79it/s]\n"
+    }
+  }
+]
