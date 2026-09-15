@@ -57,3 +57,13 @@ add_executable(FHE-BERT-Tiny
         src/Utils.h)
 
 target_link_libraries(FHE-BERT-Tiny PRIVATE fideslib::fideslib CUDA::cudart)
+
+### security_tests/cca_probe_main.cpp: standalone research tool, see its file header. Reuses
+### FHEController but never touches the BERT circuit/weights.
+add_executable(cca-probe
+        security_tests/cca_probe_main.cpp
+        src/FHEController.cpp src/FHEController.h
+        src/Utils.h)
+target_include_directories(cca-probe PRIVATE src)
+
+target_link_libraries(cca-probe PRIVATE fideslib::fideslib CUDA::cudart)

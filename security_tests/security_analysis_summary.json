@@ -1,0 +1,101 @@
+{
+  "cpa": {
+    "n_total_runs": 40,
+    "n_successful_runs": 40,
+    "ciphertext_count_leak": {
+      "distinct_values_observed": [
+        4,
+        5,
+        9,
+        10,
+        11,
+        15,
+        16,
+        17,
+        18
+      ],
+      "note": "Each distinct value below is exactly the token count of the input sentence; an observer who only counts request ciphertexts (no decryption needed) learns the input's token count exactly."
+    },
+    "retry_rate": {
+      "runs_with_retry": 4,
+      "n": 40,
+      "attempts_distribution": {
+        "1": 36,
+        "2": 4
+      }
+    },
+    "timing_noise_floor": {
+      "short": {
+        "n": 5,
+        "mean_s": 3.0,
+        "stdev_s": 0.0,
+        "cv": 0.0,
+        "min_s": 3.0,
+        "max_s": 3.0
+      },
+      "medium": {
+        "n": 5,
+        "mean_s": 7.4,
+        "stdev_s": 2.5099800796022267,
+        "cv": 0.3391864972435441,
+        "min_s": 5.0,
+        "max_s": 11.0
+      },
+      "long": {
+        "n": 5,
+        "mean_s": 7.0,
+        "stdev_s": 0.0,
+        "cv": 0.0,
+        "min_s": 7.0,
+        "max_s": 7.0
+      }
+    },
+    "content_dependence_timing": {
+      "long": {
+        "n_pairs": 4,
+        "pos_mean_s": 8.0,
+        "neg_mean_s": 8.75,
+        "wilcoxon_stat": 3.0,
+        "wilcoxon_p": 1.0,
+        "paired_t_stat": -0.3511234415883917,
+        "paired_t_p": 0.748707206390489,
+        "mean_diff_s": -0.75
+      },
+      "medium": {
+        "n_pairs": 5,
+        "pos_mean_s": 6.88,
+        "neg_mean_s": 7.0,
+        "wilcoxon_stat": 4.0,
+        "wilcoxon_p": 0.875,
+        "paired_t_stat": -0.07283570407292293,
+        "paired_t_p": 0.9454335124119588,
+        "mean_diff_s": -0.11999999999999993
+      },
+      "short": {
+        "n_pairs": 5,
+        "pos_mean_s": 3.8,
+        "neg_mean_s": 5.2,
+        "wilcoxon_stat": 0.0,
+        "wilcoxon_p": 0.125,
+        "paired_t_stat": -3.4999999999999996,
+        "paired_t_p": 0.024896163460222765,
+        "mean_diff_s": -1.4
+      }
+    }
+  },
+  "cca": {
+    "n_trials": 150,
+    "plaintext_recovery": {
+      "max_linf_error": 1.16795e-13,
+      "mean_linf_error": 5.865160133333333e-14,
+      "mean_l2_error": 1.1028138733333333e-13
+    },
+    "distinguishing_game": {
+      "correct": 150,
+      "n": 150,
+      "accuracy": 1.0,
+      "chance_accuracy": 0.5,
+      "binomial_p_value_vs_chance": 7.006492321624085e-46
+    }
+  }
+}
