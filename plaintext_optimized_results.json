@@ -1,0 +1,284 @@
+{
+  "model_load_sec": 0.591,
+  "n_sentences": 25,
+  "total_classify_sec": 0.646,
+  "total_wall_sec_including_load": 1.238,
+  "mean_classify_sec": 0.0259,
+  "results": [
+    {
+      "sentence": "This is one of the best performances I have seen all year",
+      "expected_sentiment": "positive",
+      "elapsed_sec": 0.4573,
+      "logits": [
+        -1.9175413256228124,
+        1.9433409882949564
+      ],
+      "predicted_sentiment": "positive",
+      "pytorch_predicted_sentiment": "positive"
+    },
+    {
+      "sentence": "A brilliant, funny, and touching film that exceeded my expectations",
+      "expected_sentiment": "positive",
+      "elapsed_sec": 0.0083,
+      "logits": [
+        -2.7019147942199884,
+        2.6011348958879816
+      ],
+      "predicted_sentiment": "positive",
+      "pytorch_predicted_sentiment": "positive"
+    },
+    {
+      "sentence": "I absolutely loved this film, it was a masterpiece",
+      "expected_sentiment": "positive",
+      "elapsed_sec": 0.0083,
+      "logits": [
+        -2.616415804243568,
+        2.532881634129303
+      ],
+      "predicted_sentiment": "positive",
+      "pytorch_predicted_sentiment": "positive"
+    },
+    {
+      "sentence": "What a delightful and heartwarming movie experience",
+      "expected_sentiment": "positive",
+      "elapsed_sec": 0.0079,
+      "logits": [
+        -2.7744237507273843,
+        2.651388908468225
+      ],
+      "predicted_sentiment": "positive",
+      "pytorch_predicted_sentiment": "positive"
+    },
+    {
+      "sentence": "The acting was superb and the story kept me engaged the whole time",
+      "expected_sentiment": "positive",
+      "elapsed_sec": 0.0082,
+      "logits": [
+        0.6219274559394052,
+        -0.30568067364821694
+      ],
+      "predicted_sentiment": "negative",
+      "pytorch_predicted_sentiment": "positive"
+    },
+    {
+      "sentence": "A truly inspiring story told with grace and humor",
+      "expected_sentiment": "positive",
+      "elapsed_sec": 0.0078,
+      "logits": [
+        -2.830238548318795,
+        2.6643752486393972
+      ],
+      "predicted_sentiment": "positive",
+      "pytorch_predicted_sentiment": "positive"
+    },
+    {
+      "sentence": "The cinematography was stunning from start to finish",
+      "expected_sentiment": "positive",
+      "elapsed_sec": 0.0081,
+      "logits": [
+        -0.8676351495244494,
+        1.2671098810782464
+      ],
+      "predicted_sentiment": "positive",
+      "pytorch_predicted_sentiment": "positive"
+    },
+    {
+      "sentence": "This film restored my faith in modern storytelling",
+      "expected_sentiment": "positive",
+      "elapsed_sec": 0.0078,
+      "logits": [
+        -2.422659867960962,
+        2.4041037401116774
+      ],
+      "predicted_sentiment": "positive",
+      "pytorch_predicted_sentiment": "positive"
+    },
+    {
+      "sentence": "An absolute triumph of direction and performance",
+      "expected_sentiment": "positive",
+      "elapsed_sec": 0.0079,
+      "logits": [
+        -2.5794771905688623,
+        2.509405696740615
+      ],
+      "predicted_sentiment": "positive",
+      "pytorch_predicted_sentiment": "positive"
+    },
+    {
+      "sentence": "The soundtrack alone is worth the price of admission",
+      "expected_sentiment": "positive",
+      "elapsed_sec": 0.0077,
+      "logits": [
+        -1.1514897316595027,
+        1.2544405923914113
+      ],
+      "predicted_sentiment": "positive",
+      "pytorch_predicted_sentiment": "positive"
+    },
+    {
+      "sentence": "A charming little film that grows on you",
+      "expected_sentiment": "positive",
+      "elapsed_sec": 0.0078,
+      "logits": [
+        -2.6428493625628806,
+        2.550279874303307
+      ],
+      "predicted_sentiment": "positive",
+      "pytorch_predicted_sentiment": "positive"
+    },
+    {
+      "sentence": "I laughed out loud more than once, a genuinely funny movie",
+      "expected_sentiment": "positive",
+      "elapsed_sec": 0.0078,
+      "logits": [
+        -1.1400930233527693,
+        1.1657317786814072
+      ],
+      "predicted_sentiment": "positive",
+      "pytorch_predicted_sentiment": "positive"
+    },
+    {
+      "sentence": "The chemistry between the leads made the whole film work",
+      "expected_sentiment": "positive",
+      "elapsed_sec": 0.0077,
+      "logits": [
+        -1.385940353609554,
+        1.556945324467443
+      ],
+      "predicted_sentiment": "positive",
+      "pytorch_predicted_sentiment": "positive"
+    },
+    {
+      "sentence": "A beautifully written script with real emotional depth",
+      "expected_sentiment": "positive",
+      "elapsed_sec": 0.0078,
+      "logits": [
+        -2.703502973243509,
+        2.5577504015129224
+      ],
+      "predicted_sentiment": "positive",
+      "pytorch_predicted_sentiment": "positive"
+    },
+    {
+      "sentence": "This exceeded every expectation I had going in",
+      "expected_sentiment": "positive",
+      "elapsed_sec": 0.0078,
+      "logits": [
+        0.7284666715485071,
+        -0.21907476564835307
+      ],
+      "predicted_sentiment": "negative",
+      "pytorch_predicted_sentiment": "positive"
+    },
+    {
+      "sentence": "The special effects were seamless and genuinely thrilling",
+      "expected_sentiment": "positive",
+      "elapsed_sec": 0.0078,
+      "logits": [
+        1.7037428197650286,
+        -1.2514193150909605
+      ],
+      "predicted_sentiment": "negative",
+      "pytorch_predicted_sentiment": "negative"
+    },
+    {
+      "sentence": "A masterclass in pacing and tension",
+      "expected_sentiment": "positive",
+      "elapsed_sec": 0.0078,
+      "logits": [
+        -1.5193937160577673,
+        1.5911273874069638
+      ],
+      "predicted_sentiment": "positive",
+      "pytorch_predicted_sentiment": "positive"
+    },
+    {
+      "sentence": "I would happily watch this again tomorrow",
+      "expected_sentiment": "positive",
+      "elapsed_sec": 0.0077,
+      "logits": [
+        -0.9814005778055834,
+        1.1473354343125577
+      ],
+      "predicted_sentiment": "positive",
+      "pytorch_predicted_sentiment": "positive"
+    },
+    {
+      "sentence": "The ending brought tears to my eyes, in the best way",
+      "expected_sentiment": "positive",
+      "elapsed_sec": 0.0077,
+      "logits": [
+        -1.8497986605786167,
+        1.9774850213945854
+      ],
+      "predicted_sentiment": "positive",
+      "pytorch_predicted_sentiment": "positive"
+    },
+    {
+      "sentence": "Every scene felt purposeful and beautifully shot",
+      "expected_sentiment": "positive",
+      "elapsed_sec": 0.0077,
+      "logits": [
+        -2.4915615013064567,
+        2.415871783512836
+      ],
+      "predicted_sentiment": "positive",
+      "pytorch_predicted_sentiment": "positive"
+    },
+    {
+      "sentence": "A wonderfully clever plot with a satisfying payoff",
+      "expected_sentiment": "positive",
+      "elapsed_sec": 0.0077,
+      "logits": [
+        -2.579728796609342,
+        2.4319385855397266
+      ],
+      "predicted_sentiment": "positive",
+      "pytorch_predicted_sentiment": "positive"
+    },
+    {
+      "sentence": "The dialogue crackles with wit and energy",
+      "expected_sentiment": "positive",
+      "elapsed_sec": 0.0077,
+      "logits": [
+        -1.9426601140538557,
+        2.0351240445983247
+      ],
+      "predicted_sentiment": "positive",
+      "pytorch_predicted_sentiment": "positive"
+    },
+    {
+      "sentence": "This is family entertainment done exactly right",
+      "expected_sentiment": "positive",
+      "elapsed_sec": 0.0077,
+      "logits": [
+        -0.8005819367678652,
+        0.8704184450176284
+      ],
+      "predicted_sentiment": "positive",
+      "pytorch_predicted_sentiment": "positive"
+    },
+    {
+      "sentence": "A gripping thriller that never lets up",
+      "expected_sentiment": "positive",
+      "elapsed_sec": 0.0077,
+      "logits": [
+        -0.3213825030490116,
+        0.4964858081612974
+      ],
+      "predicted_sentiment": "positive",
+      "pytorch_predicted_sentiment": "positive"
+    },
+    {
+      "sentence": "The lead actress gives a career-defining performance",
+      "expected_sentiment": "positive",
+      "elapsed_sec": 0.0077,
+      "logits": [
+        -2.6059881804381955,
+        2.451944356229617
+      ],
+      "predicted_sentiment": "positive",
+      "pytorch_predicted_sentiment": "positive"
+    }
+  ]
+}
