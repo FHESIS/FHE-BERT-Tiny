@@ -1,139 +1,15 @@
-#include <iostream>
-#include "FHEController.h"
+#include "ServerCircuit.h"
 #include <chrono>
-#include <filesystem>
-
-#define GREEN_TEXT "\033[1;32m"
-#define RED_TEXT "\033[1;31m"
 
 using namespace std::chrono;
 
-enum class Parameters { Generate, Load };
+namespace server_circuit {
 
-void setup_environment(int argc, char *argv[]);
+namespace {
 
-void run_command(const string &command) {
-    if (system(command.c_str()) != 0) {
-        cerr << "Warning: command failed: " << command << endl;
-    }
-}
+Ctxt classifier(FHEController& controller, Ctxt input, bool verbose, utils::ServerLog& log) {
+    auto log_start = log.stage_start("classifier");
 
-FHEController controller;
-
-vector<Ctxt> encoder1();
-Ctxt encoder2(vector<Ctxt> input);
-Ctxt pooler(Ctxt input);
-Ctxt classifier(Ctxt input);
-
-bool IDE_MODE = false;
-
-string input_folder;
-
-//Argument
-string text;
-
-//<OPTIONS>
-bool verbose = false;
-bool security128bits = false;
-Parameters p = Parameters::Load;
-bool plain;
-
-int main(int argc, char *argv[]) {
-    setup_environment(argc, argv);
-
-    if (p == Parameters::Generate) {
-        run_command("mkdir -p ./keys");
-        controller.generate_context(true, security128bits);
-        vector<int> rotations = {1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, -1, -2, -4, -8, -16, -32, -64, -128, -256, -512};
-        controller.generate_bootstrapping_and_rotation_keys(rotations, 16384, true, "rotation_keys.txt");
-        controller.clear_mask_cache();
-        return 0;
-    } else if (p == Parameters::Load) {
-        controller.load_context(false);
-        controller.load_bootstrapping_and_rotation_keys("rotation_keys.txt", 16384, false);
-    }
-
-    // system("mkdir -p ./checkpoint");
-
-    if (verbose) cout << "\nSERVER-SIDE\nThe evaluation of the circuit started." << endl;
-
-    auto start = high_resolution_clock::now();
-
-    cout << "input folder " << input_folder << endl;
-    if (input_folder.empty()) {
-        cerr << "The input folder \"" << input_folder << "\" is empty!";
-        exit(1);
-    }
-
-    vector<Ctxt> encoder1output;
-    Ctxt encoder2output;
-    Ctxt pooled, classified;
-    vector<double> plain_result;
-
-    // Retry wrapper: the GPU bootstrap occasionally produces a catastrophically noisy
-    // ciphertext (observed via instrumenting OpenFHE's Decode() -- the identical circuit on
-    // the identical input decoded fine with ~+23 bits of precision on some runs and failed
-    // ("approximation error too high") with ~-4 bits on others, a ~27-bit swing). That points
-    // to an intermittent bug (most likely a race condition in FIDESlib's CUDA bootstrap
-    // kernels) rather than a per-input or per-parameter precision shortfall, so more
-    // circuit_depth headroom doesn't reliably fix it. Retrying the whole circuit re-rolls
-    // that kernel's execution and empirically succeeds within a couple of attempts.
-    const int max_attempts = 3;
-    for (int attempt = 1; attempt <= max_attempts; attempt++) {
-        try {
-            encoder1output = encoder1();
-            encoder2output = encoder2(encoder1output);
-
-            pooled = pooler(encoder2output);
-            classified = classifier(pooled);
-            classified = controller.bootstrap(classified, 0, verbose); // Meta-BTS (numIterations=2) for extra precision before the final decode
-
-            if (verbose) cout << "The circuit has been evaluated, the results are sent back to the client" << endl << endl;
-            if (verbose) cout << "CLIENT-SIDE" << endl;
-
-            if (verbose)
-                controller.print(classified, 2, "Output logits");
-
-            plain_result = controller.decrypt_tovector(classified, 2);
-            break;
-        } catch (const lbcrypto::OpenFHEException &e) {
-            cerr << "Warning: FHE circuit evaluation failed on attempt " << attempt << "/" << max_attempts
-                 << " (" << e.what() << "), retrying..." << endl;
-            if (attempt == max_attempts) {
-                cerr << "Giving up after " << max_attempts << " failed attempts." << endl;
-                throw;
-            }
-        }
-    }
-
-    int timing = (duration_cast<milliseconds>( high_resolution_clock::now() - start)).count() / 1000.0;
-    if (verbose) cout << endl << "The evaluation of the FHE circuit took: " << timing << " seconds." << endl;
-
-    if (plain) {
-        cout << "Outcomes:" << endl << "FHE              : ";
-        if (plain_result[0] > plain_result[1]){
-            cout << "negative sentiment!" << endl;
-        } else {
-            cout << "positive sentiment!" << endl;
-        }
-        run_command("python3 ./src/python/PlainCircuit.py \"" + text + "\"");
-        run_command("python3 ./src/python/Precision.py \"" + text + "\" " + "\"[" + to_string(plain_result[0]) + ", " +
-                to_string(plain_result[1]) + "\" " + to_string(timing));
-    } else {
-        cout << "Outcome: ";
-        if (plain_result[0] > plain_result[1]){
-            cout << GREEN_TEXT << "negative" << RESET_COLOR << " sentiment!" << endl;
-        } else {
-            cout << GREEN_TEXT << "positive" << RESET_COLOR << " sentiment!" << endl;
-        }
-    }
-
-    // See the comment on clear_mask_cache(): must run here, before main() returns, not left to
-    // the global `controller`'s destructor at process exit.
-    controller.clear_mask_cache();
-}
-
-Ctxt classifier(Ctxt input) {
     Ptxt weight = controller.read_plain_input("./weights-sst2/classifier_weight.txt", input->GetLevel());
     Ptxt bias = controller.read_plain_expanded_input("./weights-sst2/classifier_bias.txt", input->GetLevel());
 
@@ -155,10 +31,14 @@ Ctxt classifier(Ctxt input) {
 
     output = controller.add(output, controller.rotate(controller.rotate(output, -1), 128));
 
+    log.stage_end("classifier", log_start, {{"level", std::to_string(output->GetLevel())}});
+
     return output;
 }
-Ctxt pooler(Ctxt input) {
+
+Ctxt pooler(FHEController& controller, Ctxt input, bool verbose, utils::ServerLog& log) {
     auto start = high_resolution_clock::now();
+    auto log_start = log.stage_start("pooler");
 
     double tanhScale = 1 / 30.0;
 
@@ -176,12 +56,17 @@ Ctxt pooler(Ctxt input) {
     output = controller.eval_tanh_function(output, -1, 1, tanhScale, 300);
 
     if (verbose) cout << "The evaluation of Pooler took: " << (duration_cast<milliseconds>( high_resolution_clock::now() - start)).count() / 1000.0 << " seconds." << endl;
-    if (verbose) controller.print(output, 128, "Pooler (Repeated)");
+    // Removed: this used to call a decrypting debug helper (print()/print_expanded()) here.
+    // Server-role code must never decrypt, even for --verbose debugging; per-stage timing
+    // and ciphertext level are already captured above and in the ServerLog JSONL output.
+    log.stage_end("pooler", log_start, {{"level", std::to_string(output->GetLevel())}});
 
     return output;
 }
-Ctxt encoder2(vector<Ctxt> inputs) {
+
+Ctxt encoder2(FHEController& controller, vector<Ctxt> inputs, bool verbose, utils::ServerLog& log) {
     auto start = high_resolution_clock::now();
+    auto log_start = log.stage_start("encoder2.self_attention");
 
     Ptxt query_w = controller.read_plain_input("./weights-sst2/layer1_attself_query_weight.txt", inputs[0]->GetLevel());
     Ptxt query_b = controller.read_plain_repeated_input("./weights-sst2/layer1_attself_query_bias.txt", inputs[0]->GetLevel());
@@ -223,7 +108,10 @@ Ctxt encoder2(vector<Ctxt> inputs) {
     vector<Ctxt> output = controller.matmulRE(unwrapped_scores, V_wrapped, 128, 128);
 
     if (verbose) cout << "The evaluation of Self-Attention took: " << (duration_cast<milliseconds>( high_resolution_clock::now() - start)).count() / 1000.0 << " seconds." << endl;
-    if (verbose) controller.print(output[0], 128, "Self-Attention (Repeated)");
+    // Removed: this used to call a decrypting debug helper (print()/print_expanded()) here.
+    // Server-role code must never decrypt, even for --verbose debugging; per-stage timing
+    // and ciphertext level are already captured above and in the ServerLog JSONL output.
+    log.stage_end("encoder2.self_attention", log_start, {{"level", std::to_string(output[0]->GetLevel())}});
     // Here the precision is 0.9868
 
     /*
@@ -234,6 +122,7 @@ Ctxt encoder2(vector<Ctxt> inputs) {
     output.push_back(copyFirst);
 
     start = high_resolution_clock::now();
+    log_start = log.stage_start("encoder2.self_output");
 
     Ptxt dense_w = controller.read_plain_input("./weights-sst2/layer1_selfoutput_weight.txt", output[0]->GetLevel());
     Ptxt dense_b = controller.read_plain_expanded_input("./weights-sst2/layer1_selfoutput_bias.txt", output[0]->GetLevel() + 1); // Bias only do 12 reps
@@ -261,11 +150,15 @@ Ctxt encoder2(vector<Ctxt> inputs) {
     output = controller.unwrapExpanded(wrappedOutput, inputs.size());
 
     if (verbose) cout << "The evaluation of Self-Output took: " << (duration_cast<milliseconds>( high_resolution_clock::now() - start)).count() / 1000.0 << " seconds." << endl;
-    if (verbose) controller.print_expanded(output[0], 0, 128, "Self-Output (Expanded)");
+    // Removed: this used to call a decrypting debug helper (print()/print_expanded()) here.
+    // Server-role code must never decrypt, even for --verbose debugging; per-stage timing
+    // and ciphertext level are already captured above and in the ServerLog JSONL output.
+    log.stage_end("encoder2.self_output", log_start, {{"level", std::to_string(output[0]->GetLevel())}});
     // Up to this point I get 0.9828 precision
 
 
     start = high_resolution_clock::now();
+    log_start = log.stage_start("encoder2.intermediate_output");
 
     double GELU_max_abs_value = 1 / 17.0;
 
@@ -290,7 +183,9 @@ Ctxt encoder2(vector<Ctxt> inputs) {
     vector<vector<Ctxt>> unwrappedLargeOutput = controller.unwrapRepeatedLarge(output, output.size());
 
     if (verbose) cout << "The evaluation of Intermediate took: " << (duration_cast<milliseconds>( high_resolution_clock::now() - start)).count() / 1000.0 << " seconds." << endl;
-    if (verbose) controller.print(unwrappedLargeOutput[0][0], 128, "Intermediate (Containers)");
+    // Removed: this used to call a decrypting debug helper (print()/print_expanded()) here.
+    // Server-role code must never decrypt, even for --verbose debugging; per-stage timing
+    // and ciphertext level are already captured above and in the ServerLog JSONL output.
 
     Ptxt output_w_1 = controller.read_plain_input("./weights-sst2/layer1_output_weight1.txt", output[0]->GetLevel());
     Ptxt output_w_2 = controller.read_plain_input("./weights-sst2/layer1_output_weight2.txt", output[0]->GetLevel());
@@ -315,28 +210,25 @@ Ctxt encoder2(vector<Ctxt> inputs) {
     output = controller.unwrapExpanded(wrappedOutput, inputs.size());
 
     if (verbose) cout << "The evaluation of Output took: " << (duration_cast<milliseconds>( high_resolution_clock::now() - start)).count() / 1000.0 << " seconds." << endl;
-    if (verbose) controller.print_expanded(output[0], 0, 128, "Output (Expanded)");
+    // Removed: this used to call a decrypting debug helper (print()/print_expanded()) here.
+    // Server-role code must never decrypt, even for --verbose debugging; per-stage timing
+    // and ciphertext level are already captured above and in the ServerLog JSONL output.
+    log.stage_end("encoder2.intermediate_output", log_start, {{"level", std::to_string(output[0]->GetLevel())}});
 
     return output[0];
 }
-vector<Ctxt> encoder1() {
+
+vector<Ctxt> encoder1(FHEController& controller, vector<Ctxt> inputs, bool verbose, utils::ServerLog& log) {
     auto start = high_resolution_clock::now();
+    auto log_start = log.stage_start("encoder1.self_attention");
 
-    int inputs_count = 0;
-
-    std::filesystem::path p1 { input_folder };
-
-    for (__attribute__((unused)) auto& p : std::filesystem::directory_iterator(p1))
-    {
-        ++inputs_count;
-    }
-
-    if (verbose) cout << inputs_count << " inputs found!" << endl << endl;
-
-    vector<Ctxt> inputs;
-    for (int i = 0; i < inputs_count; i++) {
-        inputs.push_back(controller.read_expanded_input(input_folder + "input_" + to_string(i) + ".txt"));
-    }
+    // `inputs` are the already-encrypted embedding ciphertexts handed to the server by the
+    // client (see client_main.cpp). Server-side code never reads the client's plaintext
+    // embedding files, and never performs the encryption itself -- that boundary used to be
+    // blurred: this function previously read `input_folder + "input_N.txt"` (client plaintext)
+    // directly off disk and encrypted it here, inside what is nominally the server's circuit.
+    if (verbose) cout << inputs.size() << " input ciphertexts received!" << endl << endl;
+    log.event("encoder1.inputs_received", {{"count", std::to_string(inputs.size())}});
 
     Ptxt query_w = controller.read_plain_input("./weights-sst2/layer0_attself_query_weight.txt");
     Ptxt query_b = controller.read_plain_repeated_input("./weights-sst2/layer0_attself_query_bias.txt");
@@ -381,10 +273,14 @@ vector<Ctxt> encoder1() {
     vector<Ctxt> output = controller.matmulRE(unwrapped_scores, V_wrapped, 128, 128);
 
     if (verbose) cout << "The evaluation of Self-Attention took: " << (duration_cast<milliseconds>( high_resolution_clock::now() - start)).count() / 1000.0 << " seconds." << endl;
-    if (verbose) controller.print(output[0], 128, "Self-Attention (Repeated)");
+    // Removed: this used to call a decrypting debug helper (print()/print_expanded()) here.
+    // Server-role code must never decrypt, even for --verbose debugging; per-stage timing
+    // and ciphertext level are already captured above and in the ServerLog JSONL output.
+    log.stage_end("encoder1.self_attention", log_start, {{"level", std::to_string(output[0]->GetLevel())}});
     // Up to this point I get precision 0.9934
 
     start = high_resolution_clock::now();
+    log_start = log.stage_start("encoder1.self_output");
 
     Ptxt dense_w = controller.read_plain_input("./weights-sst2/layer0_selfoutput_weight.txt", output[0]->GetLevel());
     Ptxt dense_b = controller.read_plain_expanded_input("./weights-sst2/layer0_selfoutput_bias.txt", output[0]->GetLevel() + 1); // Bias only do 12 reps
@@ -412,10 +308,14 @@ vector<Ctxt> encoder1() {
     output = controller.unwrapExpanded(wrappedOutput, inputs.size());
 
     if (verbose) cout << "The evaluation of Self-Output took: " << (duration_cast<milliseconds>( high_resolution_clock::now() - start)).count() / 1000.0 << " seconds." << endl;
-    if (verbose) controller.print_expanded(output[0], 0, 128, "Self-Output (Expanded)");
+    // Removed: this used to call a decrypting debug helper (print()/print_expanded()) here.
+    // Server-role code must never decrypt, even for --verbose debugging; per-stage timing
+    // and ciphertext level are already captured above and in the ServerLog JSONL output.
+    log.stage_end("encoder1.self_output", log_start, {{"level", std::to_string(output[0]->GetLevel())}});
     // Up to this point I get 0.9964 precision
 
     start = high_resolution_clock::now();
+    log_start = log.stage_start("encoder1.intermediate_output");
 
     double GELU_max_abs_value = 1 / 13.5;
 
@@ -440,7 +340,9 @@ vector<Ctxt> encoder1() {
     vector<vector<Ctxt>> unwrappedLargeOutput = controller.unwrapRepeatedLarge(output, inputs.size());
 
     if (verbose) cout << "The evaluation of Intermediate took: " << (duration_cast<milliseconds>( high_resolution_clock::now() - start)).count() / 1000.0 << " seconds." << endl;
-    if (verbose) controller.print(unwrappedLargeOutput[0][0], 128, "Intermediate (Containers)");
+    // Removed: this used to call a decrypting debug helper (print()/print_expanded()) here.
+    // Server-role code must never decrypt, even for --verbose debugging; per-stage timing
+    // and ciphertext level are already captured above and in the ServerLog JSONL output.
     // Up to this point I get 0.9957 precision
 
     Ptxt output_w_1 = controller.read_plain_input("./weights-sst2/layer0_output_weight1.txt", unwrappedLargeOutput[0][0]->GetLevel());
@@ -466,67 +368,69 @@ vector<Ctxt> encoder1() {
     output = controller.unwrapExpanded(wrappedOutput, inputs.size());
 
     if (verbose) cout << "The evaluation of Output took: " << (duration_cast<milliseconds>( high_resolution_clock::now() - start)).count() / 1000.0 << " seconds." << endl;
-    if (verbose) controller.print_expanded(output[0], 0, 128,"Output (Expanded)");
+    // Removed: this used to call a decrypting debug helper (print()/print_expanded()) here.
+    // Server-role code must never decrypt, even for --verbose debugging; per-stage timing
+    // and ciphertext level are already captured above and in the ServerLog JSONL output.
+    log.stage_end("encoder1.intermediate_output", log_start, {{"level", std::to_string(output[0]->GetLevel())}});
     // Up to this point I get 0.9965 precision
 
     return output;
 }
 
-void setup_environment(int argc, char *argv[]) {
-    string command;
+} // namespace
 
-    if (IDE_MODE) {
-        filesystem::remove_all("./src/tmp_embeddings");
-        run_command("mkdir ./src/tmp_embeddings");
+EvalResult run_server_circuit(FHEController& controller, vector<Ctxt> inputs, bool verbose, utils::ServerLog& log) {
+    EvalResult result;
 
-        input_folder = "./src/tmp_embeddings/";
+    log.event("request.received", {{"num_input_ciphertexts", std::to_string(inputs.size())}});
 
-        text = "This is a bad movie.";
-        cout << "\nCLIENT-SIDE\nTokenizing the following sentence: '" << text << "'" << endl;
-        command = "python3 ./src/python/ExtractEmbeddings.py \"" + text + "\"";
+    // Retry wrapper: the GPU bootstrap occasionally produces a catastrophically noisy
+    // ciphertext (observed via instrumenting OpenFHE's Decode() -- the identical circuit on
+    // the identical input decoded fine with ~+23 bits of precision on some runs and failed
+    // ("approximation error too high") with ~-4 bits on others, a ~27-bit swing). That points
+    // to an intermittent bug (most likely a race condition in FIDESlib's CUDA bootstrap
+    // kernels) rather than a per-input or per-parameter precision shortfall, so more
+    // circuit_depth headroom doesn't reliably fix it. Retrying the whole circuit re-rolls
+    // that kernel's execution and empirically succeeds within a couple of attempts.
+    //
+    // This retry count, and whether the process ultimately aborts (see main()'s
+    // lbcrypto::OpenFHEException rethrow after max_attempts), is itself server-observable
+    // metadata -- logged here so the security test harness can check whether it correlates
+    // with anything about the (chosen) plaintext input.
+    const int max_attempts = 3;
+    for (int attempt = 1; attempt <= max_attempts; attempt++) {
+        result.attempts = attempt;
+        auto attempt_start = log.stage_start("circuit.attempt");
+        try {
+            vector<Ctxt> encoder1output = encoder1(controller, inputs, verbose, log);
+            Ctxt encoder2output = encoder2(controller, encoder1output, verbose, log);
 
-        run_command(command);
+            Ctxt pooled = pooler(controller, encoder2output, verbose, log);
+            Ctxt classified = classifier(controller, pooled, verbose, log);
+            classified = controller.bootstrap(classified, 0, verbose); // Meta-BTS (numIterations=2) for extra precision before the final decode
 
-        verbose = true;
-        return;
-    }
-
-    if (argc < 2) {
-        cout << "This is FHEBERT-Tiny, an encrypted text classifier based on BERT-tiny. It relies on the CKKS homomorphic encryption scheme.\n\nUsage: ./FHEBERT-tiny <text_input> [OPTIONS]\n\nthe following [OPTIONS] are available:\n--verbose: activates verbose mode\n--secure: creates parameters with 128 bits of security. Use only if necessary, as it adds computational overhead \n\nExample:\n./FHEBERT-tiny \"I wonder if this text will be well classified!\" --verbose\n";
-        exit(0);
-    } else {
-        if (string(argv[1]) == "--generate_keys")
-        {
-            if (argc > 2 && string(argv[2]) == "--secure") {
-                security128bits = true;
-            }
-
-            p = Parameters::Generate;
-            return;
-        }
-
-        text = argv[1];
-
-        // Removing any previous embedding
-        filesystem::remove_all("./src/tmp_embeddings/");
-        run_command("mkdir ./src/tmp_embeddings");
-
-        input_folder = "./src/tmp_embeddings/";
-
-
-        for (int i = 2; i < argc; i++) {
-            if (string(argv[i]) == "--verbose") {
-                verbose = true;
-            }
-
-            if (string(argv[i]) == "--plain") {
-                plain = true;
+            result.output = classified;
+            result.succeeded = true;
+            log.stage_end("circuit.attempt", attempt_start,
+                           {{"attempt", std::to_string(attempt)}, {"outcome", "\"success\""}});
+            break;
+        } catch (const lbcrypto::OpenFHEException& e) {
+            result.last_error = e.what();
+            log.stage_end("circuit.attempt", attempt_start,
+                           {{"attempt", std::to_string(attempt)},
+                            {"outcome", "\"openfhe_exception\""},
+                            {"error", utils::ServerLog::json_string(e.what())}});
+            if (attempt == max_attempts) {
+                log.event("request.failed", {{"attempts", std::to_string(attempt)}});
+                throw;
             }
         }
-
-        if (verbose) cout << "\nCLIENT-SIDE\nTokenizing the following sentence: '" << text << "'" << endl;
-        command = "python3 ./src/python/ExtractEmbeddings.py \"" + text + "\"";
-        run_command(command);
     }
 
+    log.event("request.completed",
+              {{"attempts", std::to_string(result.attempts)}, {"output_level", std::to_string(result.output->GetLevel())}});
+
+    return result;
 }
+
+} // namespace server_circuit

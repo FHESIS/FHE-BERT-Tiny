@@ -49,6 +49,11 @@ find_package(GSL REQUIRED)
 include_directories(${GSL_INCLUDE_DIR})
 
 
-add_executable(FHE-BERT-Tiny src/main.cpp src/FHEController.cpp src/FHEController.h src/Utils.h)
+add_executable(FHE-BERT-Tiny
+        src/client_main.cpp
+        src/ServerCircuit.cpp src/ServerCircuit.h
+        src/ServerLog.h
+        src/FHEController.cpp src/FHEController.h
+        src/Utils.h)
 
 target_link_libraries(FHE-BERT-Tiny PRIVATE fideslib::fideslib CUDA::cudart)
