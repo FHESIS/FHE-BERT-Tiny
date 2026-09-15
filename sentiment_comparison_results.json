@@ -1442,5 +1442,1455 @@
       "returncode": 0,
       "stderr_tail": "Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 12556.83it/s]\n"
     }
+  },
+  {
+    "sentence": "This was a complete waste of my time and money",
+    "expected_sentiment": "negative",
+    "plaintext": {
+      "elapsed_sec": 9.368,
+      "logits": [
+        2.60950674,
+        -2.29074122
+      ],
+      "predicted_sentiment": "negative",
+      "pytorch_predicted_sentiment": "negative",
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 15427.51it/s]\n"
+    },
+    "encrypted": {
+      "elapsed_sec": 44.198,
+      "reported_circuit_time_sec": 5.0,
+      "logits": [
+        1.4936,
+        -1.2857
+      ],
+      "predicted_sentiment": "negative",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 13068.46it/s]\n"
+    }
+  },
+  {
+    "sentence": "The plot was boring and the acting felt wooden",
+    "expected_sentiment": "negative",
+    "plaintext": {
+      "elapsed_sec": 9.273,
+      "logits": [
+        2.65296024,
+        -2.40508683
+      ],
+      "predicted_sentiment": "negative",
+      "pytorch_predicted_sentiment": "negative",
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 15705.99it/s]\n"
+    },
+    "encrypted": {
+      "elapsed_sec": 46.849,
+      "reported_circuit_time_sec": 9.0,
+      "logits": [
+        1.9334,
+        -1.7904
+      ],
+      "predicted_sentiment": "negative",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 11659.98it/s]\n"
+    }
+  },
+  {
+    "sentence": "I hated every minute of this dull and pointless movie",
+    "expected_sentiment": "negative",
+    "plaintext": {
+      "elapsed_sec": 10.943,
+      "logits": [
+        2.49413705,
+        -2.14059368
+      ],
+      "predicted_sentiment": "negative",
+      "pytorch_predicted_sentiment": "negative",
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 13151.46it/s]\n"
+    },
+    "encrypted": {
+      "elapsed_sec": 49.769,
+      "reported_circuit_time_sec": 5.0,
+      "logits": [
+        1.6717,
+        -1.426
+      ],
+      "predicted_sentiment": "negative",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 13923.89it/s]\nClient-side decode failed on attempt 1/3 (/root/FIDESlib/deps/openfhe-src/src/pke/lib/encoding/ckkspackedencoding.cpp:l.453:Decode(): The decryption failed because the approximation error is too high. Check the parameters. ). Asking the server to recompute from scratch...\n"
+    }
+  },
+  {
+    "sentence": "A disappointing mess with no redeeming qualities",
+    "expected_sentiment": "negative",
+    "plaintext": {
+      "elapsed_sec": 9.252,
+      "logits": [
+        1.91643851,
+        -1.56313611
+      ],
+      "predicted_sentiment": "negative",
+      "pytorch_predicted_sentiment": "negative",
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 16029.19it/s]\n"
+    },
+    "encrypted": {
+      "elapsed_sec": 41.511,
+      "reported_circuit_time_sec": 5.0,
+      "logits": [
+        1.0767,
+        -0.8943
+      ],
+      "predicted_sentiment": "negative",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 12643.21it/s]\n"
+    }
+  },
+  {
+    "sentence": "The worst film I have seen in years, truly terrible",
+    "expected_sentiment": "negative",
+    "plaintext": {
+      "elapsed_sec": 9.297,
+      "logits": [
+        2.11563915,
+        -1.67558445
+      ],
+      "predicted_sentiment": "negative",
+      "pytorch_predicted_sentiment": "negative",
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 15378.19it/s]\n"
+    },
+    "encrypted": {
+      "elapsed_sec": 43.132,
+      "reported_circuit_time_sec": 6.0,
+      "logits": [
+        1.4512,
+        -1.1885
+      ],
+      "predicted_sentiment": "negative",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 12294.46it/s]\n"
+    }
+  },
+  {
+    "sentence": "This movie is a tedious, incoherent slog",
+    "expected_sentiment": "negative",
+    "plaintext": {
+      "elapsed_sec": 9.301,
+      "logits": [
+        2.46884426,
+        -2.21770148
+      ],
+      "predicted_sentiment": "negative",
+      "pytorch_predicted_sentiment": "negative",
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 15724.10it/s]\n"
+    },
+    "encrypted": {
+      "elapsed_sec": 48.16,
+      "reported_circuit_time_sec": 6.0,
+      "logits": [
+        1.6963,
+        -1.4954
+      ],
+      "predicted_sentiment": "negative",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 12260.37it/s]\nClient-side decode failed on attempt 1/3 (/root/FIDESlib/deps/openfhe-src/src/pke/lib/encoding/ckkspackedencoding.cpp:l.453:Decode(): The decryption failed because the approximation error is too high. Check the parameters. ). Asking the server to recompute from scratch...\n"
+    }
+  },
+  {
+    "sentence": "The dialogue was cringeworthy and the pacing glacial",
+    "expected_sentiment": "negative",
+    "plaintext": {
+      "elapsed_sec": 9.248,
+      "logits": [
+        1.99369672,
+        -1.69947884
+      ],
+      "predicted_sentiment": "negative",
+      "pytorch_predicted_sentiment": "negative",
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 16004.10it/s]\n"
+    },
+    "encrypted": {
+      "elapsed_sec": 41.929,
+      "reported_circuit_time_sec": 5.0,
+      "logits": [
+        1.3231,
+        -1.2238
+      ],
+      "predicted_sentiment": "negative",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 13293.61it/s]\n"
+    }
+  },
+  {
+    "sentence": "A lazy, uninspired sequel that adds nothing new",
+    "expected_sentiment": "negative",
+    "plaintext": {
+      "elapsed_sec": 9.183,
+      "logits": [
+        1.51945939,
+        -1.176493
+      ],
+      "predicted_sentiment": "negative",
+      "pytorch_predicted_sentiment": "negative",
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 16143.08it/s]\n"
+    },
+    "encrypted": {
+      "elapsed_sec": 42.461,
+      "reported_circuit_time_sec": 6.0,
+      "logits": [
+        0.6848,
+        -0.7395
+      ],
+      "predicted_sentiment": "negative",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 13108.25it/s]\n"
+    }
+  },
+  {
+    "sentence": "I walked out halfway through, it was that bad",
+    "expected_sentiment": "negative",
+    "plaintext": {
+      "elapsed_sec": 9.287,
+      "logits": [
+        2.44470485,
+        -2.10082529
+      ],
+      "predicted_sentiment": "negative",
+      "pytorch_predicted_sentiment": "negative",
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 15484.46it/s]\n"
+    },
+    "encrypted": {
+      "elapsed_sec": 42.161,
+      "reported_circuit_time_sec": 5.0,
+      "logits": [
+        1.3259,
+        -1.1386
+      ],
+      "predicted_sentiment": "negative",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 12261.29it/s]\n"
+    }
+  },
+  {
+    "sentence": "The special effects looked cheap and unconvincing",
+    "expected_sentiment": "negative",
+    "plaintext": {
+      "elapsed_sec": 9.203,
+      "logits": [
+        2.45049666,
+        -2.07949604
+      ],
+      "predicted_sentiment": "negative",
+      "pytorch_predicted_sentiment": "negative",
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 15332.07it/s]\n"
+    },
+    "encrypted": {
+      "elapsed_sec": 42.087,
+      "reported_circuit_time_sec": 5.0,
+      "logits": [
+        1.7484,
+        -1.4595
+      ],
+      "predicted_sentiment": "negative",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 12849.79it/s]\n"
+    }
+  },
+  {
+    "sentence": "A forgettable film with a plot full of holes",
+    "expected_sentiment": "negative",
+    "plaintext": {
+      "elapsed_sec": 9.194,
+      "logits": [
+        2.25409607,
+        -1.97300623
+      ],
+      "predicted_sentiment": "negative",
+      "pytorch_predicted_sentiment": "negative",
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 15766.54it/s]\n"
+    },
+    "encrypted": {
+      "elapsed_sec": 42.317,
+      "reported_circuit_time_sec": 5.0,
+      "logits": [
+        1.507,
+        -1.3695
+      ],
+      "predicted_sentiment": "negative",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 14190.84it/s]\n"
+    }
+  },
+  {
+    "sentence": "The lead performance was flat and utterly unconvincing",
+    "expected_sentiment": "negative",
+    "plaintext": {
+      "elapsed_sec": 9.21,
+      "logits": [
+        1.79350144,
+        -1.43760607
+      ],
+      "predicted_sentiment": "negative",
+      "pytorch_predicted_sentiment": "negative",
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 15641.41it/s]\n"
+    },
+    "encrypted": {
+      "elapsed_sec": 46.46,
+      "reported_circuit_time_sec": 6.0,
+      "logits": [
+        1.0146,
+        -0.8716
+      ],
+      "predicted_sentiment": "negative",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 13133.51it/s]\nClient-side decode failed on attempt 1/3 (/root/FIDESlib/deps/openfhe-src/src/pke/lib/encoding/ckkspackedencoding.cpp:l.453:Decode(): The decryption failed because the approximation error is too high. Check the parameters. ). Asking the server to recompute from scratch...\n"
+    }
+  },
+  {
+    "sentence": "This film insults the intelligence of its audience",
+    "expected_sentiment": "negative",
+    "plaintext": {
+      "elapsed_sec": 9.282,
+      "logits": [
+        2.01212309,
+        -1.89319964
+      ],
+      "predicted_sentiment": "negative",
+      "pytorch_predicted_sentiment": "negative",
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 15716.55it/s]\n"
+    },
+    "encrypted": {
+      "elapsed_sec": 40.849,
+      "reported_circuit_time_sec": 5.0,
+      "logits": [
+        1.5828,
+        -1.398
+      ],
+      "predicted_sentiment": "negative",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 13505.44it/s]\n"
+    }
+  },
+  {
+    "sentence": "A bloated, self-indulgent film that never earns its runtime",
+    "expected_sentiment": "negative",
+    "plaintext": {
+      "elapsed_sec": 9.249,
+      "logits": [
+        1.26815698,
+        -0.88308623
+      ],
+      "predicted_sentiment": "negative",
+      "pytorch_predicted_sentiment": "negative",
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 14865.31it/s]\n"
+    },
+    "encrypted": {
+      "elapsed_sec": 54.709,
+      "reported_circuit_time_sec": 8.0,
+      "logits": [
+        1.3392,
+        -1.0944
+      ],
+      "predicted_sentiment": "negative",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 13360.93it/s]\n"
+    }
+  },
+  {
+    "sentence": "The jokes fell flat and the story made no sense",
+    "expected_sentiment": "negative",
+    "plaintext": {
+      "elapsed_sec": 9.507,
+      "logits": [
+        2.49123487,
+        -2.12810681
+      ],
+      "predicted_sentiment": "negative",
+      "pytorch_predicted_sentiment": "negative",
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 15326.32it/s]\n"
+    },
+    "encrypted": {
+      "elapsed_sec": 45.962,
+      "reported_circuit_time_sec": 5.0,
+      "logits": [
+        1.5161,
+        -1.3139
+      ],
+      "predicted_sentiment": "negative",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 11490.44it/s]\n"
+    }
+  },
+  {
+    "sentence": "An empty, soulless cash grab of a sequel",
+    "expected_sentiment": "negative",
+    "plaintext": {
+      "elapsed_sec": 9.396,
+      "logits": [
+        2.40723628,
+        -2.06684611
+      ],
+      "predicted_sentiment": "negative",
+      "pytorch_predicted_sentiment": "negative",
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 15337.82it/s]\n"
+    },
+    "encrypted": {
+      "elapsed_sec": 48.342,
+      "reported_circuit_time_sec": 5.0,
+      "logits": [
+        1.353,
+        -1.2349
+      ],
+      "predicted_sentiment": "negative",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 10043.46it/s]\nClient-side decode failed on attempt 1/3 (/root/FIDESlib/deps/openfhe-src/src/pke/lib/encoding/ckkspackedencoding.cpp:l.453:Decode(): The decryption failed because the approximation error is too high. Check the parameters. ). Asking the server to recompute from scratch...\n"
+    }
+  },
+  {
+    "sentence": "This is easily the worst movie of the year",
+    "expected_sentiment": "negative",
+    "plaintext": {
+      "elapsed_sec": 9.218,
+      "logits": [
+        2.18572276,
+        -1.77002024
+      ],
+      "predicted_sentiment": "negative",
+      "pytorch_predicted_sentiment": "negative",
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 15786.32it/s]\n"
+    },
+    "encrypted": {
+      "elapsed_sec": 49.156,
+      "reported_circuit_time_sec": 5.0,
+      "logits": [
+        1.3266,
+        -1.0661
+      ],
+      "predicted_sentiment": "negative",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 12567.44it/s]\nClient-side decode failed on attempt 1/3 (/root/FIDESlib/deps/openfhe-src/src/pke/lib/encoding/ckkspackedencoding.cpp:l.453:Decode(): The decryption failed because the approximation error is too high. Check the parameters. ). Asking the server to recompute from scratch...\n"
+    }
+  },
+  {
+    "sentence": "The editing was choppy and the story dragged endlessly",
+    "expected_sentiment": "negative",
+    "plaintext": {
+      "elapsed_sec": 9.329,
+      "logits": [
+        2.6185016,
+        -2.36643495
+      ],
+      "predicted_sentiment": "negative",
+      "pytorch_predicted_sentiment": "negative",
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 15434.79it/s]\n"
+    },
+    "encrypted": {
+      "elapsed_sec": 43.188,
+      "reported_circuit_time_sec": 6.0,
+      "logits": [
+        1.8609,
+        -1.6346
+      ],
+      "predicted_sentiment": "negative",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 11985.48it/s]\n"
+    }
+  },
+  {
+    "sentence": "A painfully dull film with nothing to say",
+    "expected_sentiment": "negative",
+    "plaintext": {
+      "elapsed_sec": 9.339,
+      "logits": [
+        2.31627631,
+        -1.96170185
+      ],
+      "predicted_sentiment": "negative",
+      "pytorch_predicted_sentiment": "negative",
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 15940.15it/s]\n"
+    },
+    "encrypted": {
+      "elapsed_sec": 41.582,
+      "reported_circuit_time_sec": 5.0,
+      "logits": [
+        1.4387,
+        -1.1708
+      ],
+      "predicted_sentiment": "negative",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 12302.79it/s]\n"
+    }
+  },
+  {
+    "sentence": "The characters were flat and impossible to care about",
+    "expected_sentiment": "negative",
+    "plaintext": {
+      "elapsed_sec": 9.252,
+      "logits": [
+        2.14415137,
+        -1.77776762
+      ],
+      "predicted_sentiment": "negative",
+      "pytorch_predicted_sentiment": "negative",
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 14790.04it/s]\n"
+    },
+    "encrypted": {
+      "elapsed_sec": 47.589,
+      "reported_circuit_time_sec": 5.0,
+      "logits": [
+        1.375,
+        -1.1592
+      ],
+      "predicted_sentiment": "negative",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 12697.19it/s]\nClient-side decode failed on attempt 1/3 (/root/FIDESlib/deps/openfhe-src/src/pke/lib/encoding/ckkspackedencoding.cpp:l.453:Decode(): The decryption failed because the approximation error is too high. Check the parameters. ). Asking the server to recompute from scratch...\n"
+    }
+  },
+  {
+    "sentence": "A confused mess that never finds its footing",
+    "expected_sentiment": "negative",
+    "plaintext": {
+      "elapsed_sec": 9.324,
+      "logits": [
+        1.84536693,
+        -1.55888563
+      ],
+      "predicted_sentiment": "negative",
+      "pytorch_predicted_sentiment": "negative",
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 15856.71it/s]\n"
+    },
+    "encrypted": {
+      "elapsed_sec": 45.996,
+      "reported_circuit_time_sec": 5.0,
+      "logits": [
+        1.2055,
+        -0.9595
+      ],
+      "predicted_sentiment": "negative",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 13052.81it/s]\nClient-side decode failed on attempt 1/3 (/root/FIDESlib/deps/openfhe-src/src/pke/lib/encoding/ckkspackedencoding.cpp:l.453:Decode(): The decryption failed because the approximation error is too high. Check the parameters. ). Asking the server to recompute from scratch...\n"
+    }
+  },
+  {
+    "sentence": "The score was intrusive and the script painfully cliched",
+    "expected_sentiment": "negative",
+    "plaintext": {
+      "elapsed_sec": 9.324,
+      "logits": [
+        1.99959542,
+        -1.67715425
+      ],
+      "predicted_sentiment": "negative",
+      "pytorch_predicted_sentiment": "negative",
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 15935.49it/s]\n"
+    },
+    "encrypted": {
+      "elapsed_sec": 45.461,
+      "reported_circuit_time_sec": 6.0,
+      "logits": [
+        1.2282,
+        -1.2139
+      ],
+      "predicted_sentiment": "negative",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 11610.32it/s]\n"
+    }
+  },
+  {
+    "sentence": "I regret spending an evening on this dreadful movie",
+    "expected_sentiment": "negative",
+    "plaintext": {
+      "elapsed_sec": 9.281,
+      "logits": [
+        1.56414967,
+        -1.15210955
+      ],
+      "predicted_sentiment": "negative",
+      "pytorch_predicted_sentiment": "negative",
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 15452.28it/s]\n"
+    },
+    "encrypted": {
+      "elapsed_sec": 43.562,
+      "reported_circuit_time_sec": 5.0,
+      "logits": [
+        1.1659,
+        -0.9879
+      ],
+      "predicted_sentiment": "negative",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 13785.43it/s]\n"
+    }
+  },
+  {
+    "sentence": "A shallow, forgettable film with no depth whatsoever",
+    "expected_sentiment": "negative",
+    "plaintext": {
+      "elapsed_sec": 9.575,
+      "logits": [
+        2.36536667,
+        -2.05519448
+      ],
+      "predicted_sentiment": "negative",
+      "pytorch_predicted_sentiment": "negative",
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 14580.43it/s]\n"
+    },
+    "encrypted": {
+      "elapsed_sec": 44.81,
+      "reported_circuit_time_sec": 5.0,
+      "logits": [
+        1.4766,
+        -1.2389
+      ],
+      "predicted_sentiment": "negative",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 10752.50it/s]\n"
+    }
+  },
+  {
+    "sentence": "The pacing kills any tension the story might have had",
+    "expected_sentiment": "negative",
+    "plaintext": {
+      "elapsed_sec": 9.457,
+      "logits": [
+        2.16809251,
+        -1.88534634
+      ],
+      "predicted_sentiment": "negative",
+      "pytorch_predicted_sentiment": "negative",
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 15267.67it/s]\n"
+    },
+    "encrypted": {
+      "elapsed_sec": 42.429,
+      "reported_circuit_time_sec": 5.0,
+      "logits": [
+        1.6357,
+        -1.3629
+      ],
+      "predicted_sentiment": "negative",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 13504.32it/s]\n"
+    }
+  },
+  {
+    "sentence": "This sequel betrays everything that made the original good",
+    "expected_sentiment": "negative",
+    "plaintext": {
+      "elapsed_sec": 9.274,
+      "logits": [
+        -0.54725293,
+        0.78569589
+      ],
+      "predicted_sentiment": "positive",
+      "pytorch_predicted_sentiment": "positive",
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 15468.36it/s]\n"
+    },
+    "encrypted": {
+      "elapsed_sec": 46.026,
+      "reported_circuit_time_sec": 5.0,
+      "logits": [
+        -0.1776,
+        0.14
+      ],
+      "predicted_sentiment": "positive",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 12651.03it/s]\nClient-side decode failed on attempt 1/3 (/root/FIDESlib/deps/openfhe-src/src/pke/lib/encoding/ckkspackedencoding.cpp:l.453:Decode(): The decryption failed because the approximation error is too high. Check the parameters. ). Asking the server to recompute from scratch...\n"
+    }
+  },
+  {
+    "sentence": "The food arrived cold and tasted terrible",
+    "expected_sentiment": "negative",
+    "plaintext": {
+      "elapsed_sec": 9.416,
+      "logits": [
+        2.08563886,
+        -1.61968659
+      ],
+      "predicted_sentiment": "negative",
+      "pytorch_predicted_sentiment": "negative",
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 15339.26it/s]\n"
+    },
+    "encrypted": {
+      "elapsed_sec": 42.629,
+      "reported_circuit_time_sec": 4.0,
+      "logits": [
+        1.3917,
+        -1.1184
+      ],
+      "predicted_sentiment": "negative",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 12549.13it/s]\n"
+    }
+  },
+  {
+    "sentence": "Customer service was rude and unhelpful throughout",
+    "expected_sentiment": "negative",
+    "plaintext": {
+      "elapsed_sec": 9.342,
+      "logits": [
+        0.29915771,
+        -0.03143636
+      ],
+      "predicted_sentiment": "negative",
+      "pytorch_predicted_sentiment": "negative",
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 15666.88it/s]\n"
+    },
+    "encrypted": {
+      "elapsed_sec": 44.497,
+      "reported_circuit_time_sec": 5.0,
+      "logits": [
+        0.4585,
+        -0.4802
+      ],
+      "predicted_sentiment": "negative",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 10851.66it/s]\n"
+    }
+  },
+  {
+    "sentence": "This phone constantly freezes and the battery is awful",
+    "expected_sentiment": "negative",
+    "plaintext": {
+      "elapsed_sec": 9.767,
+      "logits": [
+        2.37854746,
+        -2.15212579
+      ],
+      "predicted_sentiment": "negative",
+      "pytorch_predicted_sentiment": "negative",
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 15058.26it/s]\n"
+    },
+    "encrypted": {
+      "elapsed_sec": 44.421,
+      "reported_circuit_time_sec": 6.0,
+      "logits": [
+        1.4385,
+        -1.3102
+      ],
+      "predicted_sentiment": "negative",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 12562.62it/s]\n"
+    }
+  },
+  {
+    "sentence": "The hotel room was filthy and the staff were dismissive",
+    "expected_sentiment": "negative",
+    "plaintext": {
+      "elapsed_sec": 9.402,
+      "logits": [
+        2.52004943,
+        -2.30038794
+      ],
+      "predicted_sentiment": "negative",
+      "pytorch_predicted_sentiment": "negative",
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 15500.60it/s]\n"
+    },
+    "encrypted": {
+      "elapsed_sec": 44.209,
+      "reported_circuit_time_sec": 5.0,
+      "logits": [
+        2.0558,
+        -1.868
+      ],
+      "predicted_sentiment": "negative",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 12745.66it/s]\n"
+    }
+  },
+  {
+    "sentence": "Overpriced and poorly made, do not waste your money",
+    "expected_sentiment": "negative",
+    "plaintext": {
+      "elapsed_sec": 9.277,
+      "logits": [
+        2.52989691,
+        -2.30113937
+      ],
+      "predicted_sentiment": "negative",
+      "pytorch_predicted_sentiment": "negative",
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 15421.69it/s]\n"
+    },
+    "encrypted": {
+      "elapsed_sec": 43.527,
+      "reported_circuit_time_sec": 6.0,
+      "logits": [
+        1.8275,
+        -1.6037
+      ],
+      "predicted_sentiment": "negative",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 11748.75it/s]\n"
+    }
+  },
+  {
+    "sentence": "The book was tedious and I never finished it",
+    "expected_sentiment": "negative",
+    "plaintext": {
+      "elapsed_sec": 9.211,
+      "logits": [
+        1.74801112,
+        -1.46298874
+      ],
+      "predicted_sentiment": "negative",
+      "pytorch_predicted_sentiment": "negative",
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 15407.16it/s]\n"
+    },
+    "encrypted": {
+      "elapsed_sec": 46.259,
+      "reported_circuit_time_sec": 6.0,
+      "logits": [
+        1.4169,
+        -1.1573
+      ],
+      "predicted_sentiment": "negative",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 13049.69it/s]\nClient-side decode failed on attempt 1/3 (/root/FIDESlib/deps/openfhe-src/src/pke/lib/encoding/ckkspackedencoding.cpp:l.453:Decode(): The decryption failed because the approximation error is too high. Check the parameters. ). Asking the server to recompute from scratch...\n"
+    }
+  },
+  {
+    "sentence": "A joyless comedy that never once made me laugh",
+    "expected_sentiment": "negative",
+    "plaintext": {
+      "elapsed_sec": 9.392,
+      "logits": [
+        0.80097035,
+        -0.47238876
+      ],
+      "predicted_sentiment": "negative",
+      "pytorch_predicted_sentiment": "negative",
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 15290.51it/s]\n"
+    },
+    "encrypted": {
+      "elapsed_sec": 44.408,
+      "reported_circuit_time_sec": 6.0,
+      "logits": [
+        0.9943,
+        -0.8093
+      ],
+      "predicted_sentiment": "negative",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 14452.89it/s]\n"
+    }
+  },
+  {
+    "sentence": "The concert was a disorganized, disappointing mess",
+    "expected_sentiment": "negative",
+    "plaintext": {
+      "elapsed_sec": 9.557,
+      "logits": [
+        2.50424004,
+        -2.19768083
+      ],
+      "predicted_sentiment": "negative",
+      "pytorch_predicted_sentiment": "negative",
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 15356.54it/s]\n"
+    },
+    "encrypted": {
+      "elapsed_sec": 44.281,
+      "reported_circuit_time_sec": 6.0,
+      "logits": [
+        1.8989,
+        -1.655
+      ],
+      "predicted_sentiment": "negative",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 11868.95it/s]\n"
+    }
+  },
+  {
+    "sentence": "This laptop overheats constantly and the fan is deafening",
+    "expected_sentiment": "negative",
+    "plaintext": {
+      "elapsed_sec": 9.196,
+      "logits": [
+        0.94800651,
+        -0.54891018
+      ],
+      "predicted_sentiment": "negative",
+      "pytorch_predicted_sentiment": "negative",
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 15796.99it/s]\n"
+    },
+    "encrypted": {
+      "elapsed_sec": 45.707,
+      "reported_circuit_time_sec": 6.0,
+      "logits": [
+        0.6162,
+        -0.6094
+      ],
+      "predicted_sentiment": "negative",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 12778.52it/s]\n"
+    }
+  },
+  {
+    "sentence": "The weather ruined what could have been a nice trip",
+    "expected_sentiment": "negative",
+    "plaintext": {
+      "elapsed_sec": 9.18,
+      "logits": [
+        2.15084928,
+        -1.80327263
+      ],
+      "predicted_sentiment": "negative",
+      "pytorch_predicted_sentiment": "negative",
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 15952.59it/s]\n"
+    },
+    "encrypted": {
+      "elapsed_sec": 44.882,
+      "reported_circuit_time_sec": 5.0,
+      "logits": [
+        0.7327,
+        -0.7823
+      ],
+      "predicted_sentiment": "negative",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 10304.12it/s]\n"
+    }
+  },
+  {
+    "sentence": "Our vacation was plagued with delays and bad service",
+    "expected_sentiment": "negative",
+    "plaintext": {
+      "elapsed_sec": 9.248,
+      "logits": [
+        1.94082185,
+        -1.56169851
+      ],
+      "predicted_sentiment": "negative",
+      "pytorch_predicted_sentiment": "negative",
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 15826.03it/s]\n"
+    },
+    "encrypted": {
+      "elapsed_sec": 51.841,
+      "reported_circuit_time_sec": 5.0,
+      "logits": [
+        1.3345,
+        -1.1115
+      ],
+      "predicted_sentiment": "negative",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 13403.63it/s]\nClient-side decode failed on attempt 1/3 (/root/FIDESlib/deps/openfhe-src/src/pke/lib/encoding/ckkspackedencoding.cpp:l.453:Decode(): The decryption failed because the approximation error is too high. Check the parameters. ). Asking the server to recompute from scratch...\nClient-side decode failed on attempt 2/3 (/root/FIDESlib/deps/openfhe-src/src/pke/lib/encoding/ckkspackedencoding.cpp:l.453:Decode(): The decryption failed because the approximation error is too high. Check the parameters. ). Asking the server to recompute from scratch...\n"
+    }
+  },
+  {
+    "sentence": "The coffee here tastes burnt and watered down",
+    "expected_sentiment": "negative",
+    "plaintext": {
+      "elapsed_sec": 9.265,
+      "logits": [
+        2.50502254,
+        -2.24003772
+      ],
+      "predicted_sentiment": "negative",
+      "pytorch_predicted_sentiment": "negative",
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 15234.97it/s]\n"
+    },
+    "encrypted": {
+      "elapsed_sec": 41.452,
+      "reported_circuit_time_sec": 5.0,
+      "logits": [
+        1.8426,
+        -1.5523
+      ],
+      "predicted_sentiment": "negative",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 12081.97it/s]\n"
+    }
+  },
+  {
+    "sentence": "I am thoroughly disappointed with the quality of this product",
+    "expected_sentiment": "negative",
+    "plaintext": {
+      "elapsed_sec": 9.281,
+      "logits": [
+        -0.56935701,
+        0.74592366
+      ],
+      "predicted_sentiment": "positive",
+      "pytorch_predicted_sentiment": "positive",
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 15909.15it/s]\n"
+    },
+    "encrypted": {
+      "elapsed_sec": 44.677,
+      "reported_circuit_time_sec": 5.0,
+      "logits": [
+        -0.5352,
+        0.4055
+      ],
+      "predicted_sentiment": "positive",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 12324.11it/s]\n"
+    }
+  },
+  {
+    "sentence": "The team played sloppily and lost embarrassingly",
+    "expected_sentiment": "negative",
+    "plaintext": {
+      "elapsed_sec": 9.297,
+      "logits": [
+        2.19919119,
+        -1.86784462
+      ],
+      "predicted_sentiment": "negative",
+      "pytorch_predicted_sentiment": "negative",
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 15043.03it/s]\n"
+    },
+    "encrypted": {
+      "elapsed_sec": 47.098,
+      "reported_circuit_time_sec": 6.0,
+      "logits": [
+        1.324,
+        -1.2162
+      ],
+      "predicted_sentiment": "negative",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 13069.50it/s]\nClient-side decode failed on attempt 1/3 (/root/FIDESlib/deps/openfhe-src/src/pke/lib/encoding/ckkspackedencoding.cpp:l.453:Decode(): The decryption failed because the approximation error is too high. Check the parameters. ). Asking the server to recompute from scratch...\n"
+    }
+  },
+  {
+    "sentence": "This app crashes constantly and loses my data",
+    "expected_sentiment": "negative",
+    "plaintext": {
+      "elapsed_sec": 9.233,
+      "logits": [
+        2.25552808,
+        -2.03040704
+      ],
+      "predicted_sentiment": "negative",
+      "pytorch_predicted_sentiment": "negative",
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 15261.98it/s]\n"
+    },
+    "encrypted": {
+      "elapsed_sec": 46.716,
+      "reported_circuit_time_sec": 5.0,
+      "logits": [
+        1.5721,
+        -1.3461
+      ],
+      "predicted_sentiment": "negative",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 10260.17it/s]\nClient-side decode failed on attempt 1/3 (/root/FIDESlib/deps/openfhe-src/src/pke/lib/encoding/ckkspackedencoding.cpp:l.453:Decode(): The decryption failed because the approximation error is too high. Check the parameters. ). Asking the server to recompute from scratch...\n"
+    }
+  },
+  {
+    "sentence": "The garden was overgrown and poorly maintained",
+    "expected_sentiment": "negative",
+    "plaintext": {
+      "elapsed_sec": 9.184,
+      "logits": [
+        2.47611508,
+        -2.29478283
+      ],
+      "predicted_sentiment": "negative",
+      "pytorch_predicted_sentiment": "negative",
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 15893.69it/s]\n"
+    },
+    "encrypted": {
+      "elapsed_sec": 41.687,
+      "reported_circuit_time_sec": 4.0,
+      "logits": [
+        1.7312,
+        -1.4769
+      ],
+      "predicted_sentiment": "negative",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 8963.66it/s]\n"
+    }
+  },
+  {
+    "sentence": "Their new album is a tired, uninspired retread",
+    "expected_sentiment": "negative",
+    "plaintext": {
+      "elapsed_sec": 9.334,
+      "logits": [
+        2.19058608,
+        -1.90493953
+      ],
+      "predicted_sentiment": "negative",
+      "pytorch_predicted_sentiment": "negative",
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 15415.88it/s]\n"
+    },
+    "encrypted": {
+      "elapsed_sec": 56.363,
+      "reported_circuit_time_sec": 7.0,
+      "logits": [
+        1.3295,
+        -1.2223
+      ],
+      "predicted_sentiment": "negative",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 11970.57it/s]\nClient-side decode failed on attempt 1/3 (/root/FIDESlib/deps/openfhe-src/src/pke/lib/encoding/ckkspackedencoding.cpp:l.453:Decode(): The decryption failed because the approximation error is too high. Check the parameters. ). Asking the server to recompute from scratch...\nClient-side decode failed on attempt 2/3 (/root/FIDESlib/deps/openfhe-src/src/pke/lib/encoding/ckkspackedencoding.cpp:l.453:Decode(): The decryption failed because the approximation error is too high. Check the parameters. ). Asking the server to recompute from scratch...\n"
+    }
+  },
+  {
+    "sentence": "This is not a good film, it is a genuine chore to watch",
+    "expected_sentiment": "negative",
+    "plaintext": {
+      "elapsed_sec": 9.813,
+      "logits": [
+        0.49269394,
+        -0.14535159
+      ],
+      "predicted_sentiment": "negative",
+      "pytorch_predicted_sentiment": "positive",
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 14671.98it/s]\n"
+    },
+    "encrypted": {
+      "elapsed_sec": 53.731,
+      "reported_circuit_time_sec": 8.0,
+      "logits": [
+        0.2696,
+        -0.345
+      ],
+      "predicted_sentiment": "negative",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 12721.87it/s]\n"
+    }
+  },
+  {
+    "sentence": "I never expected to dislike this movie as much as I did",
+    "expected_sentiment": "negative",
+    "plaintext": {
+      "elapsed_sec": 9.889,
+      "logits": [
+        1.27589367,
+        -0.91304317
+      ],
+      "predicted_sentiment": "negative",
+      "pytorch_predicted_sentiment": "negative",
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 15273.38it/s]\n"
+    },
+    "encrypted": {
+      "elapsed_sec": 55.809,
+      "reported_circuit_time_sec": 7.0,
+      "logits": [
+        1.0255,
+        -0.7741
+      ],
+      "predicted_sentiment": "negative",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 12384.76it/s]\n"
+    }
+  },
+  {
+    "sentence": "Despite a promising start, the film collapses completely",
+    "expected_sentiment": "negative",
+    "plaintext": {
+      "elapsed_sec": 9.551,
+      "logits": [
+        2.23327203,
+        -1.88485929
+      ],
+      "predicted_sentiment": "negative",
+      "pytorch_predicted_sentiment": "negative",
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 15154.52it/s]\n"
+    },
+    "encrypted": {
+      "elapsed_sec": 48.647,
+      "reported_circuit_time_sec": 6.0,
+      "logits": [
+        1.4307,
+        -1.1377
+      ],
+      "predicted_sentiment": "negative",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 13224.82it/s]\n"
+    }
+  },
+  {
+    "sentence": "It is hard to sit through this movie without checking the time",
+    "expected_sentiment": "negative",
+    "plaintext": {
+      "elapsed_sec": 9.583,
+      "logits": [
+        1.60825442,
+        -1.27727719
+      ],
+      "predicted_sentiment": "negative",
+      "pytorch_predicted_sentiment": "negative",
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 14847.77it/s]\n"
+    },
+    "encrypted": {
+      "elapsed_sec": 50.352,
+      "reported_circuit_time_sec": 6.0,
+      "logits": [
+        1.2377,
+        -1.0093
+      ],
+      "predicted_sentiment": "negative",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 12823.60it/s]\n"
+    }
+  },
+  {
+    "sentence": "A big-budget film with a surprisingly hollow core",
+    "expected_sentiment": "negative",
+    "plaintext": {
+      "elapsed_sec": 9.524,
+      "logits": [
+        1.62228183,
+        -1.32052964
+      ],
+      "predicted_sentiment": "negative",
+      "pytorch_predicted_sentiment": "negative",
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 14815.49it/s]\n"
+    },
+    "encrypted": {
+      "elapsed_sec": 49.215,
+      "reported_circuit_time_sec": 5.0,
+      "logits": [
+        0.4078,
+        -0.6003
+      ],
+      "predicted_sentiment": "negative",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 13265.58it/s]\nClient-side decode failed on attempt 1/3 (/root/FIDESlib/deps/openfhe-src/src/pke/lib/encoding/ckkspackedencoding.cpp:l.453:Decode(): The decryption failed because the approximation error is too high. Check the parameters. ). Asking the server to recompute from scratch...\n"
+    }
+  },
+  {
+    "sentence": "The sequel manages to be worse than the original in every way",
+    "expected_sentiment": "negative",
+    "plaintext": {
+      "elapsed_sec": 9.35,
+      "logits": [
+        1.97866098,
+        -1.60651737
+      ],
+      "predicted_sentiment": "negative",
+      "pytorch_predicted_sentiment": "negative",
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 15332.07it/s]\n"
+    },
+    "encrypted": {
+      "elapsed_sec": 44.037,
+      "reported_circuit_time_sec": 6.0,
+      "logits": [
+        0.9647,
+        -0.9145
+      ],
+      "predicted_sentiment": "negative",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 13811.03it/s]\n"
+    }
+  },
+  {
+    "sentence": "Not worth the wait, this fails on almost every level",
+    "expected_sentiment": "negative",
+    "plaintext": {
+      "elapsed_sec": 9.365,
+      "logits": [
+        1.67427471,
+        -1.4363712
+      ],
+      "predicted_sentiment": "negative",
+      "pytorch_predicted_sentiment": "negative",
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 15461.04it/s]\n"
+    },
+    "encrypted": {
+      "elapsed_sec": 55.234,
+      "reported_circuit_time_sec": 6.0,
+      "logits": [
+        1.0294,
+        -0.8576
+      ],
+      "predicted_sentiment": "negative",
+      "retries": 0,
+      "timed_out": false,
+      "returncode": 0,
+      "stderr_tail": "Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n\nLoading weights:   0%|          | 0/39 [00:00<?, ?it/s]\nLoading weights: 100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 39/39 [00:00<00:00, 12166.45it/s]\nClient-side decode failed on attempt 1/3 (/root/FIDESlib/deps/openfhe-src/src/pke/lib/encoding/ckkspackedencoding.cpp:l.453:Decode(): The decryption failed because the approximation error is too high. Check the parameters. ). Asking the server to recompute from scratch...\nClient-side decode failed on attempt 2/3 (/root/FIDESlib/deps/openfhe-src/src/pke/lib/encoding/ckkspackedencoding.cpp:l.453:Decode(): The decryption failed because the approximation error is too high. Check the parameters. ). Asking the server to recompute from scratch...\n"
+    }
   }
 ]
