@@ -6,10 +6,13 @@ import numpy as np
 from transformers import logging
 logging.set_verbosity_error()
 
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
 tokenizer = AutoTokenizer.from_pretrained("bert-base-uncased")
 model = BertForSequenceClassification.from_pretrained("prajjwal1/bert-tiny")
 trained = torch.load('./notebooks/SST-2-BERT-tiny.bin', map_location=torch.device('cpu'))
 model.load_state_dict(trained, strict=False)
+model.to(device)
 model.eval()
 
 text = sys.argv[1]
@@ -18,9 +21,10 @@ text = "[CLS] " + text + " [SEP]"
 tokenized = tokenizer(text)
 tokenized_text = tokenizer.tokenize(text)
 indexed_tokens = tokenizer.convert_tokens_to_ids(tokenized_text)
-tokens_tensor = torch.tensor([indexed_tokens])
+tokens_tensor = torch.tensor([indexed_tokens], device=device)
+attention_mask = torch.tensor([[1] * len(tokenized_text)], device=device)
 
-x = model.bert.embeddings(tokens_tensor, torch.tensor([[1] * len(tokenized_text)]))
+x = model.bert.embeddings(tokens_tensor, attention_mask)
 
 key = model.bert.encoder.layer[0].attention.self.key.weight.clone().detach().double().transpose(0, 1)
 query = model.bert.encoder.layer[0].attention.self.query.weight.clone().detach().double().transpose(0, 1)
@@ -188,7 +192,7 @@ densed_pooler = torch.tanh(torch.matmul(fin7_whole.double(), model.bert.pooler.d
 approx = densed_pooler[0][0].detach()
 
 output = torch.matmul(approx, model.classifier.weight.transpose(0, 1).double()) + model.classifier.bias.double()
-output_real = model(tokens_tensor, torch.tensor([[1] * len(tokenized_text)])).logits[0].detach()
+output_real = model(tokens_tensor, attention_mask).logits[0].detach()
 
 if output[0] > output[1]:
     print("Plain-Precomputed: negative sentiment!")
@@ -201,4 +205,4 @@ if output_real[0] > output_real[1]:
 else:
     print("Plain-PyTorch    : positive sentiment!")
 
-print("Output logits Plain-Precomputed: " + str(output.detach().numpy()))
+print("Output logits Plain-Precomputed: " + str(output.detach().cpu().numpy()))
