@@ -18,20 +18,16 @@ set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS ON)
 
-### FIDESlib provides GPU-accelerated CKKS primitives; FHEController now runs the whole circuit
-### through its api/ wrapper instead of talking to OpenFHE directly.
-find_package(fideslib REQUIRED CONFIG)
-if (fideslib_FOUND)
-    message(STATUS "FOUND PACKAGE FIDESlib")
-    message(STATUS "FIDESlib Version: ${fideslib_VERSION}")
-    message(STATUS "FIDESlib header files location: ${FIDESLIB_INCLUDE_PATH}")
-    message(STATUS "FIDESlib lib files location: ${FIDESLIB_LIBRARIES_PATH}")
-else ()
-    message(FATAL_ERROR "PACKAGE FIDESlib NOT FOUND")
-endif ()
+### FIDESlib provides GPU-accelerated CKKS primitives; FHEController runs the whole circuit
+### through its api/ wrapper instead of talking to OpenFHE directly. FIDESlib is built and
+### installed separately (see build_fideslib.sh, which builds ../FIDESlib and installs it to
+### OPENFHE_INSTALL_PREFIX's sibling prefix, default /usr/local) and picked up here via its
+### installed CMake package config rather than as an in-tree add_subdirectory.
+find_package(fideslib CONFIG REQUIRED)
 
-set(CMAKE_CXX_COMPILER ${FIDESLIB_CXX_COMPILER})
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${FIDESLIB_CXX_FLAGS}")
+# fideslib.a is built with OpenMP (see FIDESlib's src/parallel_for.cpp); that flag isn't part
+# of fideslib::fideslib's INTERFACE_LINK_LIBRARIES, so link OpenMP explicitly here too.
+find_package(OpenMP REQUIRED)
 
 ### FHEController still makes a couple of raw lbcrypto:: calls (e.g. FHECKKSRNS::GetBootstrapDepth)
 ### that aren't exposed through fideslib's wrapper API, so the OpenFHE headers FIDESlib itself was
@@ -48,7 +44,6 @@ include_directories(include)
 find_package(GSL REQUIRED)
 include_directories(${GSL_INCLUDE_DIR})
 
-
 add_executable(FHE-BERT-Tiny
         src/client_main.cpp
         src/ServerCircuit.cpp src/ServerCircuit.h
@@ -56,7 +51,7 @@ add_executable(FHE-BERT-Tiny
         src/FHEController.cpp src/FHEController.h
         src/Utils.h)
 
-target_link_libraries(FHE-BERT-Tiny PRIVATE fideslib::fideslib CUDA::cudart)
+target_link_libraries(FHE-BERT-Tiny PRIVATE fideslib::fideslib OpenMP::OpenMP_CXX)
 
 ### security_tests/cca_probe_main.cpp: standalone research tool, see its file header. Reuses
 ### FHEController but never touches the BERT circuit/weights.
@@ -66,4 +61,5 @@ add_executable(cca-probe
         src/Utils.h)
 target_include_directories(cca-probe PRIVATE src)
 
-target_link_libraries(cca-probe PRIVATE fideslib::fideslib CUDA::cudart)
+target_link_libraries(cca-probe PRIVATE fideslib::fideslib OpenMP::OpenMP_CXX)
+
